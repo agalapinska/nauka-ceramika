@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceramika — techniki, zdobienie, historia</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#f7f2ec;--pap:#fffdfa;--ink:#33291f;--mut:#8a7a68;--lin:#e7ddd0;--acc:#a0522d;--acc2:#c9a227}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 90px}
+header.hero{background:linear-gradient(140deg,#6e3b1f,#9c5a2d 45%,#c98850);color:#fff;padding:30px 0 24px;box-shadow:0 2px 22px rgba(0,0,0,.13)}
+header.hero .wrap{padding-bottom:0}
+h1{margin:0 0 4px;font-size:1.75rem;letter-spacing:-.4px}
+.sub{opacity:.92;margin:0 0 16px;font-size:.97rem}
+.met{display:flex;gap:10px;flex-wrap:wrap}
+.met div{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:11px;padding:8px 14px;min-width:104px}
+.met b{display:block;font-size:1.35rem;line-height:1.15}
+.met span{font-size:.76rem;opacity:.9}
+.prg{margin-top:14px;background:rgba(255,255,255,.2);border-radius:99px;height:13px;overflow:hidden;border:1px solid rgba(255,255,255,.3)}
+.prg i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffe082,#ffd54f);transition:width .35s}
+.pinfo{font-size:.83rem;margin-top:6px;opacity:.95;display:flex;gap:14px;flex-wrap:wrap}
+nav.zk{display:flex;gap:4px;flex-wrap:wrap;margin:20px 0 18px;border-bottom:2px solid var(--lin)}
+nav.zk button{background:none;border:none;border-bottom:3px solid transparent;padding:10px 14px;font:inherit;font-weight:600;font-size:.93rem;color:var(--mut);cursor:pointer;border-radius:8px 8px 0 0}
+nav.zk button:hover{background:#f0e8dd;color:var(--ink)}
+nav.zk button.on{color:var(--acc);border-bottom-color:var(--acc);background:var(--pap)}
+.panel{display:none}.panel.on{display:block}
+.box{background:var(--pap);border:1px solid var(--lin);border-radius:14px;padding:20px;margin-bottom:18px}
+.box h2{margin:0 0 10px;font-size:1.15rem}
+.box h3{margin:16px 0 7px;font-size:1rem;color:var(--acc)}
+.tk{background:var(--pap);border:1px solid var(--lin);border-left:5px solid var(--pc,#a0522d);border-radius:13px;padding:16px 18px;margin-bottom:11px}
+.tk-h{display:flex;gap:12px;align-items:flex-start}
+.tk-i{font-size:1.6rem;flex:0 0 auto}
+.tk-t{flex:1;min-width:0}
+.tk h4{margin:0 0 2px;font-size:1.05rem}
+.tk .typ{font-size:.7rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.tk .wstep{margin:8px 0 0;color:#544838;font-size:.93rem}
+.chkwrap{flex:0 0 auto;cursor:pointer;padding-top:3px}
+.chkwrap input{position:absolute;opacity:0;width:0;height:0}
+.chkwrap span{display:block;width:22px;height:22px;border:2px solid #cfc2ae;border-radius:7px;transition:.15s}
+.chkwrap input:checked+span{background:var(--acc);border-color:var(--acc);box-shadow:inset 0 0 0 3px #fff}
+.tk.done{opacity:.55}
+.tk.done h4{text-decoration:line-through}
+details.szcz{margin:9px 0 0}
+details summary{cursor:pointer;font-size:.85rem;color:var(--acc);font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";display:inline-block}
+details[open]>summary::before{content:"▾ "}
+details.szcz p,details.szcz li{margin:6px 0 0;font-size:.89rem;color:#4b4033}
+details.szcz ul{margin:4px 0 0;padding-left:20px}
+.pill{display:inline-block;background:var(--pc,#a0522d);color:#fff;border-radius:20px;padding:2px 9px;font-size:.72rem;font-weight:700;white-space:nowrap;margin-right:5px}
+.narz{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px;background:var(--pap);border:1px solid var(--lin);border-radius:12px;padding:10px 12px;position:sticky;top:0;z-index:20}
+.narz select,.narz button,.narz input[type=search]{font:inherit;font-size:.88rem;padding:7px 11px;border:1px solid var(--lin);border-radius:8px;background:#fff;cursor:pointer;min-width:0}
+.narz input[type=search]{cursor:text;flex:1 1 190px;max-width:280px}
+.narz button{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
+.narz label{font-size:.82rem;color:var(--mut);display:inline-flex;align-items:center;gap:5px;min-width:0}
+.hist{background:var(--pap);border:1px solid var(--lin);border-radius:13px;padding:14px 16px;margin-bottom:9px}
+.hist-h{display:flex;gap:12px;align-items:flex-start}
+.hist-d{flex:0 0 96px;text-align:center;line-height:1.2;padding-top:2px}
+.hist-d b{display:block;font-size:.95rem;color:var(--acc)}
+.hist-d i{font-style:normal;font-size:.68rem;color:var(--mut)}
+.hist-t{flex:1;min-width:0}
+.hist h4{margin:0 0 3px;font-size:1.03rem;line-height:1.35}
+.hist .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.tag{font-size:.7rem;font-weight:700;border-radius:20px;padding:2px 9px;color:#fff}
+.tag.reg{background:#7a6a3f}.tag.ep{background:#5f7470}.tag.kul{background:#8d5f8c}
+.hist p{margin:5px 0 0;font-size:.9rem;color:#4b4033}
+.nores{text-align:center;color:var(--mut);padding:34px;font-size:.92rem;display:none}
+.qb,.fkat{background:var(--pap);border:1px solid var(--lin);border-radius:14px;padding:20px;margin-bottom:16px}
+.qb h3,.fkat h3{margin:0 0 12px;font-size:1.02rem;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.qcount{margin-left:auto;font-size:.75rem;color:var(--mut);font-weight:500;background:#f3ede3;border-radius:20px;padding:2px 10px}
+details.q{border:1px solid var(--lin);border-radius:10px;margin-bottom:7px;background:#fcf9f4}
+details.q summary{padding:10px 13px;display:flex;gap:9px;color:var(--ink);font-weight:600;font-size:.92rem}
+details.q summary::before{content:""}
+.qn{background:var(--acc);color:#fff;border-radius:6px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.74rem;flex:0 0 auto}
+details.q[open] summary{border-bottom:1px solid var(--lin)}
+.a{padding:11px 13px 13px 44px;font-size:.89rem;background:#fff;border-radius:0 0 9px 9px;color:#463c2f}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:9px}
+.fk{perspective:900px;height:118px;cursor:pointer}
+.fk-in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fk.flip .fk-in{transform:rotateY(180deg)}
+.fk-f,.fk-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:11px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-size:.85rem;border:1px solid var(--lin)}
+.fk-f{background:#fcf9f2;font-weight:600}
+.fk-b{background:var(--acc);color:#fff;transform:rotateY(180deg);font-weight:700}
+.zas{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:11px;margin-top:10px}
+.zas div{background:#fcf9f4;border:1px solid var(--lin);border-radius:10px;padding:12px}
+.zas b{display:block;color:var(--acc);margin-bottom:3px;font-size:.9rem}
+.zas p{margin:0;font-size:.85rem;color:#4d4335}
+table.tmp{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
+table.tmp th,table.tmp td{border:1px solid var(--lin);padding:7px 10px;text-align:left}
+table.tmp th{background:#f3ede3;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:#6b5c48}
+table.tmp td b{color:var(--acc)}
+.src{font-size:.78rem;color:var(--mut);margin-top:6px;font-style:italic}
+figure.schemat{margin:12px 0 0;background:#fcf9f4;border:1px solid var(--lin);border-radius:10px;padding:10px 12px 6px}
+figure.schemat svg{width:100%;max-width:480px;height:auto;display:block;margin:0 auto}
+figure.schemat figcaption{font-size:.74rem;color:var(--mut);text-align:center;margin-top:4px}
+.toast{position:fixed;right:16px;bottom:16px;max-width:340px;background:#33291f;color:#f6efe6;border-radius:14px;padding:14px 16px;font-size:.86rem;line-height:1.5;box-shadow:0 8px 30px rgba(0,0,0,.35);z-index:99;display:none}
+.toast.show{display:block;animation:tin .3s}
+@keyframes tin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.toast b{color:#ffd54f}
+.toast button{margin-top:9px;background:#ffd54f;color:#33291f;border:none;border-radius:8px;padding:6px 12px;font:inherit;font-weight:700;cursor:pointer}
+.kalk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start}
+.kalk table{width:100%;border-collapse:collapse;font-size:.85rem}
+.kalk th,.kalk td{border:1px solid var(--lin);padding:5px 7px;text-align:center}
+.kalk th{background:#f3ede3;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;color:#6b5c48}
+.kalk input[type=number]{width:78px;font:inherit;font-size:.85rem;padding:4px 6px;border:1px solid var(--lin);border-radius:6px}
+.kalk select{font:inherit;font-size:.86rem;padding:6px 9px;border:1px solid var(--lin);border-radius:7px;background:#fff}
+.kalk .kbtn{background:var(--acc);color:#fff;border:none;border-radius:7px;padding:6px 11px;font:inherit;font-size:.83rem;font-weight:600;cursor:pointer}
+.kalk .kbtn.alt{background:#fff;color:var(--ink);border:1px solid var(--lin)}
+.kalk .kbtn.del{background:#fff;color:#a3564a;border:1px solid var(--lin);padding:4px 9px}
+.ksum{font-size:.88rem;background:#fcf9f4;border:1px solid var(--lin);border-radius:10px;padding:10px 12px;margin-top:10px}
+.ksum b{color:var(--acc)}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:24px 0}
+@media(max-width:840px){
+ h1{font-size:1.35rem}.wrap{padding:0 12px 60px}
+ .met div{min-width:88px;padding:7px 11px}.met b{font-size:1.1rem}
+ .narz{position:static;flex-direction:column;align-items:stretch}
+ .narz input[type=search]{max-width:100%;flex:none}
+ .hist-h{flex-direction:column;gap:6px}.hist-d{text-align:left;flex:none}
+ .fgrid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+}
+@media print{
+ header.hero{background:#6e3b1f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ nav.zk,.narz,.chkwrap{display:none}
+ .panel{display:block!important}
+ details.szcz>summary{display:none}details.szcz>*{display:block!important}
+ details.q .a{display:block}
+ .fk{height:auto;perspective:none}.fk-in{transform:none!important}
+ .fk-f,.fk-b{position:static;transform:none!important;backface-visibility:visible}
+ .fk-b{background:#eee;color:#000}
+}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+<h1>🏺 Ceramika — techniki i historia</h1>
+<p class="sub">Kompendium metod formowania, wypału, szkliwienia i zdobienia ceramiki oraz interaktywna historia ceramiki od prehistorii do współczesności.</p>
+<div class="met">
+ <div><b id="mTech">0</b><span>technik opisanych</span></div>
+ <div><b id="mHist">0</b><span>epizodów historii</span></div>
+ <div><b id="mQuiz">0</b><span>pytań w quizach</span></div>
+ <div><b id="mFisz">0</b><span>fiszek</span></div>
+</div>
+<div class="prg"><i id="pbar"></i></div>
+<div class="pinfo"><span id="ptxt">0 z 0 technik opanowanych</span><span>💾 Postęp zapisuje się automatycznie na tym urządzeniu.</span></div>
+</div></header>
+
+<div class="wrap">
+
+<nav class="zk">
+<button class="on" data-p="glina">🧱 Glina</button>
+<button data-p="form">🏺 Formowanie</button>
+<button data-p="wypal">🔥 Wypał i piece</button>
+<button data-p="szklo">✨ Szkliwienie</button>
+<button data-p="zdob">🎨 Zdobienie i wykończenia</button>
+<button data-p="hist">📖 Historia</button>
+<button data-p="kalk">🧮 Kalkulatory</button>
+<button data-p="quiz">❓ Quizy</button>
+<button data-p="fisz">🃏 Fiszki</button>
+</nav>
+
+<!-- ============ GLINA ============ -->
+<section class="panel on" id="p-glina">
+<div class="box">
+<h2>🧱 Glina — surowiec ceramika</h2>
+<p style="font-size:.92rem;margin:0">Glina to zwietrzałe skały skaleniowe: mikroskopijne, płaskie cząstki minerałów ilastych (głównie kaolinitu), które zwilżone ślizgają się po sobie — stąd plastyczność. To, co glina zawiera poza minerałami ilastymi (żelazo, topniki, piasek, organika), decyduje o jej kolorze, temperaturze wypału i zastosowaniu.</p>
+</div>
+
+<div class="box">
+<h2>Rodzaje glin i mas — porównanie</h2>
+<table class="tmp">
+<tr><th>Surowiec</th><th>Wygląd</th><th>Właściwości</th><th>Do czego służy</th></tr>
+<tr><td><b>Kaolin (glinka porcelanowa)</b></td><td>Biały, również po wypale</td><td>Bardzo czysty chemicznie (mało żelaza), ogniotrwały, stosunkowo mało plastyczny</td><td>Podstawa porcelany i mas białych; składnik szkliw (nośnik Al₂O₃)</td></tr>
+<tr><td><b>Ball clay (glina wiążąca)</b></td><td>Szara/beżowa przed wypałem, jasna po wypale</td><td>Najdrobniejsze cząstki → maksymalna plastyczność i duży skurcz; sporo substancji organicznych</td><td>Dodatek uplastyczniający do mas porcelanowych i lejnych</td></tr>
+<tr><td><b>Glina kamionkowa</b></td><td>Szara, płowa lub brązowa; po wypale od piaskowej po ciemny brąz</td><td>Plastyczna, spieka się na szczelny czerep w 1200–1300 °C</td><td>Naczynia użytkowe, ceramika warsztatowa (m.in. Bolesławiec)</td></tr>
+<tr><td><b>Glina czerwona (żelazista, ceglarska)</b></td><td>Ruda/brunatna; po wypale ceglasta do brązowej</td><td>Dużo tlenków żelaza — barwią czerep i działają jak topnik (niska temperatura spiekania, przepalona się deformuje)</td><td>Terakota, doniczki, cegła, majolika, tradycyjne garncarstwo</td></tr>
+<tr><td><b>Glina ogniotrwała (fireclay)</b></td><td>Płowa, często gruboziarnista</td><td>Mało topników i żelaza — wytrzymuje bardzo wysokie temperatury</td><td>Cegły szamotowe, płyty piecowe, składnik mas kamionkowych</td></tr>
+<tr><td><b>Bentonit</b></td><td>Bardzo drobny pył</td><td>Ekstremalnie plastyczny minerał ilasty; pęcznieje w wodzie</td><td>Dodatek 1–3% poprawiający plastyczność mas i zawieszenie szkliw</td></tr>
+</table>
+<h3>Co decyduje o właściwościach gliny?</h3>
+<div class="zas">
+<div><b>Wielkość cząstek</b><p>Im drobniejsze cząstki ilaste, tym większa plastyczność — ale i większy skurcz przy schnięciu (ball clay vs kaolin).</p></div>
+<div><b>Tlenki żelaza</b><p>Barwią czerep (krem → ceglasty → brąz) i obniżają temperaturę spiekania — dlatego gliny czerwone to gliny niskotopliwe.</p></div>
+<div><b>Topniki (skalenie, miki, wapń)</b><p>Decydują, w jakiej temperaturze masa się spieka i zeszkliwia.</p></div>
+<div><b>Materiały schudzające</b><p>Piasek i szamot zmniejszają skurcz i plastyczność, ułatwiają suszenie, zwiększają odporność na szok termiczny (masy rzeźbiarskie, raku).</p></div>
+<div><b>Substancje organiczne</b><p>Poprawiają plastyczność surowej masy (i ciemnią jej kolor), wypalają się w piecu — muszą mieć czas na wypalenie ok. 300–800 °C.</p></div>
+<div><b>Woda</b><p>Ta sama masa przechodzi stany: lejny → plastyczny → skórzany → suchy „na kość” — każdy etap ma swoje techniki pracy.</p></div>
+</div>
+</div>
+
+<div class="tk" style="--pc:#7a6a3f" data-tid="dzika">
+ <div class="tk-h"><div class="tk-i">⛏️</div><div class="tk-t">
+  <div class="typ">Surowiec</div><h4>Pozyskiwanie dzikiej gliny i test słoikowy</h4>
+  <p class="wstep">Glinę znajdziesz w skarpach, wykopach, na brzegach rzek — tam, gdzie ziemia po deszczu robi się śliska i lepka. Szybki test plastyczności: uformuj wałeczek grubości palca i zegnij go w obwarzanek — jeśli nie pęka, glina jest obiecująca. Test słoikowy pokaże skład: rozmieszaj próbkę w wodzie i pozwól warstwom opaść.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="20" y="15" width="70" height="80" rx="6" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="24" y="72" width="62" height="19" fill="#c2a266"/>
+   <rect x="24" y="52" width="62" height="20" fill="#d9b98a"/>
+   <rect x="24" y="34" width="62" height="18" fill="#b0603a"/>
+   <rect x="24" y="22" width="62" height="12" fill="#dbe7ee"/>
+   <text x="100" y="88" font-size="9" fill="#6b5c48">piasek (opada 1 min)</text>
+   <text x="100" y="64" font-size="9" fill="#6b5c48">pył (kilka godzin)</text>
+   <text x="100" y="44" font-size="9" fill="#6b5c48">ił — frakcja ilasta (1–2 dni)</text>
+   <text x="100" y="30" font-size="9" fill="#6b5c48">woda</text>
+   <path d="M245 70 q15 -28 40 -8" fill="none" stroke="#b0603a" stroke-width="9" stroke-linecap="round"/>
+   <text x="238" y="95" font-size="9" fill="#6b5c48">test obwarzanka</text>
+  </svg><figcaption>Test słoikowy: proporcje warstw mówią, ile w próbce jest iłu, pyłu i piasku.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Im grubsza warstwa najdrobniejszej frakcji (na górze osadu), tym bardziej „tłusta” (plastyczna) glina.</li>
+  <li>Glina bardzo tłusta pęka przy schnięciu — schudza się ją piaskiem lub szamotem; zbyt chuda kruszy się przy formowaniu.</li>
+  <li>Zawsze wypal próbkę nowej gliny w niskiej temperaturze zanim włożysz do pieca większą pracę — nieznana glina może mieć za niską temperaturę topnienia.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#7a6a3f" data-tid="oczyszczanie">
+ <div class="tk-h"><div class="tk-i">🫧</div><div class="tk-t">
+  <div class="typ">Surowiec</div><h4>Oczyszczanie dzikiej gliny (szlamowanie / lewigacja)</h4>
+  <p class="wstep">Dziką glinę suszy się, kruszy i rozmacza w nadmiarze wody (tzw. slaking). Zawiesinę przelewa się przez sito (ok. 60–80 oczek/cal usuwa kamyki, korzenie i gruby piasek), a przy lewigacji dodatkowo odstawia — piasek opada na dno w minutę, a zlana znad niego zawiesina zawiera już tylko drobne frakcje.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M15 40 h55 l-6 45 h-43 z" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <text x="20" y="100" font-size="9" fill="#6b5c48">rozmaczanie</text>
+   <path d="M80 55 h30" stroke="#8a5a2d" stroke-width="2" marker-end="url(#arr)"/>
+   <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#8a5a2d"/></marker></defs>
+   <rect x="115" y="45" width="60" height="10" rx="3" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M119 50 h52" stroke="#8a5a2d" stroke-dasharray="2 3"/>
+   <text x="112" y="100" font-size="9" fill="#6b5c48">sito 60–80 mesh</text>
+   <path d="M185 55 h30" stroke="#8a5a2d" stroke-width="2" marker-end="url(#arr)"/>
+   <path d="M225 40 h55 l-6 45 h-43 z" fill="#e2cba4" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="232" y="74" width="40" height="9" fill="#c2a266"/>
+   <text x="218" y="100" font-size="9" fill="#6b5c48">piasek opada → zlej górę</text>
+  </svg><figcaption>Szlamowanie: rozmoczenie → przesianie → sedymentacja i zlanie czystej zawiesiny.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Oczyszczoną zawiesinę zagęszcza się przez odparowanie lub rozlanie na płycie gipsowej / w płóciennym worku, aż osiągnie konsystencję plastyczną.</li>
+  <li>Dojrzewanie (aging): masa odłożona na tygodnie w szczelnym worku staje się wyraźnie bardziej plastyczna (równomierne nawilżenie i praca mikroorganizmów).</li>
+  <li>Na koniec wykonaj testy: belka 10 cm do pomiaru skurczu suszenia i wypału oraz próbki wypalane na kilka temperatur (spiek, nasiąkliwość, kolor).</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#7a6a3f" data-tid="wyrabianie">
+ <div class="tk-h"><div class="tk-i">🥨</div><div class="tk-t">
+  <div class="typ">Przygotowanie masy</div><h4>Wyrabianie gliny (wedging)</h4>
+  <p class="wstep">Przed formowaniem (zwłaszcza toczeniem) glinę trzeba wyrobić: usunąć pęcherze powietrza i wyrównać wilgotność w całej bryle. Pęcherz powietrza w ściance to bomba w piecu i wada przy toczeniu; niejednorodna masa „skręca” na kole.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M20 75 q20 -35 55 -18 q18 10 2 18 q-30 12 -57 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <text x="22" y="98" font-size="9" fill="#6b5c48">„barani łeb”</text>
+   <g transform="translate(125,30)">
+    <path d="M35 45 a28 24 0 1 1 20 -40" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+    <path d="M35 45 a14 12 0 1 1 12 -21" fill="none" stroke="#8a5a2d" stroke-width="1.5"/>
+    <path d="M35 45 a5 5 0 1 1 5 -8" fill="none" stroke="#8a5a2d" stroke-width="1.2"/>
+   </g>
+   <text x="128" y="98" font-size="9" fill="#6b5c48">spiralne (kikumomi)</text>
+   <rect x="240" y="38" width="60" height="22" rx="4" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M238 49 h64" stroke="#5f7470" stroke-width="2" stroke-dasharray="4 3"/>
+   <path d="M255 66 l12 14 M285 66 l-12 14" stroke="#8a5a2d" stroke-width="2"/>
+   <text x="234" y="98" font-size="9" fill="#6b5c48">przecięcie i zbicie</text>
+  </svg><figcaption>Trzy metody wyrabiania: barani łeb, spirala, przecinanie strunką i zbijanie połówek.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li><b>Barani łeb (ram's head)</b>: rytmiczne dociskanie bryły nadgarstkami — glina zwija się w kształt przypominający łeb barana.</li>
+  <li><b>Wyrabianie spiralne (jap. kikumomi, „ugniatanie chryzantemy”)</b>: bryła obracana o kąt przy każdym docisku tworzy spiralę; metoda na duże ilości gliny.</li>
+  <li><b>Przecinanie strunką</b>: bryłę tnie się na pół i zbija połówki na blacie — szybko miesza dwie masy lub twarde z miękkim.</li>
+  <li>Kontrola: przetnij wyrobioną bryłę strunką — przekrój ma być gładki, bez dziurek po pęcherzach.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#7a6a3f" data-tid="reclaim">
+ <div class="tk-h"><div class="tk-i">♻️</div><div class="tk-t">
+  <div class="typ">Przygotowanie masy</div><h4>Odzyskiwanie gliny (reclaim)</h4>
+  <p class="wstep">Ścinki, nieudane naczynia (niewypalone!) i osad z toczenia wysusza się całkiem, rozmacza w wodzie, a papkę rozkłada na płycie gipsowej. Gdy zgęstnieje, wyrabia się ją jak świeżą masę — glina przed wypałem jest surowcem w pełni odnawialnym.</p>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Suche kawałki rozmakają błyskawicznie i równomiernie — mokrych resztek nie warto rozmiękczać „na siłę”.</li>
+  <li>Nie mieszaj mas o różnych temperaturach wypału; odzysk trzymaj osobno dla każdej masy.</li>
+  <li>Raz wypalonej gliny nie da się odzyskać — biskwit można najwyżej zmielić na szamot.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+</section>
+
+<!-- ============ FORMOWANIE ============ -->
+<section class="panel" id="p-form">
+<div class="box">
+<h2>Techniki formowania naczyń i rzeźby</h2>
+<p style="font-size:.92rem;margin:0">Od najprostszych metod ręcznych, znanych od tysiącleci, po przemysłowe odlewanie i druk 3D. Zaznacz ✓ przy technikach, które już znasz — postęp widać na pasku u góry.</p>
+</div>
+
+<div class="tk" style="--pc:#b0603a" data-tid="szczypanie">
+ <div class="tk-h"><div class="tk-i">🤏</div><div class="tk-t">
+  <div class="typ">Ręczne formowanie</div><h4>Wyciskanie z kuli (pinching)</h4>
+  <p class="wstep">Najstarsza i najprostsza technika: kulę gliny otwiera się kciukiem i stopniowo ściska ściankę między kciukiem a palcami, obracając naczynie w dłoni. Tak powstają czarki, miski i japońskie czarki chawan.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <circle cx="50" cy="55" r="26" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <text x="30" y="100" font-size="9" fill="#6b5c48">1. kula gliny</text>
+   <path d="M100 55 h25" stroke="#8a5a2d" stroke-width="2"/><path d="M121 50 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <circle cx="175" cy="58" r="26" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M175 32 v22" stroke="#fcf9f4" stroke-width="9" stroke-linecap="round"/>
+   <text x="140" y="100" font-size="9" fill="#6b5c48">2. kciuk otwiera środek</text>
+   <path d="M215 55 h25" stroke="#8a5a2d" stroke-width="2"/><path d="M236 50 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <path d="M255 45 q5 35 25 35 q20 0 25 -35" fill="none" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M258 45 q6 28 22 28 q16 0 22 -28" fill="#e8d3ba"/>
+   <text x="248" y="100" font-size="9" fill="#6b5c48">3. ścianka ściskana palcami</text>
+  </svg><figcaption>Wyciskanie z kuli: otwarcie kciukiem i stopniowe pocienianie ścianki od dna ku krawędzi.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły i wskazówki</summary>
+  <ul><li>Ścianki wyciska się od dna ku górze, cienko i równomiernie — zbyt szybkie ściskanie krawędzi prowadzi do pęknięć.</li>
+  <li>Pękającą krawędź można nawilżyć i zagładzić; praca w zbyt suchej glinie to najczęstszy błąd początkujących.</li>
+  <li>Dwie połączone czarki szczypane tworzą pustą kulę — punkt wyjścia do rzeźby figuralnej.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b0603a" data-tid="waleczki">
+ <div class="tk-h"><div class="tk-i">🌀</div><div class="tk-t">
+  <div class="typ">Ręczne formowanie</div><h4>Technika wałeczkowa (coiling)</h4>
+  <p class="wstep">Naczynie buduje się z wałeczków gliny układanych spiralnie lub w pierścieniach na przygotowanym dnie, a następnie łączy i zagładza. Metoda pozwala budować bardzo duże formy — od prehistorycznych zasobowych naczyń po współczesne rzeźby.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <ellipse cx="60" cy="82" rx="34" ry="9" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M20 40 q20 -14 40 0 q20 14 40 0" fill="none" stroke="#c98850" stroke-width="10" stroke-linecap="round"/>
+   <text x="26" y="103" font-size="9" fill="#6b5c48">dno + wałeczek</text>
+   <g stroke="#8a5a2d" stroke-width="2">
+   <ellipse cx="175" cy="80" rx="30" ry="8" fill="#c98850"/>
+   <ellipse cx="175" cy="66" rx="32" ry="8" fill="#c98850"/>
+   <ellipse cx="175" cy="52" rx="34" ry="8" fill="#c98850"/>
+   <ellipse cx="175" cy="38" rx="36" ry="8" fill="#c98850"/>
+   </g>
+   <text x="140" y="103" font-size="9" fill="#6b5c48">układanie pierścieni</text>
+   <path d="M255 30 q-12 25 0 55 q22 6 30 0 q12 -30 0 -55 q-18 -6 -30 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M258 42 h26 M257 56 h28 M258 70 h26" stroke="#8a5a2d" stroke-width="1" opacity=".45"/>
+   <text x="242" y="103" font-size="9" fill="#6b5c48">łączenie i zagładzanie</text>
+  </svg><figcaption>Technika wałeczkowa: dno, spiralnie układane wałeczki, łączenie i gładzenie ścianek.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły i wskazówki</summary>
+  <ul><li>Wałeczki łączy się przez nacinanie (karbowanie) i przemazanie szlikrem albo przez staranne rozprowadzenie gliny palcem po obu stronach spoiny.</li>
+  <li>Duże formy buduje się etapami — dolna część musi stężeć (do stanu „skórzanego”), zanim doda się kolejne partie, inaczej ścianki osiadają.</li>
+  <li>Ślady wałeczków można zostawić jako dekorację lub całkowicie zagładzić cykliną/żeberkiem.</li>
+  <li>Japońska ceramika Jōmon (od ok. 14 500 lat temu) i wielkie greckie pitosy powstawały właśnie tą techniką.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b0603a" data-tid="platy">
+ <div class="tk-h"><div class="tk-i">📄</div><div class="tk-t">
+  <div class="typ">Ręczne formowanie</div><h4>Technika płatowa (slab building)</h4>
+  <p class="wstep">Glinę rozwałkowuje się na równe płaty (wałkiem między listwami dystansowymi lub w wałkowarce), z których po podsuszeniu tnie się i skleja elementy. Idealna do form geometrycznych: pudełek, kafli, talerzy, architektonicznych rzeźb.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="15" y="62" width="14" height="26" rx="2" fill="#d9b98a" stroke="#8a5a2d" stroke-width="1.5"/>
+   <rect x="118" y="62" width="14" height="26" rx="2" fill="#d9b98a" stroke="#8a5a2d" stroke-width="1.5"/>
+   <rect x="29" y="72" width="89" height="16" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="46" y="46" width="54" height="14" rx="7" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <line x1="40" y1="53" x2="30" y2="40" stroke="#8a5a2d" stroke-width="2"/>
+   <line x1="106" y1="53" x2="116" y2="40" stroke="#8a5a2d" stroke-width="2"/>
+   <text x="18" y="103" font-size="9" fill="#6b5c48">wałek + listwy dystansowe</text>
+   <path d="M160 60 h22" stroke="#8a5a2d" stroke-width="2"/><path d="M178 55 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <g stroke="#8a5a2d" stroke-width="2">
+   <path d="M215 70 l30 -14 40 0 0 26 -30 14 -40 0 z" fill="#e8d3ba"/>
+   <path d="M215 70 l40 0 0 26" fill="none"/>
+   <path d="M255 70 l30 -14" fill="none"/>
+   <path d="M255 70 v26" fill="none"/>
+   </g>
+   <text x="222" y="107" font-size="9" fill="#6b5c48">sklejanie płatów (nacięcie + szliker)</text>
+  </svg><figcaption>Technika płatowa: równy płat rozwałkowany między listwami, cięcie i klejenie form.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły i wskazówki</summary>
+  <ul><li>Płaty łączy się na złączach nacinanych i smarowanych szlikrem; spoinę wzmacnia się cienkim wałeczkiem gliny wciśniętym w kąt.</li>
+  <li>Miękkie płaty można układać na formach garbujących (hump mold) lub w formach wklęsłych (slump mold) — tak powstają miski i półmiski.</li>
+  <li>Płat powinien wszędzie mieć tę samą grubość i być rozwałkowany w różnych kierunkach, inaczej przy schnięciu się wypacza.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8a5a2d" data-tid="toczenie">
+ <div class="tk-h"><div class="tk-i">🎡</div><div class="tk-t">
+  <div class="typ">Koło garncarskie</div><h4>Toczenie na kole</h4>
+  <p class="wstep">Formowanie naczyń z bryły gliny obracającej się na kole garncarskim. Szybkie koło garncarskie upowszechniło się na Bliskim Wschodzie w IV tysiącleciu p.n.e. i zrewolucjonizowało produkcję naczyń symetrycznych.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="2">
+   <line x1="10" y1="88" x2="310" y2="88"/>
+   <path d="M28 88 q2 -34 22 -34 q20 0 22 34" fill="#c98850"/>
+   <path d="M105 88 q0 -26 10 -30 q-6 10 8 12 q14 -2 8 -12 q10 4 10 30 z" fill="#c98850"/>
+   <path d="M190 88 v-46 q0 -5 6 -5 h4 v42 h10 v-42 h4 q6 0 6 5 v46 z" fill="#c98850"/>
+   <path d="M262 88 q-4 -20 4 -34 q4 -8 16 -8 q12 0 16 8 q8 14 4 34 z" fill="#c98850"/>
+   </g>
+   <text x="24" y="104" font-size="9" fill="#6b5c48">1. centrowanie</text>
+   <text x="100" y="104" font-size="9" fill="#6b5c48">2. otwieranie</text>
+   <text x="184" y="104" font-size="9" fill="#6b5c48">3. ciągnięcie</text>
+   <text x="256" y="104" font-size="9" fill="#6b5c48">4. profil</text>
+   <path d="M18 116 a140 30 0 0 1 284 0" fill="none" stroke="#8a5a2d" stroke-width="1.4" stroke-dasharray="4 4"/>
+   <text x="140" y="118" font-size="9" fill="#8a5a2d">obrót koła</text>
+  </svg><figcaption>Toczenie: od wycentrowanej bryły przez otwarcie i ciągnięcie do profilu naczynia.</figcaption></figure>
+  <details class="szcz"><summary>Etapy toczenia</summary>
+  <ul><li><b>Wyrabianie gliny</b> (np. metodą „baraniego łba” / spiralną) — usuwa pęcherze powietrza i ujednolica masę.</li>
+  <li><b>Centrowanie</b> — ustabilizowanie bryły idealnie w osi koła; bez tego dalsze etapy się nie udadzą.</li>
+  <li><b>Otwieranie</b> — wciśnięcie kciuków/palców w środek bryły i uformowanie dna.</li>
+  <li><b>Ciągnięcie ścianek</b> — stopniowe podnoszenie i pocienianie ścianki między palcami wewnętrznej i zewnętrznej dłoni, zwykle w 2–4 przejściach.</li>
+  <li><b>Profilowanie</b> — nadawanie ostatecznego kształtu (brzusiec, szyjka, wylew) żeberkami i palcami.</li>
+  <li><b>Zdejmowanie</b> — podcięcie strunką i zdjęcie naczynia z koła.</li>
+  <li><b>Obtaczanie (trimming)</b> — po podeschnięciu do stanu skórzanego naczynie odwraca się i cyklinami ścina nadmiar gliny, formując stopkę.</li>
+  <li>Małe elementy (uchwyty, pokrywki) często toczy się „z góry” — z jednej dużej bryły (off the hump).</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8a5a2d" data-tid="obtaczanie">
+ <div class="tk-h"><div class="tk-i">🫙</div><div class="tk-t">
+  <div class="typ">Koło garncarskie</div><h4>Toczenie przez obtaczanie i techniki mieszane</h4>
+  <p class="wstep">Wiele tradycji (m.in. słowiańska ceramika wczesnośredniowieczna) łączyło budowanie z wałeczków z wykańczaniem na wolnoobrotowym kole — tzw. obtaczanie. Współcześnie łączy się toczenie z deformacją, cięciem i doklejaniem elementów ręcznie formowanych.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="2">
+   <ellipse cx="90" cy="86" rx="52" ry="9" fill="#d9b98a"/>
+   <ellipse cx="90" cy="70" rx="30" ry="7" fill="#c98850"/>
+   <ellipse cx="90" cy="57" rx="32" ry="7" fill="#c98850"/>
+   <ellipse cx="90" cy="44" rx="30" ry="7" fill="#c98850"/>
+   </g>
+   <path d="M40 100 a55 12 0 0 1 100 0" fill="none" stroke="#8a5a2d" stroke-width="1.4" stroke-dasharray="4 4"/>
+   <text x="52" y="108" font-size="9" fill="#8a5a2d">wolny obrót</text>
+   <path d="M150 40 l30 8" stroke="#8a5a2d" stroke-width="2"/><path d="M176 44 l8 5 -9 3 z" fill="#8a5a2d"/>
+   <path d="M215 30 q-10 30 0 58 q20 6 28 0 q10 -28 0 -58 q-16 -6 -28 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="252" y="45" width="34" height="9" rx="3" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="1.6"/>
+   <text x="212" y="102" font-size="9" fill="#6b5c48">wygładzenie na kole</text>
+  </svg><figcaption>Obtaczanie: naczynie zbudowane z wałeczków wyrównywane narzędziem na wolnym kole.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary>
+  <ul><li>Obtaczanie wyrównuje i zagęszcza ścianki naczynia zbudowanego ręcznie; charakterystyczne dla kultur, które znały koło, ale nie stosowały szybkiego toczenia z pełnej bryły.</li>
+  <li>Formy toczone można po podeschnięciu ciąć strunką, owalizować, wgniatać (faceting — ścinanie płaszczyzn nożem) i składać w formy rzeźbiarskie.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#5f7470" data-tid="odlewanie">
+ <div class="tk-h"><div class="tk-i">🫗</div><div class="tk-t">
+  <div class="typ">Formy i produkcja seryjna</div><h4>Odlewanie ze szlikru (slip casting)</h4>
+  <p class="wstep">Płynną masę lejną (szliker z dodatkiem upłynniacza, np. szkła wodnego lub sody) wlewa się do chłonnej formy gipsowej. Gips odciąga wodę, na ściankach formy osadza się warstwa masy; po osiągnięciu pożądanej grubości nadmiar się wylewa. Podstawowa metoda produkcji porcelany użytkowej i form o skomplikowanych kształtach.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="2">
+   <path d="M20 30 h60 v60 h-60 z M32 30 v-8 h36 v8 M32 30 q-4 30 8 52 h20 q12 -22 8 -52" fill="#fff"/>
+   <path d="M36 34 q-3 26 7 44 h14 q10 -18 7 -44 z" fill="#7a9bb5" opacity=".7"/>
+   </g>
+   <path d="M52 6 q10 8 2 16" stroke="#7a9bb5" stroke-width="3" fill="none"/>
+   <text x="14" y="105" font-size="9" fill="#6b5c48">1. szliker do formy gipsowej</text>
+   <g stroke="#8a5a2d" stroke-width="2">
+   <path d="M130 30 h60 v60 h-60 z M142 30 q-4 30 8 52 h20 q12 -22 8 -52" fill="#fff"/>
+   <path d="M142 30 q-4 30 8 52 h20 q12 -22 8 -52 z" fill="none" stroke-width="5" stroke="#c98850"/>
+   </g>
+   <text x="124" y="105" font-size="9" fill="#6b5c48">2. gips buduje ściankę</text>
+   <g transform="rotate(35 270 60)" stroke="#8a5a2d" stroke-width="2">
+   <path d="M240 35 h60 v50 h-60 z" fill="#fff"/>
+   </g>
+   <path d="M296 88 q6 10 2 16" stroke="#7a9bb5" stroke-width="3" fill="none"/>
+   <text x="228" y="105" font-size="9" fill="#6b5c48">3. wylanie nadmiaru</text>
+  </svg><figcaption>Odlewanie ze szlikru: forma gipsowa odciąga wodę, nadmiar masy się wylewa.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary>
+  <ul><li>Formy gipsowe wykonuje się z modelu; formy wieloczęściowe pozwalają odlewać podcięcia i kształty niemożliwe do wytoczenia.</li>
+  <li>Upłynniacz (deflokulant) sprawia, że masa jest lejna przy małej ilości wody — mniejszy skurcz i szybsze odlewy.</li>
+  <li>Po stężeniu odlew wyjmuje się, usuwa szwy (retusz) i dokleja elementy (ucha, dzióbki) szlikrem.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#5f7470" data-tid="formy">
+ <div class="tk-h"><div class="tk-i">🧩</div><div class="tk-t">
+  <div class="typ">Formy i produkcja seryjna</div><h4>Wyciskanie w formach (press molding) i formy garbujące</h4>
+  <p class="wstep">Plastyczną glinę wciska się ręcznie lub mechanicznie w formę gipsową (lub na nią). Technika znana od starożytności — tak powstawały m.in. rzymskie naczynia terra sigillata z reliefową dekoracją odciskaną w formach.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M25 75 q0 -34 45 -34 q45 0 45 34 l-8 0 q0 -26 -37 -26 q-37 0 -37 26 z" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M33 75 q0 -26 37 -26 q37 0 37 26" fill="none" stroke="#c98850" stroke-width="6"/>
+   <text x="30" y="98" font-size="9" fill="#6b5c48">slump: płat osiada w formie</text>
+   <path d="M195 45 q0 30 40 30 q40 0 40 -30 l-8 0 q0 22 -32 22 q-32 0 -32 -22 z" fill="#fff" stroke="#8a5a2d" stroke-width="2" transform="rotate(180 235 60)"/>
+   <path d="M203 74 q0 -22 32 -22 q32 0 32 22" fill="none" stroke="#c98850" stroke-width="6" transform="translate(0 -28)"/>
+   <text x="192" y="98" font-size="9" fill="#6b5c48">hump: płat na grzbiecie formy</text>
+  </svg><figcaption>Formy garbujące: płat gliny formowany we wklęsłej (slump) lub na wypukłej (hump) formie gipsowej.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary>
+  <ul><li><b>Hump mold</b> (forma wypukła) — płat kładzie się na grzbiet formy; <b>slump mold</b> (wklęsła) — płat osiada w zagłębieniu.</li>
+  <li>Formy dwuczęściowe pozwalają wyciskać pełne kształty (np. figurki, kafle piecowe).</li>
+  <li>W manufakturach stosuje się prasy i formy metalowo-gipsowe do masowej produkcji talerzy i kafli.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#5f7470" data-tid="jiggering">
+ <div class="tk-h"><div class="tk-i">⚙️</div><div class="tk-t">
+  <div class="typ">Formy i produkcja seryjna</div><h4>Formowanie maszynowe: jiggering / jolleying i ekstruzja</h4>
+  <p class="wstep">W przemyśle naczynia obrotowe formuje się półautomatycznie: forma gipsowa nadaje jedną powierzchnię, a opuszczany profil metalowy — drugą. Jiggering formuje talerze (profil od spodu), jolleying — naczynia głębokie (profil od środka). Ekstruder wyciska przez matryce jednolite profile: rurki, uchwyty, listwy.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M30 80 q0 -18 50 -18 q50 0 50 18 z" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M38 78 q0 -12 42 -12 q42 0 42 12" fill="none" stroke="#c98850" stroke-width="6"/>
+   <rect x="70" y="14" width="12" height="34" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M82 48 q14 2 22 12" fill="none" stroke="#8a5a2d" stroke-width="3"/>
+   <path d="M76 6 v6 M72 9 l8 -6" stroke="#8a5a2d" stroke-width="1.6"/>
+   <text x="26" y="100" font-size="9" fill="#6b5c48">jiggering: profil z góry, forma obraca się</text>
+   <rect x="225" y="35" width="34" height="45" rx="4" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M259 45 h20 M259 57 h20 M259 69 h20" stroke="#c98850" stroke-width="7" stroke-linecap="round"/>
+   <path d="M283 57 h14" stroke="#8a5a2d" stroke-width="2"/><path d="M294 52 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <text x="222" y="100" font-size="9" fill="#6b5c48">ekstruzja przez matrycę</text>
+  </svg><figcaption>Formowanie maszynowe: profil metalowy + forma obrotowa (jiggering) i wyciskanie profili (ekstruzja).</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary>
+  <ul><li>To technologia, dzięki której od XVIII–XIX w. zastawa stołowa stała się tania i powtarzalna.</li>
+  <li>Współczesne linie (roller-head) formują talerz w kilka sekund.</li>
+  <li>Ekstrudowane profile tnie się i skleja — popularne w ceramice architektonicznej.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#5f7470" data-tid="druk3d">
+ <div class="tk-h"><div class="tk-i">🖨️</div><div class="tk-t">
+  <div class="typ">Technologie współczesne</div><h4>Druk 3D z gliny</h4>
+  <p class="wstep">Drukarki ceramiczne wyciskają masę warstwa po warstwie według modelu cyfrowego. Pozwalają uzyskać geometrie nieosiągalne ręcznie (struktury ażurowe, parametryczne); wydruk wymaga potem normalnego suszenia, wypału i szkliwienia.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="2">
+   <path d="M130 12 h60 l-16 26 h-28 z" fill="#d9b98a"/>
+   <rect x="152" y="38" width="16" height="12" fill="#8a5a2d"/>
+   </g>
+   <g stroke="#8a5a2d" stroke-width="1.6" fill="#c98850">
+   <ellipse cx="160" cy="92" rx="46" ry="7"/>
+   <ellipse cx="160" cy="82" rx="42" ry="7"/>
+   <ellipse cx="160" cy="72" rx="38" ry="7"/>
+   <ellipse cx="160" cy="62" rx="34" ry="7"/>
+   </g>
+   <path d="M215 30 h30" stroke="#8a5a2d" stroke-width="1.6" stroke-dasharray="3 3"/>
+   <text x="248" y="33" font-size="9" fill="#6b5c48">dysza (ruch XY)</text>
+   <path d="M212 75 h32" stroke="#8a5a2d" stroke-width="1.6" stroke-dasharray="3 3"/>
+   <text x="248" y="78" font-size="9" fill="#6b5c48">warstwy masy</text>
+   <text x="118" y="107" font-size="9" fill="#6b5c48">model cyfrowy → warstwa po warstwie</text>
+  </svg><figcaption>Druk 3D: dysza wyciska masę zgodnie z modelem; ścianka rośnie warstwami.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary>
+  <ul><li>Charakterystyczne prążkowanie warstw bywa celowym efektem estetycznym.</li>
+  <li>Masa musi być na tyle sztywna, by kolejne warstwy nie osiadały — drukuje się z ograniczonym nawisem.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="box">
+<h2>Rodzaje mas ceramicznych</h2>
+<table class="tmp">
+<tr><th>Masa</th><th>Temperatura wypału ostrego</th><th>Cechy</th></tr>
+<tr><td><b>Glina niskotopliwa (earthenware)</b></td><td>ok. 1000–1150 °C (stożki 06–04 to ok. 1000–1060 °C)</td><td>Porowata po wypale, wymaga szkliwienia dla szczelności; czerwone gliny ceglarskie, majolika, terakota.</td></tr>
+<tr><td><b>Kamionka (stoneware)</b></td><td>ok. 1200–1300 °C (stożki 5–10)</td><td>Spieczona, szczelna i bardzo trwała; naczynia użytkowe, m.in. ceramika bolesławiecka.</td></tr>
+<tr><td><b>Porcelana</b></td><td>ok. 1280–1400 °C</td><td>Biała masa na bazie kaolinu, skalenia i kwarcu; po wypale zeszklona, cienkościenna bywa przeświecalna.</td></tr>
+<tr><td><b>Porcelit / fajans delikatny</b></td><td>zwykle 1050–1250 °C (zależnie od typu)</td><td>Białe masy pośrednie — bardziej porowate niż porcelana, tańsze w produkcji zastawy.</td></tr>
+<tr><td><b>Masy szamotowe</b></td><td>jak kamionka</td><td>Glina z dodatkiem szamotu (zmielonej wypalonej gliny) — mniejszy skurcz, odporność na szok termiczny; rzeźba, raku, piece.</td></tr>
+</table>
+<p class="src">Zakresy temperatur są orientacyjne — zawsze obowiązuje specyfikacja producenta danej masy.</p>
+</div>
+</section>
+
+<!-- ============ WYPAŁ ============ -->
+<section class="panel" id="p-wypal">
+<div class="box">
+<h2>Od surowej gliny do ceramiki</h2>
+<p style="font-size:.92rem;margin:0">Wypał to nieodwracalna przemiana: minerały ilaste tracą wodę związaną chemicznie i przekształcają się w trwały materiał ceramiczny. Poniżej etapy procesu i typy pieców.</p>
+<div class="zas">
+<div><b>1. Suszenie</b><p>Naczynie schnie do stanu „na kość” (bone dry). Zbyt szybkie lub nierównomierne suszenie = pęknięcia. Grube i cienkie partie muszą schnąć razem.</p></div>
+<div><b>2. Wypał na biskwit</b><p>Pierwszy wypał, zwykle ok. 900–1060 °C (stożki 08–04). Czerep staje się trwały, ale pozostaje porowaty i dobrze chłonie szkliwo.</p></div>
+<div><b>3. Szkliwienie</b><p>Na biskwit nakłada się szkliwo (zakładka „Szkliwienie”).</p></div>
+<div><b>4. Wypał ostry (szkliwny)</b><p>Drugi wypał do temperatury dojrzewania masy i szkliwa — od ok. 1000 °C (niskotopliwe) do 1300+ °C (porcelana). Szkliwo się stapia, czerep spieka.</p></div>
+</div>
+<h3>Co dzieje się w piecu — kluczowe progi</h3>
+<ul style="font-size:.9rem;margin:4px 0 0;padding-left:20px">
+<li><b>do ok. 100–200 °C</b> — odparowanie resztek wody fizycznej; zbyt szybki start grozi rozerwaniem parą (dlatego początek wypału jest powolny).</li>
+<li><b>ok. 300–800 °C</b> — wypalanie substancji organicznych i utrata wody związanej chemicznie (dehydroksylacja, głównie ok. 450–600 °C); glina przestaje być gliną.</li>
+<li><b>573 °C — inwersja kwarcu</b>: kwarc zmienia odmianę (α→β) i skokowo zwiększa objętość ok. 1–2%; przy zbyt szybkim przechodzeniu tego progu (zwłaszcza przy studzeniu) naczynia pękają — tzw. dunting.</li>
+<li><b>od ok. 900 °C wzwyż</b> — spiekanie i witryfikacja: topniki tworzą fazę szklistą, czerep gęstnieje i twardnieje; porcelana zeszkliwia się niemal całkowicie.</li>
+</ul>
+<h3>Stożki pyrometryczne (Orton)</h3>
+<p style="font-size:.9rem;margin:4px 0 0">Miarą wypału nie jest sama temperatura, lecz „praca cieplna” (temperatura × czas). Mierzy się ją stożkami, które miękną i wyginają się przy określonej dawce ciepła — np. stożek 06 ≈ 1000 °C, 04 ≈ 1060 °C, 6 ≈ 1220–1240 °C, 10 ≈ 1300 °C (zależnie od tempa grzania).</p>
+</div>
+
+<div class="tk" style="--pc:#c25b4a" data-tid="elektryczny">
+ <div class="tk-h"><div class="tk-i">🔌</div><div class="tk-t">
+  <div class="typ">Piece</div><h4>Piec elektryczny</h4>
+  <p class="wstep">Najpopularniejszy w pracowniach: grzałki oporowe, programowalny sterownik, czysta atmosfera utleniająca. Przewidywalny i bezpieczny — standard dla biskwitu, szkliw niskotopliwych i kamionkowych w utlenieniu.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="90" y="12" width="120" height="86" rx="8" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="104" y="24" width="92" height="62" rx="4" fill="#fff" stroke="#8a5a2d" stroke-width="1.6"/>
+   <path d="M108 32 q6 5 0 10 q-6 5 0 10 q6 5 0 10 q-6 5 0 10" stroke="#c25b4a" stroke-width="2.5" fill="none"/>
+   <path d="M192 32 q-6 5 0 10 q6 5 0 10 q-6 5 0 10 q6 5 0 10" stroke="#c25b4a" stroke-width="2.5" fill="none"/>
+   <path d="M138 86 q-3 -18 6 -26 q-2 8 6 10 q8 -2 6 -10 q9 8 6 26 z" fill="#c98850" stroke="#8a5a2d" stroke-width="1.6"/>
+   <rect x="222" y="40" width="42" height="30" rx="4" fill="#fff" stroke="#8a5a2d" stroke-width="1.6"/>
+   <rect x="228" y="46" width="30" height="8" fill="#5f7470"/>
+   <circle cx="234" cy="62" r="3" fill="#8a5a2d"/><circle cx="246" cy="62" r="3" fill="#8a5a2d"/>
+   <text x="216" y="86" font-size="9" fill="#6b5c48">sterownik</text>
+   <text x="66" y="30" font-size="9" fill="#c25b4a" text-anchor="end">grzałki</text>
+   <path d="M70 27 h32" stroke="#c25b4a" stroke-width="1" stroke-dasharray="2 2"/>
+  </svg><figcaption>Piec elektryczny: grzałki oporowe w komorze + programowalny sterownik (atmosfera utleniająca).</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Atmosfera utleniająca (nadmiar tlenu): kolory szkliw są „czyste” — miedź daje zieleń, żelazo miody i brązy.</li>
+  <li>Bez ingerencji nie uzyska się efektów redukcyjnych (seladon, czerwień miedziowa).</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#c25b4a" data-tid="gazowy">
+ <div class="tk-h"><div class="tk-i">🔥</div><div class="tk-t">
+  <div class="typ">Piece</div><h4>Piec gazowy i atmosfera redukcyjna</h4>
+  <p class="wstep">Palniki gazowe pozwalają sterować atmosferą: przy ograniczeniu dopływu powietrza płomień „wyciąga” tlen ze szkliw i mas (redukcja). To klucz do klasycznych efektów wysokotemperaturowych.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="100" y="14" width="110" height="84" rx="8" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="140" y="4" width="26" height="12" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="132" y="0" width="42" height="6" fill="#8a5a2d"/>
+   <text x="182" y="10" font-size="9" fill="#6b5c48">szyber (dławi ciąg)</text>
+   <path d="M60 78 h40" stroke="#8a5a2d" stroke-width="6"/>
+   <path d="M100 78 q14 -6 22 4 q-10 8 -22 -4" fill="#e2963f"/>
+   <path d="M104 76 q9 -3 13 3 q-6 5 -13 -3" fill="#c25b4a"/>
+   <text x="18" y="70" font-size="9" fill="#6b5c48">palnik gazowy</text>
+   <path d="M60 92 h34" stroke="#5f7470" stroke-width="2"/><path d="M90 87 l7 5 -7 5 z" fill="#5f7470"/>
+   <text x="18" y="96" font-size="9" fill="#5f7470">powietrze ↓ = redukcja</text>
+   <path d="M155 88 q-3 -16 5 -24 q-2 8 6 9 q8 -1 5 -9 q9 8 6 24 z" fill="#c98850" stroke="#8a5a2d" stroke-width="1.6"/>
+   <text x="222" y="40" font-size="9" fill="#6b5c48">CO „wyciąga” tlen</text>
+   <text x="222" y="52" font-size="9" fill="#6b5c48">ze szkliw i masy:</text>
+   <text x="222" y="66" font-size="9" fill="#3f6e8a">Fe → seladon</text>
+   <text x="222" y="79" font-size="9" fill="#c25b4a">Cu → oxblood</text>
+  </svg><figcaption>Piec gazowy: ograniczenie powietrza (szyber/palnik) daje atmosferę redukcyjną.</figcaption></figure>
+  <details class="szcz"><summary>Efekty redukcji</summary><ul>
+  <li><b>Seladon</b> — niewielka ilość żelaza w redukcji daje szarozielone, „nefrytowe” szkliwa (Chiny, Korea).</li>
+  <li><b>Czerwień miedziowa (oxblood / sang de boeuf)</b> — miedź w redukcji zamiast zieleni daje głęboką czerwień.</li>
+  <li>Masy kamionkowe nabierają cieplejszych, nakrapianych odcieni („toasty” brąz, żelazne cętki).</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#c25b4a" data-tid="drewno">
+ <div class="tk-h"><div class="tk-i">🪵</div><div class="tk-t">
+  <div class="typ">Piece</div><h4>Wypał drewnem (anagama, noborigama)</h4>
+  <p class="wstep">Wielogodzinny lub wielodniowy wypał w piecach opalanych drewnem. Lecący popiół osiada na naczyniach i topi się w naturalne szkliwo popiołowe; płomień zostawia „rumieńce” i cienie. Japońskie piece tunelowe anagama i komorowe noborigama przyszły do Japonii z kontynentu i są używane od wieków do dziś.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M15 95 L305 95" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M25 95 q0 -18 30 -24 L230 40 q30 -6 30 14 v41 z" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="255" y="10" width="18" height="50" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M40 88 q-3 -12 5 -18 q-1 6 5 7 q6 -1 4 -7 q8 6 5 18 z" fill="#e2963f"/>
+   <text x="20" y="107" font-size="9" fill="#6b5c48">palenisko</text>
+   <g fill="#c98850" stroke="#8a5a2d" stroke-width="1.4">
+   <ellipse cx="120" cy="84" rx="10" ry="9"/><ellipse cx="150" cy="78" rx="9" ry="8"/><ellipse cx="180" cy="72" rx="10" ry="9"/><ellipse cx="210" cy="66" rx="9" ry="8"/>
+   </g>
+   <path d="M70 74 q60 -26 180 -44" stroke="#c25b4a" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+   <text x="120" y="34" font-size="9" fill="#c25b4a">droga płomienia i popiołu</text>
+   <text x="238" y="107" font-size="9" fill="#6b5c48">komin</text>
+   <text x="120" y="107" font-size="9" fill="#6b5c48">naczynia w komorze (na stoku)</text>
+  </svg><figcaption>Anagama: jednokomorowy piec tunelowy na stoku — płomień i popiół przechodzą przez naczynia do komina.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Ustawienie naczyń w piecu (ścieżka płomienia) jest częścią kompozycji — każda strona naczynia wypala się inaczej.</li>
+  <li>Efekty: naturalne szkliwo popiołowe, wady-zalety typu hikidashi, muszelkowe odciski podkładek.</li>
+  <li>Wypał bywa zbiorowym wydarzeniem — dokładanie drewna trwa na zmiany dzień i noc.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#c25b4a" data-tid="raku">
+ <div class="tk-h"><div class="tk-i">🍵</div><div class="tk-t">
+  <div class="typ">Piece i techniki wypału</div><h4>Raku</h4>
+  <p class="wstep">Tradycyjne raku: ręcznie formowane czarki wyjmowane z pieca na gorąco — technika stworzona w XVI-wiecznym Kioto przez garncarza Chōjirō dla mistrza herbaty Sen no Rikyū. Raku zachodnie (spopularyzowane w XX w., m.in. przez Paula Soldnera) dodaje redukcję poszkliwną: rozżarzone naczynie ląduje w pojemniku z trocinami.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="20" y="30" width="70" height="65" rx="6" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="34" y="44" width="42" height="38" fill="#e2963f" stroke="#8a5a2d" stroke-width="1.6"/>
+   <text x="22" y="107" font-size="9" fill="#6b5c48">piec ~1000 °C</text>
+   <path d="M100 60 h28" stroke="#8a5a2d" stroke-width="2"/><path d="M124 55 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <path d="M140 45 l22 12 M140 75 l22 -12" stroke="#8a5a2d" stroke-width="2.5"/>
+   <path d="M166 52 q-3 -10 5 -14 q-1 5 4 6 q5 -1 4 -6 q8 4 5 14 q-4 6 -9 6 q-5 0 -9 -6" fill="#c25b4a" stroke="#8a5a2d" stroke-width="1.4"/>
+   <text x="134" y="95" font-size="9" fill="#6b5c48">szczypce: naczynie na gorąco</text>
+   <path d="M225 50 h60 l-6 45 h-48 z" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M237 58 h36 M234 68 h42 M236 78 h38" stroke="#8a5a2d" stroke-width="1.4" stroke-dasharray="2 3"/>
+   <path d="M240 42 q4 -8 0 -14 M255 40 q4 -8 0 -14 M270 42 q4 -8 0 -14" stroke="#8a7a68" stroke-width="1.8" fill="none"/>
+   <text x="224" y="107" font-size="9" fill="#6b5c48">trociny — redukcja i dym</text>
+  </svg><figcaption>Raku zachodnie: naczynie wyjęte z pieca szczypcami dymi się w pojemniku z trocinami.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Szok termiczny wymaga mas szamotowych; naczynia raku są porowate i głównie dekoracyjne.</li>
+  <li>Efekty: metaliczne lustry miedziowe, spękania szkliwa podkreślone dymem (krakle), aksamitna czerń odkrytego czerepu.</li>
+  <li>Pokrewne techniki dymne: wypał w beczce, sagger, obvara (zanurzenie gorącego naczynia w zakwasie mącznym — technika znana z Europy Wschodniej).</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#c25b4a" data-tid="mielerz">
+ <div class="tk-h"><div class="tk-i">⛺</div><div class="tk-t">
+  <div class="typ">Piece i techniki wypału</div><h4>Wypał ogniskowy i mielerzowy (pit firing)</h4>
+  <p class="wstep">Najstarsza metoda wypału: naczynia układane w jamie lub na powierzchni, przykryte opałem (drewno, łajno, słoma) i wypalane w niskiej temperaturze (zwykle ok. 600–900 °C). Tak wypalano ceramikę przed wynalezieniem pieca — i tak nadal pracuje wiele tradycyjnych warsztatów Afryki i Ameryk.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M15 80 h290" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M60 80 q0 -22 100 -22 q100 0 100 22 z" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <g fill="#c98850" stroke="#8a5a2d" stroke-width="1.4">
+   <ellipse cx="125" cy="72" rx="12" ry="9"/><ellipse cx="160" cy="70" rx="13" ry="10"/><ellipse cx="196" cy="72" rx="12" ry="9"/>
+   </g>
+   <path d="M90 56 l140 -6 M95 50 l130 14" stroke="#8a5a2d" stroke-width="2.5"/>
+   <path d="M120 40 q-4 -14 6 -20 q-2 8 7 9 q9 -1 7 -9 q10 6 6 20 q-6 8 -13 8 q-7 0 -13 -8" fill="#e2963f"/>
+   <path d="M185 42 q-3 -11 5 -16 q-1 6 5 7 q6 -1 5 -7 q8 5 5 16 q-5 7 -10 7 q-5 0 -10 -7" fill="#c25b4a"/>
+   <text x="70" y="100" font-size="9" fill="#6b5c48">jama: naczynia + warstwy opału (drewno, łajno, słoma)</text>
+  </svg><figcaption>Wypał mielerzowy: naczynia zagrzebane w opale wypalają się w jamie, bez pieca.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Nierównomierna atmosfera daje chmury czerni i różu na powierzchni — dziś ceniony efekt artystyczny.</li>
+  <li>Naczynia często wcześniej poleruje się lub pokrywa terra sigillatą, bo szkliwa w tych temperaturach zwykle się nie stosuje.</li>
+  <li>Czarna ceramika siwa (redukcyjne wędzenie pod koniec wypału) to tradycja żywa m.in. w Polsce.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="box">
+<h2>📈 Krzywa wypału + kalkulator harmonogramu</h2>
+<p style="font-size:.9rem;margin:0 0 10px">Krzywa wypału to wykres temperatury w czasie. Wybierz gotowy harmonogram wg dobrych praktyk (wolno przez odparowanie wody i wypalanie organiki, ostrożnie przez inwersję kwarcu 573 °C, szybciej powyżej czerwonego żaru) albo zmień dowolny segment ręcznie — wykres i czasy przeliczą się na bieżąco.</p>
+<div class="kalk">
+<div>
+<label style="font-size:.85rem;color:var(--mut)">Harmonogram:
+<select id="kPreset">
+<option value="biskwit">Biskwit — stożek 04 (~1060 °C)</option>
+<option value="biskwit06">Biskwit — stożek 06 (~1000 °C)</option>
+<option value="szkliwK">Szkliwny kamionka — stożek 6 (~1240 °C)</option>
+<option value="szkliwE">Szkliwny niskotopliwy (~1060 °C)</option>
+</select></label>
+<table style="margin-top:9px"><thead><tr><th>#</th><th>Tempo [°C/h]</th><th>Cel [°C]</th><th>Przetrzymanie [min]</th><th></th></tr></thead>
+<tbody id="kRows"></tbody></table>
+<div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<button class="kbtn alt" id="kAdd">+ dodaj segment</button>
+<label style="font-size:.83rem;color:var(--mut)">Studzenie kontrolowane [°C/h]:
+<input type="number" id="kCool" min="0" step="10" value="0" title="0 = studzenie naturalne"></label>
+</div>
+<div class="ksum" id="kSum"></div>
+</div>
+<div id="kChart"></div>
+</div>
+<h3>Jak czytać krzywą — etapy wypału</h3>
+<div class="zas">
+<div><b>Start (do ~100–200 °C)</b><p>Powoli! Resztki wody fizycznej muszą odparować — para w zamkniętych porach rozrywa ścianki. Przy grubych pracach warto dodać przetrzymanie.</p></div>
+<div><b>Środek (300–800 °C)</b><p>Wypala się organika, uchodzi woda chemiczna; po drodze próg 573 °C (inwersja kwarcu). Umiarkowane tempo.</p></div>
+<div><b>Finisz (od czerwonego żaru)</b><p>Można przyspieszyć; na końcu krótkie przetrzymanie (soak) wyrównuje temperaturę w piecu i wygładza szkliwa.</p></div>
+<div><b>Studzenie</b><p>Naturalne zwykle wystarcza; kontrolowane 80–150 °C/h poprawia niektóre szkliwa (maty, krystaliczne). Pieca nie otwieramy powyżej ~200 °C.</p></div>
+</div>
+<p class="src">Harmonogramy domyślne opracowane wg dobrych praktyk opisanych w przewodniku Glazy (help.glazy.org): wolny start do 100 °C, spokojnie do 600 °C, szybciej do temperatury szczytowej, krótki soak.</p>
+</div>
+</section>
+
+<!-- ============ SZKLIWIENIE ============ -->
+<section class="panel" id="p-szklo">
+<div class="box">
+<h2>Czym jest szkliwo?</h2>
+<p style="font-size:.92rem;margin:0">Szkliwo to cienka warstwa szkła stopiona na powierzchni czerepu — uszczelnia, wzmacnia i zdobi. Każde szkliwo balansuje trzy składniki:</p>
+<div class="zas">
+<div><b>Szkłotwórca</b><p>Krzemionka (SiO₂) — buduje szkło. Sama topi się dopiero ok. 1710 °C, więc potrzebuje topników.</p></div>
+<div><b>Topniki</b><p>Obniżają temperaturę topnienia: skalenie, kreda (CaCO₃), talk, dolomit, związki sodu, potasu, litu, cynku, baru oraz bor (fryty, kolemanit); dawniej także ołów.</p></div>
+<div><b>Stabilizator</b><p>Tlenek glinu (Al₂O₃, z kaolinu i skaleni) — zagęszcza stop, żeby szkliwo nie spływało ze ścianek.</p></div>
+<div><b>Barwniki i zmętniacze</b><p>Tlenki metali: kobalt → błękit, miedź → zieleń (a w redukcji czerwień), żelazo → miody/brązy/seladony, mangan → fiolety i brązy, chrom → zielenie; cyna i cyrkon mętnią szkliwo na biało.</p></div>
+</div>
+</div>
+
+<div class="tk" style="--pc:#3f6e8a" data-tid="zanurzanie">
+ <div class="tk-h"><div class="tk-i">🛁</div><div class="tk-t">
+  <div class="typ">Nakładanie szkliwa</div><h4>Zanurzanie (dipping)</h4>
+  <p class="wstep">Biskwit zanurza się na kilka sekund w zawiesinie szkliwa — porowaty czerep zasysa wodę, a na powierzchni osadza się równa warstwa. Najszybsza i najbardziej powtarzalna metoda w pracowni.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M60 40 h140 l-10 60 h-120 z" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M66 52 h128 l-8 44 h-112 z" fill="#7a9bb5" opacity=".75"/>
+   <path d="M120 20 l14 14 M120 20 l-3 8 M120 20 l8 2" stroke="#8a5a2d" stroke-width="2" fill="none"/>
+   <path d="M132 34 q-8 26 4 40 q14 4 20 0 q12 -14 4 -40 q-14 -5 -28 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M134 52 q12 4 24 0" stroke="#3f6e8a" stroke-width="2" fill="none"/>
+   <text x="216" y="60" font-size="9" fill="#6b5c48">kilka sekund —</text>
+   <text x="216" y="72" font-size="9" fill="#6b5c48">czerep zasysa szkliwo</text>
+   <text x="52" y="30" font-size="9" fill="#6b5c48">szczypce</text>
+  </svg><figcaption>Zanurzanie: naczynie trzymane szczypcami wchodzi na kilka sekund do zawiesiny szkliwa.</figcaption></figure>
+  <details class="szcz"><summary>Wskazówki</summary><ul>
+  <li>Gęstość zawiesiny i czas zanurzenia decydują o grubości warstwy; szkliwo trzeba przed użyciem dokładnie wymieszać i przesiać.</li>
+  <li>Ślady po szczypcach retuszuje się pędzlem; stopkę czyści się z szkliwa, żeby naczynie nie przywarło do płyty.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#3f6e8a" data-tid="polewanie">
+ <div class="tk-h"><div class="tk-i">🫖</div><div class="tk-t">
+  <div class="typ">Nakładanie szkliwa</div><h4>Polewanie (pouring)</h4>
+  <p class="wstep">Wnętrza naczyń szkliwi się wlewając i wylewając szkliwo ruchem obrotowym; zewnętrze — polewając naczynie ustawione na listwach nad miską. Naturalne zacieki bywają zamierzoną dekoracją.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M40 18 h34 l14 10 -8 6 -14 -6 h-26 z" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M88 32 q10 10 8 24" stroke="#7a9bb5" stroke-width="4" fill="none"/>
+   <path d="M80 56 q-8 28 6 40 q16 5 22 0 q14 -12 6 -40 q-16 -6 -34 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M92 58 q2 16 -2 30 M104 58 q2 12 0 22" stroke="#7a9bb5" stroke-width="3" fill="none"/>
+   <text x="140" y="40" font-size="9" fill="#6b5c48">polewanie z dzbanka</text>
+   <path d="M215 60 q0 24 30 24 q30 0 30 -24" fill="none" stroke="#8a5a2d" stroke-width="2"/>
+   <line x1="205" y1="58" x2="295" y2="58" stroke="#8a5a2d" stroke-width="3"/>
+   <path d="M232 44 q-6 12 4 14 q10 2 12 -6 q2 -8 -4 -10 q-8 -2 -12 2" fill="#c98850" stroke="#8a5a2d" stroke-width="1.6"/>
+   <text x="206" y="100" font-size="9" fill="#6b5c48">listwy nad miską łapią nadmiar</text>
+  </svg><figcaption>Polewanie: szkliwo lane na naczynie ustawione na listwach; nadmiar wraca do miski.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#3f6e8a" data-tid="natrysk">
+ <div class="tk-h"><div class="tk-i">💨</div><div class="tk-t">
+  <div class="typ">Nakładanie szkliwa</div><h4>Natrysk (spraying)</h4>
+  <p class="wstep">Szkliwo napyla się aerografem lub pistoletem w kabinie z wyciągiem. Pozwala na delikatne przejścia tonalne i cieniowanie kilku szkliw; wymaga ochrony dróg oddechowych.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M30 45 h34 v16 h-34 z M64 49 h10 v8 h-10 z M40 61 v14 h14 v-14" fill="#5f7470" stroke="#33291f" stroke-width="1.6"/>
+   <g stroke="#7a9bb5" stroke-width="1.6" opacity=".8">
+   <path d="M78 53 q40 -18 80 -14"/><path d="M78 53 q40 0 82 6"/><path d="M78 53 q38 16 78 24"/>
+   </g>
+   <g fill="#7a9bb5" opacity=".65"><circle cx="120" cy="44" r="2"/><circle cx="132" cy="56" r="2"/><circle cx="122" cy="68" r="2"/><circle cx="146" cy="48" r="1.6"/><circle cx="148" cy="64" r="1.6"/></g>
+   <path d="M196 34 q-10 30 4 52 q16 5 24 0 q14 -22 4 -52 q-16 -6 -32 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <ellipse cx="212" cy="96" rx="30" ry="6" fill="#d9b98a" stroke="#8a5a2d" stroke-width="1.6"/>
+   <path d="M188 104 a26 6 0 0 1 48 0" fill="none" stroke="#8a5a2d" stroke-width="1.2" stroke-dasharray="3 3"/>
+   <text x="252" y="60" font-size="9" fill="#6b5c48">talerzyk obrotowy —</text>
+   <text x="252" y="72" font-size="9" fill="#6b5c48">równa mgiełka</text>
+  </svg><figcaption>Natrysk: pistolet/aerograf napyla mgiełkę szkliwa na obracane naczynie (kabina + maska!).</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#3f6e8a" data-tid="pedzel">
+ <div class="tk-h"><div class="tk-i">🖌️</div><div class="tk-t">
+  <div class="typ">Nakładanie szkliwa</div><h4>Pędzlowanie</h4>
+  <p class="wstep">Szkliwa pędzlowe (z dodatkiem spoiwa, np. gumy arabskiej lub CMC) nakłada się w 2–3 warstwach. Wolniejsze od zanurzania, ale precyzyjne — dobre do wielobarwnych kompozycji i małych pracowni.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M55 15 l16 5 -22 62 -12 -4 z" fill="#d9b98a" stroke="#8a5a2d" stroke-width="1.8"/>
+   <path d="M49 82 q-4 14 4 16 q8 2 10 -12 l-2 -8 z" fill="#3f6e8a"/>
+   <path d="M120 30 v55 M150 30 v55 M180 30 v55" stroke="#7a9bb5" stroke-width="16" stroke-linecap="round" opacity=".85"/>
+   <path d="M120 30 v55" stroke="#3f6e8a" stroke-width="16" stroke-linecap="round" opacity=".4"/>
+   <text x="112" y="103" font-size="9" fill="#6b5c48">2–3 warstwy, na krzyż</text>
+   <text x="228" y="50" font-size="9" fill="#6b5c48">szkliwo pędzlowe</text>
+   <text x="228" y="62" font-size="9" fill="#6b5c48">ze spoiwem (CMC)</text>
+  </svg><figcaption>Pędzlowanie: kilka krzyżujących się warstw szkliwa ze spoiwem.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#3f6e8a" data-tid="wosk">
+ <div class="tk-h"><div class="tk-i">🕯️</div><div class="tk-t">
+  <div class="typ">Techniki pomocnicze</div><h4>Rezerważ: wosk, latex, taśmy</h4>
+  <p class="wstep">Miejsca, które mają zostać bez szkliwa (stopki, wzory), maluje się woskiem lub lateksem albo okleja taśmą. Rezerważ pozwala łączyć kilka szkliw w graficzne kompozycje i odsłaniać kolor czerepu.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M110 20 q-12 34 4 62 q20 6 28 0 q16 -28 4 -62 q-18 -7 -36 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M112 30 q16 6 32 0 v34 q-16 6 -32 0 z" fill="#7a9bb5" opacity=".8"/>
+   <path d="M110 72 q18 7 36 0 l2 10 q-20 8 -40 0 z" fill="#e2c98a" stroke="#8a5a2d" stroke-width="1.4"/>
+   <text x="170" y="40" font-size="9" fill="#3f6e8a">szkliwo trzyma się</text>
+   <text x="170" y="52" font-size="9" fill="#3f6e8a">tylko poza woskiem</text>
+   <text x="170" y="80" font-size="9" fill="#8a6d2b">wosk na stopce —</text>
+   <text x="170" y="92" font-size="9" fill="#8a6d2b">szkliwo spływa kroplami</text>
+   <path d="M40 30 l14 40" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M52 70 q2 8 8 8" stroke="#e2c98a" stroke-width="4" fill="none"/>
+   <text x="16" y="24" font-size="9" fill="#6b5c48">pędzel z woskiem</text>
+  </svg><figcaption>Rezerważ woskiem: pokryte miejsca (np. stopka) zostają czyste po zanurzeniu w szkliwie.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="box">
+<h2>Typy i efekty szkliw</h2>
+<div class="zas">
+<div><b>Transparentne i mleczne</b><p>Bezbarwne błyszczące pokazują czerep i dekorację podszkliwną; mleczne (cyna, cyrkon) kryją go bielą — to baza majoliki i fajansu.</p></div>
+<div><b>Matowe i satynowe</b><p>Matowość daje mikrokrystalizacja lub odpowiedni stosunek Al₂O₃/SiO₂; przyjemne w dotyku, mniej odporne na zabrudzenia.</p></div>
+<div><b>Seladon</b><p>Klasyka Dalekiego Wschodu: transparentna zieleń/szarozieleń z żelaza wypalanego w redukcji.</p></div>
+<div><b>Tenmoku</b><p>Nasycone żelazem szkliwa od miodowego brązu po czerń; z tradycji chińskich czarek jian (dynastia Song) — efekty „zajęczej sierści”, „oleistych plam”.</p></div>
+<div><b>Shino i szkliwa popiołowe</b><p>Shino — gęste, białoróżowe szkliwa skaleniowe z Japonii (Mino, XVI w.); szkliwa popiołowe powstają z popiołu drzewnego — naturalne zacieki i zielenie.</p></div>
+<div><b>Krystaliczne</b><p>Duże kryształy willemitu (cynk + krzemionka) hodowane przez kontrolowane przetrzymanie temperatury przy studzeniu — spektakularne „kwiaty” w szkle.</p></div>
+<div><b>Krakle</b><p>Siatka spękań powstaje, gdy szkliwo kurczy się mocniej niż czerep; podbarwiona tuszem staje się dekoracją (chińskie guan/ge z epoki Song).</p></div>
+<div><b>Soda i sól</b><p>Wrzucane do rozgrzanego pieca (par soli od XIV-wiecznej Nadrenii) opary osadzają się na czerepie, tworząc szkliwo o fakturze „skórki pomarańczy”.</p></div>
+</div>
+<p class="src">Uwaga bezpieczeństwa: szkliwa na naczynia do żywności muszą być stabilne i bezołowiowe; surowe szkliwa i pyły wymagają maski przeciwpyłowej.</p>
+</div>
+
+<div class="box">
+<h2>⚗️ Chemia szkliwa w praktyce — formuła UMF (wg Glazy)</h2>
+<p style="font-size:.92rem;margin:0 0 10px">Serwis <b>Glazy.org</b> (największa otwarta baza receptur szkliw) opisuje szkliwa <b>formułą molową UMF</b> (Unity Molecular Formula): wszystkie topniki sprowadza się łącznie do 1,0 mola — dzięki temu od razu widać, ile krzemionki i tlenku glinu przypada na „standardową” porcję topnika, i można porównywać dowolne receptury.</p>
+<div class="zas">
+<div><b>Topniki: R₂O i RO</b><p>Alkaliczne R₂O (Na₂O, K₂O, Li₂O) — silne, dają płynne stopy i wysoką rozszerzalność; ziem alkalicznych RO (CaO, MgO, BaO, SrO, ZnO) — usztywniają stop i sprzyjają matom. Dla stabilnych szkliw typowa proporcja R₂O:RO to <b>0,2:0,8 – 0,3:0,7</b>.</p></div>
+<div><b>Stosunek SiO₂:Al₂O₃</b><p>Najszybsza diagnoza charakteru szkliwa: <b>ok. 3–5</b> — maty i szkliwa niedopalone; <b>ok. 5–7</b> — stabilne błyszczące szkliwa kamionkowe; <b>ok. 9 i więcej</b> — bardzo błyszczące, ale rosnące ryzyko spękań (crazing).</p></div>
+<div><b>Wykres Stulla i formuły graniczne</b><p>Wykres Stulla (Al₂O₃ na osi X, SiO₂ na osi Y) dzieli szkliwa na strefy: błyszczące, matowe, niedopalone i spękane. „Formuły graniczne” to bezpieczne okna wartości Al₂O₃ i SiO₂ dla danego stożka — Glazy pokazuje je na wykresie dla każdej receptury.</p></div>
+<div><b>Dopasowanie do czerepu</b><p>Szkliwo i masa muszą mieć zgodną rozszerzalność cieplną: szkliwo kurczące się mocniej niż czerep pęka siatką (crazing), a ściśnięte za mocno — odpryskuje (shivering). Odporne naczynia użytkowe = szkliwo w lekkiej kompresji.</p></div>
+</div>
+</div>
+
+<div class="box">
+<h2>🩺 Wady szkliw — diagnoza i naprawa (wg Glazy)</h2>
+<div class="zas">
+<div><b>Crazing (siatka spękań)</b><p>Pajęcza siatka rys, czasem dopiero po tygodniach. Przyczyna: szkliwo kurczy się mocniej niż czerep. Naprawa: dodać krzemionki/kaolinu, ograniczyć topniki alkaliczne, cieńsza warstwa, wolniejsze studzenie lub zmiana masy.</p></div>
+<div><b>Shivering (odpryskiwanie)</b><p>Płatki szkliwa odłupują się z krawędzi i uch — szkliwo jest zbyt ściśnięte. Naprawa: podnieść rozszerzalność szkliwa (więcej topników alkalicznych), unikać ostrych krawędzi, zmienić masę. Wada groźna — ostre odpryski w naczyniach!</p></div>
+<div><b>Crawling (zwijanie się)</b><p>Szkliwo zbiega się w wyspy, odsłaniając czerep. Przyczyna: kurz/tłuszcz na biskwicie albo za gruba, spękana przy schnięciu warstwa. Naprawa: czysty biskwit, cieńsza warstwa, dodatek spoiwa (CMC), mniej surowej gliny w recepturze.</p></div>
+<div><b>Pinholing (dziurkowanie)</b><p>Dziurki wielkości szpilki — gazy z czerepu nie zdążyły ujść przed zastygnięciem szkliwa. Naprawa: dłuższy soak na szczycie, odrobinę wyższa temperatura, cieńsza warstwa, staranniejszy biskwit (wypalenie organiki).</p></div>
+<div><b>Blistering (pęcherze)</b><p>Większe bąble i kratery, często z przepalenia. Naprawa: cieńsza warstwa, niższa temperatura szczytowa lub krótszy czas, topniki frytowane zamiast surowych, dobre wysuszenie przed wypałem.</p></div>
+<div><b>Spływanie</b><p>Szkliwo ścieka na płytę pieca. Przyczyna: za dużo topnika lub za gruba warstwa. Naprawa: więcej Al₂O₃ (kaolin), cieńsza warstwa, podstawki/„stopka bezpieczeństwa” przy testach nowych szkliw.</p></div>
+</div>
+</div>
+
+<div class="box">
+<h2>🧪 Testowanie szkliw jak na Glazy</h2>
+<div class="zas">
+<div><b>Płytki testowe</b><p>Testuj na pionowych płytkach z fakturą i rowkami — pokażą spływanie i zachowanie na krawędziach, czego płaska próbka nie zdradzi. Zawsze podpisuj próbki (tlenkiem lub ołówkiem podszkliwnym).</p></div>
+<div><b>Line blend (mieszanka liniowa)</b><p>Dwa szkliwa (lub szkliwo + barwnik) mieszane w krokach np. 100:0, 75:25, 50:50, 25:75, 0:100 — najprostszy sposób szukania własnych wariantów.</p></div>
+<div><b>Triaxial i biaxial</b><p>Trzy składniki w trójkącie proporcji (triaxial) albo siatka dwóch zmiennych, np. rosnący SiO₂ × rosnący Al₂O₃ (biaxial) — tak systematycznie mapuje się okolice receptury na wykresie Stulla.</p></div>
+<div><b>Dokumentacja</b><p>Notuj: recepturę, gęstość, liczbę warstw, masę, piec i program wypału. Receptury warto wpisać do Glazy.org — przeliczy UMF, pokaże recepturę na wykresie Stulla i porówna z tysiącami przetestowanych szkliw.</p></div>
+</div>
+<p class="src">Sekcje o chemii, wadach i testowaniu opracowane na podstawie przewodnika Glazy: help.glazy.org (Concepts: Analyses, Defects; Testing) oraz glazy.org.</p>
+</div>
+</section>
+
+<!-- ============ ZDOBIENIE ============ -->
+<section class="panel" id="p-zdob">
+<div class="box">
+<h2>Zdobienie i wykończenia powierzchni</h2>
+<p style="font-size:.92rem;margin:0">Dekorować można na każdym etapie: w mokrej glinie (faktury, rzeźbienie), w stanie skórzanym (angoby, sgraffito, inkrustacja), na biskwicie (malowanie podszkliwne), na surowym szkliwie (majolika) i na wypalonym szkliwie (naszkliwne emalie, lustry, złocenia).</p>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="faktura">
+ <div class="tk-h"><div class="tk-i">🪵</div><div class="tk-t">
+  <div class="typ">W glinie</div><h4>Faktury, stemplowanie, odciskanie</h4>
+  <p class="wstep">Miękka glina przyjmuje każdy odcisk: stemple, sznur (ceramika sznurowa i japońska Jōmon — dosł. „wzór sznura”), tkaniny, koronki, wałki fakturowe, pieczęcie. Współczesny Bolesławiec zdobi naczynia stempelkami z gąbki — technika rozwinięta tam w XVIII w.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="20" y="60" width="130" height="26" rx="4" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="52" y="18" width="26" height="30" rx="4" fill="#d9b98a" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M56 48 l-4 12 h22 l-4 -12" fill="#8d5f8c" stroke="#8a5a2d" stroke-width="1.4"/>
+   <path d="M65 10 v6 M61 13 l8 -6" stroke="#8a5a2d" stroke-width="1.6"/>
+   <g fill="none" stroke="#8a5a2d" stroke-width="1.4">
+   <circle cx="95" cy="73" r="5"/><circle cx="112" cy="73" r="5"/><circle cx="129" cy="73" r="5"/>
+   </g>
+   <text x="22" y="102" font-size="9" fill="#6b5c48">stempel odciska wzór w miękkiej glinie</text>
+   <path d="M210 30 q-8 26 4 52 q16 5 22 0 q12 -26 4 -52 q-14 -6 -30 0" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="2"/>
+   <g fill="#3f6e8a"><circle cx="222" cy="46" r="3.4"/><circle cx="234" cy="46" r="3.4"/><circle cx="228" cy="58" r="3.4"/><circle cx="222" cy="70" r="3.4"/><circle cx="234" cy="70" r="3.4"/></g>
+   <text x="196" y="102" font-size="9" fill="#6b5c48">stempelki gąbkowe (Bolesławiec)</text>
+  </svg><figcaption>Stemplowanie: odcisk w mokrej glinie albo kobaltowy stempelek gąbkowy na czerepie.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="rzezbienie">
+ <div class="tk-h"><div class="tk-i">🗿</div><div class="tk-t">
+  <div class="typ">W glinie</div><h4>Rzeźbienie, carving, ażur i relief</h4>
+  <p class="wstep">W stanie skórzanym glinę tnie się i rzeźbi: płytki relief (płaskorzeźba), głębokie żłobienia (fluting/faceting — kanelowanie i ścinanie płaszczyzn), ażurowe prześwity (piercing), nakładany relief ze szlikru lub doklejanych elementów (sprigging — tak zdobiona jest jasperware Wedgwooda).</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="18" y="55" width="80" height="30" rx="4" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M30 55 l10 -14 8 6 -10 12" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="1.6"/>
+   <path d="M48 62 q14 -4 30 0" stroke="#8a5a2d" stroke-width="2.5" fill="none"/>
+   <text x="16" y="102" font-size="9" fill="#6b5c48">rylec żłobi relief</text>
+   <path d="M135 30 q-8 26 4 52 q14 5 20 0 q12 -26 4 -52 q-13 -6 -28 0" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <g fill="#fcf9f4" stroke="#8a5a2d" stroke-width=".8"><circle cx="145" cy="48" r="4"/><circle cx="157" cy="56" r="4"/><circle cx="145" cy="66" r="4"/></g>
+   <text x="122" y="102" font-size="9" fill="#6b5c48">ażur (piercing)</text>
+   <path d="M225 30 q-8 26 4 52 q14 5 20 0 q12 -26 4 -52 q-13 -6 -28 0" fill="#7a9bb5" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M235 48 q6 -8 12 0 q-2 10 -6 12 q-4 -2 -6 -12" fill="#fff"/>
+   <text x="208" y="102" font-size="9" fill="#6b5c48">sprigging: doklejony relief</text>
+  </svg><figcaption>Rzeźbienie: żłobienie reliefu, wycinanie ażuru i naklejane reliefy (sprigging).</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Chińskie i koreańskie seladony często mają delikatny rzeźbiony relief widoczny przez transparentne szkliwo gromadzące się w zagłębieniach.</li>
+  <li>Ażur wymaga masy o dobrej stabilności i cierpliwego suszenia.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="angoba">
+ <div class="tk-h"><div class="tk-i">🎨</div><div class="tk-t">
+  <div class="typ">Angoby i szlikry</div><h4>Angoba (engoba) i malowanie szlikrem</h4>
+  <p class="wstep">Angoba to barwiona glinka w konsystencji śmietany, nakładana zwykle na stan skórzany: pędzlem, przez zanurzenie, natrysk lub trailing (rysowanie gruszką/butelką — klasyka angielskiego slipware). Daje matowy, „ceramiczny” kolor pod transparentne szkliwo lub bez szkliwa.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <ellipse cx="90" cy="60" rx="62" ry="30" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M45 62 q20 -16 44 0 q22 14 44 -2" fill="none" stroke="#fcf9f4" stroke-width="5" stroke-linecap="round"/>
+   <path d="M52 72 q18 -12 38 0 q20 10 38 -2" fill="none" stroke="#3f6e8a" stroke-width="5" stroke-linecap="round"/>
+   <path d="M150 22 l-28 26" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M146 18 a7 9 0 1 1 8 8" fill="#e8d3ba" stroke="#8a5a2d" stroke-width="1.6"/>
+   <text x="30" y="104" font-size="9" fill="#6b5c48">trailing: rysowanie gruszką po talerzu</text>
+   <text x="216" y="46" font-size="9" fill="#6b5c48">angoba = barwiona</text>
+   <text x="216" y="58" font-size="9" fill="#6b5c48">glinka w konsystencji</text>
+   <text x="216" y="70" font-size="9" fill="#6b5c48">śmietany</text>
+  </svg><figcaption>Malowanie szlikrem (trailing): linie angoby wyciskane gruszką na stan skórzany.</figcaption></figure>
+  <details class="szcz"><summary>Techniki pokrewne</summary><ul>
+  <li><b>Marmurkowanie</b> — dwie mokre angoby poruszone ruchem naczynia tworzą marmurowe wzory.</li>
+  <li><b>Feathering</b> — przeciąganie piórkiem/igłą przez świeże pasy angoby.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="sgraffito">
+ <div class="tk-h"><div class="tk-i">✏️</div><div class="tk-t">
+  <div class="typ">Angoby i szlikry</div><h4>Sgraffito</h4>
+  <p class="wstep">Przez warstwę angoby wydrapuje się rysunek, odsłaniając kontrastowy kolor gliny pod spodem. Technika o wielowiekowej tradycji od Chin przez świat islamu po Europę; ulubiona metoda współczesnych ilustratorskich dekoracji.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="30" y="52" width="260" height="26" fill="#c98850" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="30" y="38" width="260" height="14" fill="#33291f"/>
+   <path d="M120 38 q10 8 20 0 q10 -8 20 0 q10 8 20 0" fill="#c98850"/>
+   <path d="M186 34 l26 -20" stroke="#8a5a2d" stroke-width="2.5"/>
+   <path d="M182 40 l6 -8 4 4 z" fill="#8a5a2d"/>
+   <text x="222" y="16" font-size="9" fill="#6b5c48">rylec zdejmuje angobę</text>
+   <text x="34" y="49" font-size="9" fill="#fcf9f4">warstwa ciemnej angoby</text>
+   <text x="34" y="70" font-size="9" fill="#fff">jasna glina — odsłonięta linia rysunku</text>
+  </svg><figcaption>Sgraffito w przekroju: rysunek wydrapany w angobie odsłania kolor czerepu.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="mishima">
+ <div class="tk-h"><div class="tk-i">🔷</div><div class="tk-t">
+  <div class="typ">Angoby i szlikry</div><h4>Inkrustacja (mishima / sanggam)</h4>
+  <p class="wstep">Wzór ryje się w stanie skórzanym, wypełnia kontrastową angobą, a po podeschnięciu zeskrobuje nadmiar — linia zostaje idealnie ostra, „intarsjowana”. Koreańska technika sanggam doprowadzona do mistrzostwa w seladonach dynastii Goryeo (918–1392); nazwa mishima przyszła z Japonii.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="2">
+   <rect x="15" y="45" width="80" height="30" fill="#7fa38f"/>
+   <path d="M35 45 l10 14 10 -14" fill="none" stroke-width="3"/>
+   <rect x="120" y="45" width="80" height="30" fill="#7fa38f"/>
+   <path d="M140 45 l10 14 10 -14" fill="none" stroke="#fcf9f4" stroke-width="7"/>
+   <path d="M128 38 h64" stroke="#fcf9f4" stroke-width="6"/>
+   <rect x="225" y="45" width="80" height="30" fill="#7fa38f"/>
+   <path d="M245 45 l10 14 10 -14" fill="none" stroke="#fcf9f4" stroke-width="3.5"/>
+   </g>
+   <text x="20" y="98" font-size="9" fill="#6b5c48">1. rycie wzoru</text>
+   <text x="118" y="98" font-size="9" fill="#6b5c48">2. wypełnienie angobą</text>
+   <text x="222" y="98" font-size="9" fill="#6b5c48">3. zeskrobanie nadmiaru</text>
+  </svg><figcaption>Mishima/sanggam: ryta linia, wypełnienie kontrastową glinką, zeskrobanie — zostaje inkrustacja.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="terra">
+ <div class="tk-h"><div class="tk-i">🏛️</div><div class="tk-t">
+  <div class="typ">Angoby i szlikry</div><h4>Terra sigillata i polerowanie (burnishing)</h4>
+  <p class="wstep">Terra sigillata to ultradrobna frakcja gliny (odstana zawiesina z upłynniaczem), która naniesiona cienko i wypolerowana daje jedwabisty połysk bez szkliwa — sekret czerwonej ceramiki rzymskiej (I w. p.n.e. – III w. n.e.). Polerowanie kamieniem lub łyżką zagęszcza powierzchnię gliny; stosowane od prehistorii, dziś głównie przy wypałach dymnych.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M55 22 q-14 32 6 60 q20 7 28 0 q20 -28 6 -60 q-20 -8 -40 0" fill="#b0603a" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M62 34 q10 -8 16 2 M58 52 q12 -8 20 2 M62 70 q10 -8 16 2" stroke="#e8c9a8" stroke-width="2" fill="none" opacity=".9"/>
+   <ellipse cx="128" cy="46" rx="12" ry="8" fill="#d9b98a" stroke="#8a5a2d" stroke-width="1.8" transform="rotate(-25 128 46)"/>
+   <text x="112" y="30" font-size="9" fill="#6b5c48">gładzik / kamień</text>
+   <text x="112" y="72" font-size="9" fill="#6b5c48">połysk bez szkliwa</text>
+   <path d="M215 40 h60 l-5 40 h-50 z" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <rect x="222" y="62" width="46" height="14" fill="#b0603a"/>
+   <rect x="222" y="52" width="46" height="10" fill="#d98a5f"/>
+   <text x="200" y="96" font-size="9" fill="#6b5c48">odstana zawiesina gliny —</text>
+   <text x="200" y="107" font-size="9" fill="#6b5c48">zbiera się sam wierzch</text>
+  </svg><figcaption>Polerowanie i terra sigillata: najdrobniejsza frakcja gliny + gładzik = jedwabisty połysk.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#8d5f8c" data-tid="nerikomi">
+ <div class="tk-h"><div class="tk-i">🌈</div><div class="tk-t">
+  <div class="typ">Barwione masy</div><h4>Nerikomi / agateware — wzory z barwionych mas</h4>
+  <p class="wstep">Masy barwione tlenkami lub pigmentami skleja się w bloki, z których cięte plastry ujawniają wzór na wskroś (nerikomi — termin japoński; ang. agateware, „ceramika agatowa”). Wzór nie jest namalowany — biegnie przez całą grubość ścianki.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="2">
+   <rect x="25" y="30" width="70" height="50" fill="#e8d3ba"/>
+   <rect x="25" y="38" width="70" height="8" fill="#b0603a" stroke="none"/>
+   <rect x="25" y="54" width="70" height="8" fill="#3f6e8a" stroke="none"/>
+   <rect x="25" y="70" width="70" height="6" fill="#b0603a" stroke="none"/>
+   </g>
+   <path d="M20 24 h80" stroke="#5f7470" stroke-width="2" stroke-dasharray="5 3"/>
+   <text x="28" y="100" font-size="9" fill="#6b5c48">blok barwionych mas + strunka</text>
+   <path d="M120 55 h24" stroke="#8a5a2d" stroke-width="2"/><path d="M140 50 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <g stroke="#8a5a2d" stroke-width="2">
+   <ellipse cx="205" cy="55" rx="30" ry="30" fill="#e8d3ba"/>
+   <path d="M181 42 a30 30 0 0 1 48 0" fill="none" stroke="#b0603a" stroke-width="7"/>
+   <path d="M178 62 a30 30 0 0 0 54 0" fill="none" stroke="#3f6e8a" stroke-width="7"/>
+   </g>
+   <text x="242" y="94" font-size="9" fill="#6b5c48">plaster = wzór</text>
+  </svg><figcaption>Nerikomi: cięty plaster bloku barwionych mas ma wzór na wskroś ścianki.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Masy muszą mieć identyczny skurcz, inaczej blok pęka na łączeniach.</li>
+  <li>Po wypale powierzchnię często szlifuje się na mokro, by wyostrzyć rysunek.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b56a2c" data-tid="podszkliwne">
+ <div class="tk-h"><div class="tk-i">🖊️</div><div class="tk-t">
+  <div class="typ">Malowanie</div><h4>Malowanie podszkliwne</h4>
+  <p class="wstep">Farby z tlenków i pigmentów maluje się na biskwicie (lub stanie skórzanym), a następnie przykrywa transparentnym szkliwem. Dekoracja jest trwała, zatopiona pod szkłem. Największa tradycja: kobaltowy błękit na białej porcelanie — chińskie „blue and white” rozkwitłe w Jingdezhen za dynastii Yuan (XIV w.), naśladowane potem od Delft po Bolesławiec.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="1.6">
+   <rect x="40" y="62" width="240" height="24" fill="#e8d3ba"/>
+   <path d="M70 62 q14 -14 28 0 M170 62 q14 -14 28 0" fill="none" stroke="#3f6e8a" stroke-width="4"/>
+   <rect x="40" y="40" width="240" height="10" fill="#bcd6e8" opacity=".8"/>
+   <path d="M40 50 v12 M280 50 v12" stroke-dasharray="2 2"/>
+   </g>
+   <text x="44" y="82" font-size="9" fill="#6b5c48">biskwit + malatura kobaltem</text>
+   <text x="44" y="34" font-size="9" fill="#3f6e8a">transparentne szkliwo przykrywa rysunek</text>
+   <text x="44" y="102" font-size="9" fill="#6b5c48">dekoracja zatopiona pod szkłem = wieczna</text>
+  </svg><figcaption>Malowanie podszkliwne w przekroju: farba na biskwicie, nad nią warstwa transparentnego szkliwa.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Tlenki „surowe” (kobalt, żelazo, miedź, mangan) dają klasyczną, ograniczoną paletę; współczesne pigmenty ceramiczne (sztaple/underglaze) — pełną gamę kolorów.</li>
+  <li>Niektóre kolory wypalają się tylko w niskich temperaturach — projekt dekoracji musi uwzględniać wypał.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b56a2c" data-tid="majolika">
+ <div class="tk-h"><div class="tk-i">🍋</div><div class="tk-t">
+  <div class="typ">Malowanie</div><h4>Majolika — malowanie na surowym szkliwie</h4>
+  <p class="wstep">Na niewypalone, kryjące białe szkliwo cynowe maluje się pigmentami, które wtapiają się w nie podczas wypału. Kresek nie da się poprawić — biała polewa działa jak chłonny fresk. Szczyt techniki: włoska majolika renesansowa (złoty wiek w XVI w.), wcześniej ceramika hiszpańsko-mauretańska, później francuskie i polskie fajanse.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="1.6">
+   <rect x="40" y="66" width="240" height="22" fill="#c98850"/>
+   <rect x="40" y="46" width="240" height="20" fill="#fcfcf8"/>
+   <path d="M120 56 q10 -8 20 0 q-4 8 -10 8 q-6 0 -10 -8" fill="#e2b23f" stroke="none"/>
+   <path d="M180 58 h40" stroke="#3f6e8a" stroke-width="4"/>
+   </g>
+   <path d="M150 20 l-16 26" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M130 50 q-4 8 4 10" fill="none" stroke="#8a5a2d" stroke-width="2"/>
+   <text x="44" y="82" font-size="9" fill="#fff">czerep (glina niskotopliwa)</text>
+   <text x="44" y="40" font-size="9" fill="#6b5c48">surowe białe szkliwo cynowe — malowanie „jak na fresku”, bez poprawek</text>
+  </svg><figcaption>Majolika: pigmenty malowane wprost na niewypalone białe szkliwo cynowe.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b56a2c" data-tid="naszkliwne">
+ <div class="tk-h"><div class="tk-i">💎</div><div class="tk-t">
+  <div class="typ">Malowanie</div><h4>Malowanie naszkliwne, emalie i złocenia</h4>
+  <p class="wstep">Na wypalonym szkliwie maluje się niskotopliwymi emaliami i utrwala trzecim, łagodnym wypałem (ok. 700–850 °C). Tak zdobiono chińskie porcelany famille rose, japońskie kakiemon i europejskie serwisy z Miśni czy Sèvres. Złoto i platynę nakłada się jako pasty/lustry i wypala podobnie.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <g stroke="#8a5a2d" stroke-width="1.6">
+   <rect x="40" y="66" width="240" height="22" fill="#e8d3ba"/>
+   <rect x="40" y="52" width="240" height="14" fill="#bcd6e8" opacity=".85"/>
+   <path d="M110 52 q10 -10 20 0 M200 52 h36" fill="none" stroke="#c25b4a" stroke-width="5"/>
+   <path d="M160 52 h24" stroke="#e2b23f" stroke-width="5"/>
+   </g>
+   <text x="44" y="82" font-size="9" fill="#6b5c48">czerep</text>
+   <text x="44" y="44" font-size="9" fill="#3f6e8a">wypalone szkliwo · na nim emalie i złoto</text>
+   <path d="M262 24 q-3 -10 5 -14 q-1 5 4 6 q5 -1 4 -6 q8 4 5 14 q-4 6 -9 6 q-5 0 -9 -6" fill="#e2963f"/>
+   <text x="176" y="30" font-size="9" fill="#6b5c48">3. wypał ~700–850 °C</text>
+  </svg><figcaption>Malowanie naszkliwne: emalie na gotowym szkliwie utrwala łagodny trzeci wypał.</figcaption></figure>
+  <details class="szcz"><summary>Szczegóły</summary><ul>
+  <li>Paleta naszkliwna jest najszersza (niska temperatura = stabilne pigmenty), ale mniej odporna na ścieranie niż dekoracja podszkliwna.</li>
+  <li>Naczynia ze złoceniami nie nadają się do mikrofalówki.</li></ul></details>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b56a2c" data-tid="lustry">
+ <div class="tk-h"><div class="tk-i">✨</div><div class="tk-t">
+  <div class="typ">Malowanie</div><h4>Lustry metaliczne</h4>
+  <p class="wstep">Cienkie warstwy metalicznego połysku (miedź, srebro, złoto) na wypalonym szkliwie, utrwalane dodatkowym wypałem redukcyjnym lub z żywic. Technika wynaleziona przez garncarzy Iraku Abbasydów w IX w. (Basra), przejęta przez Persję i mauretańską Hiszpanię, zachwyciła renesansowe Włochy (Gubbio, Deruta).</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M85 20 q-14 34 6 62 q22 7 30 0 q20 -28 6 -62 q-22 -8 -42 0" fill="#8d5f8c" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M92 30 q8 -6 14 2 M88 48 q10 -7 18 2 M92 66 q8 -6 14 2" stroke="#f2d98c" stroke-width="3" fill="none"/>
+   <path d="M78 26 l-10 -8 M74 46 l-12 -2 M78 68 l-10 8" stroke="#e2b23f" stroke-width="2"/>
+   <text x="160" y="40" font-size="9" fill="#6b5c48">cienka metaliczna błona</text>
+   <text x="160" y="52" font-size="9" fill="#6b5c48">(Cu, Ag, Au) na szkliwie,</text>
+   <text x="160" y="64" font-size="9" fill="#6b5c48">utrwalona wypałem redukcyjnym</text>
+   <path d="M160 80 q6 -10 0 -18 M172 82 q6 -10 0 -18" stroke="#8a7a68" stroke-width="1.8" fill="none"/>
+   <text x="184" y="82" font-size="9" fill="#8a7a68">dym / redukcja</text>
+  </svg><figcaption>Lustry: związki metali na wypalonym szkliwie redukowane do lustrzanej błony.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b56a2c" data-tid="kalka">
+ <div class="tk-h"><div class="tk-i">🖼️</div><div class="tk-t">
+  <div class="typ">Techniki graficzne</div><h4>Kalkomania, sitodruk, transfer</h4>
+  <p class="wstep">Dekorację drukuje się farbami ceramicznymi na papierze transferowym (kalka ceramiczna) i przenosi na szkliwo, utrwalając wypałem. Druk transferowy zrewolucjonizował angielską ceramikę końca XVIII w. (słynne niebieskie „willow pattern”); dziś kalki drukuje się też cyfrowo. Sitodruk stosuje się również bezpośrednio i na angobach (np. przez folię).</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <rect x="25" y="30" width="70" height="50" rx="3" fill="#fff" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M35 45 q12 -8 22 0 q12 8 24 0 M35 62 h50" stroke="#3f6e8a" stroke-width="3" fill="none"/>
+   <text x="24" y="98" font-size="9" fill="#6b5c48">kalka z nadrukiem</text>
+   <path d="M112 55 h24" stroke="#8a5a2d" stroke-width="2"/><path d="M132 50 l7 5 -7 5 z" fill="#8a5a2d"/>
+   <path d="M165 22 q-12 32 5 60 q20 7 28 0 q17 -28 5 -60 q-19 -8 -38 0" fill="#fcfcf8" stroke="#8a5a2d" stroke-width="2"/>
+   <path d="M172 40 q10 -7 20 0 q-8 8 -20 0 M170 58 h26" stroke="#3f6e8a" stroke-width="3" fill="none"/>
+   <path d="M258 34 q-3 -10 5 -14 q-1 5 4 6 q5 -1 4 -6 q8 4 5 14 q-4 6 -9 6 q-5 0 -9 -6" fill="#e2963f"/>
+   <text x="238" y="60" font-size="9" fill="#6b5c48">wypał utrwala</text>
+   <text x="238" y="72" font-size="9" fill="#6b5c48">nadruk w szkliwie</text>
+  </svg><figcaption>Kalkomania: drukowany motyw przenoszony z papieru na szkliwo i utrwalany wypałem.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+
+<div class="tk" style="--pc:#b56a2c" data-tid="kintsugi">
+ <div class="tk-h"><div class="tk-i">🩹</div><div class="tk-t">
+  <div class="typ">Wykończenia i naprawa</div><h4>Kintsugi i wykończenia „po wypale”</h4>
+  <p class="wstep">Japońska sztuka naprawy: pęknięcia skleja się laką urushi i podkreśla pyłem złota — blizna staje się ozdobą (estetyka wabi-sabi). Po wypale ceramikę można też szlifować i polerować diamentowymi gąbkami (satynowy dotyk nieszkliwionej porcelany) lub woskować przy wypałach dymnych.</p>
+  <figure class="schemat"><svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+   <path d="M100 40 q0 42 60 42 q60 0 60 -42 l-12 0 q0 30 -48 30 q-48 0 -48 -30 z" fill="#5f7470" stroke="#33291f" stroke-width="2"/>
+   <path d="M128 44 q6 14 2 34 M182 42 q10 10 22 14" stroke="#e2b23f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+   <path d="M148 46 l14 20" stroke="#e2b23f" stroke-width="3" stroke-linecap="round"/>
+   <text x="226" y="36" font-size="9" fill="#8a6d2b">laka urushi + pył złota</text>
+   <text x="24" y="36" font-size="9" fill="#6b5c48" text-anchor="start">pęknięcia czarki</text>
+   <text x="96" y="102" font-size="9" fill="#6b5c48">blizna staje się ozdobą (wabi-sabi)</text>
+  </svg><figcaption>Kintsugi: sklejone laką pęknięcia podkreślone złotem.</figcaption></figure>
+ </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+</div>
+</section>
+
+<!-- ============ HISTORIA ============ -->
+<section class="panel" id="p-hist">
+<div class="box">
+<h2>📖 Historia ceramiki</h2>
+<p style="font-size:.92rem;margin:0">Oś czasu od pierwszych wypalonych figurek epoki lodowcowej po ceramikę studyjną XX wieku. Filtruj po regionie, epoce lub kulturze i szukaj po słowach kluczowych.</p>
+</div>
+
+<div class="narz">
+<label>Region
+<select id="fReg"><option value="">wszystkie</option>
+<option>Azja Wschodnia</option><option>Bliski Wschód i świat islamu</option><option>Europa</option><option>Polska</option><option>Ameryki</option><option>Afryka</option></select></label>
+<label>Epoka
+<select id="fEp"><option value="">wszystkie</option>
+<option>Prehistoria</option><option>Starożytność</option><option>Średniowiecze</option><option>Nowożytność</option><option>XVIII–XIX w.</option><option>XX w.</option></select></label>
+<input type="search" id="fSzuk" placeholder="Szukaj: np. porcelana, seladon, Delft…">
+<button id="fClear">Wyczyść filtry</button>
+</div>
+
+<div id="histLista">
+
+<div class="hist" data-reg="Europa" data-ep="Prehistoria" data-kul="Kultura grawecka">
+ <div class="hist-h"><div class="hist-d"><b>~29–25 tys. p.n.e.</b><i>paleolit</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">Prehistoria</span><span class="tag kul">Kultura grawecka</span></div>
+ <h4>Wenus z Dolních Věstonic — najstarsza ceramika świata</h4>
+ <p>Figurka kobiety z wypalonej gliny znaleziona na Morawach (dzisiejsze Czechy) jest najstarszym znanym przedmiotem ceramicznym — powstała tysiące lat przed pierwszymi naczyniami. Ludzie opanowali wypalanie gliny najpierw do celów rytualnych/artystycznych, nie użytkowych.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Prehistoria" data-kul="Chiny — łowcy-zbieracze">
+ <div class="hist-h"><div class="hist-d"><b>~20–19 tys. lat temu</b><i>paleolit</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Prehistoria</span><span class="tag kul">Chiny</span></div>
+ <h4>Jaskinia Xianrendong — najstarsze naczynia</h4>
+ <p>Fragmenty naczyń z jaskini Xianrendong (prowincja Jiangxi, Chiny) to najstarsza znana ceramika naczyniowa. Co ważne: garnki wynaleźli łowcy-zbieracze epoki lodowcowej, na długo przed rolnictwem.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Prehistoria" data-kul="Jōmon (Japonia)">
+ <div class="hist-h"><div class="hist-d"><b>od ~14 500 p.n.e.</b><i>Jōmon</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Prehistoria</span><span class="tag kul">Jōmon</span></div>
+ <h4>Japonia: ceramika Jōmon — „wzór sznura”</h4>
+ <p>Jedna z najstarszych tradycji naczyniowych świata (najstarsze datowania ze stanowiska Odai Yamamoto). Naczynia budowane z wałeczków, zdobione odciskami sznura — stąd nazwa całej epoki. Tradycja trwała ponad 10 tysięcy lat.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Bliski Wschód i świat islamu" data-ep="Prehistoria" data-kul="Mezopotamia">
+ <div class="hist-h"><div class="hist-d"><b>IV tys. p.n.e.</b><i>eneolit</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Bliski Wschód</span><span class="tag ep">Prehistoria</span><span class="tag kul">Mezopotamia</span></div>
+ <h4>Koło garncarskie</h4>
+ <p>W Mezopotamii upowszechnia się koło garncarskie — najpierw wolnoobrotowe (obtaczanie), potem szybkie, umożliwiające toczenie z pełnej bryły. Początek masowej, wyspecjalizowanej produkcji naczyń i jednej z pierwszych „zawodowych” profesji rzemieślniczych.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Polska" data-ep="Prehistoria" data-kul="Kultura ceramiki wstęgowej rytej">
+ <div class="hist-h"><div class="hist-d"><b>~5500–5000 p.n.e.</b><i>neolit</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Polska</span><span class="tag ep">Prehistoria</span><span class="tag kul">Kultura ceramiki wstęgowej rytej</span></div>
+ <h4>Pierwsi garncarze na ziemiach polskich</h4>
+ <p>Wraz z pierwszymi rolnikami neolitu na ziemie polskie przychodzi ceramika — naczynia kultury ceramiki wstęgowej rytej zdobione charakterystycznymi rytymi wstęgami. Później m.in. kultura pucharów lejkowatych i kultura ceramiki sznurowej (zdobienie odciskami sznura).</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Bliski Wschód i świat islamu" data-ep="Starożytność" data-kul="Egipt">
+ <div class="hist-h"><div class="hist-d"><b>od ~IV tys. p.n.e.</b><i>Egipt faraonów</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Bliski Wschód</span><span class="tag ep">Starożytność</span><span class="tag kul">Egipt</span></div>
+ <h4>Fajans egipski — błękit nie z gliny</h4>
+ <p>Egipski „fajans” to nie glina, lecz masa kwarcowa pokryta alkaliczno-miedziowym szkliwem o intensywnym turkusie. Z niej powstawały amulety, uszebti i paciorki. To jedna z najstarszych tradycji szkliwionej powierzchni ceramicznej — dowód, że szkliwo wynaleziono niezależnie od naczyń glinianych.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="Starożytność" data-kul="Grecja">
+ <div class="hist-h"><div class="hist-d"><b>~700 / ~530 p.n.e.</b><i>archaiczna Grecja</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">Starożytność</span><span class="tag kul">Grecja</span></div>
+ <h4>Wazy czarno- i czerwonofigurowe</h4>
+ <p>Styl czarnofigurowy narodził się w Koryncie ok. 700 p.n.e.; ok. 530 p.n.e. Ateny wynalazły styl czerwonofigurowy (postacie w kolorze gliny na czarnym tle). „Czarny” to nie farba, lecz dopracowana glinka (rodzaj terra sigillaty) czerniejąca w trójfazowym wypale utlenianie–redukcja–utlenianie. Amfory, kyliksy i kratery to dziś główne źródło wiedzy o greckim malarstwie.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="Starożytność" data-kul="Rzym">
+ <div class="hist-h"><div class="hist-d"><b>I w. p.n.e. – III w. n.e.</b><i>Imperium Rzymskie</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">Starożytność</span><span class="tag kul">Rzym</span></div>
+ <h4>Terra sigillata — pierwsza ceramika masowa</h4>
+ <p>Błyszcząca czerwona zastawa z reliefami odciskanymi w formach, produkowana seryjnie (Arezzo, potem Galia) i eksportowana po całym imperium. Wzór organizacji produkcji: standaryzacja, sygnatury warsztatów, dystrybucja na skalę kontynentu.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Afryka" data-ep="Starożytność" data-kul="Kultura Nok">
+ <div class="hist-h"><div class="hist-d"><b>~500 p.n.e. – 200 n.e.</b><i>epoka żelaza</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Afryka</span><span class="tag ep">Starożytność</span><span class="tag kul">Nok</span></div>
+ <h4>Terakoty kultury Nok (Nigeria)</h4>
+ <p>Monumentalne głowy i figury z terakoty — najstarsza znana rzeźba figuralna Afryki subsaharyjskiej. Budowane techniką wałeczkową, o charakterystycznych trójkątnych oczach. Afryka rozwija też do dziś żywe tradycje wypału ogniskowego i polerowanych naczyń bez szkliwa.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Starożytność" data-kul="Chiny — dynastie Szang–Han">
+ <div class="hist-h"><div class="hist-d"><b>II tys. p.n.e. – 220 n.e.</b><i>Szang → Han</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Starożytność</span><span class="tag kul">Chiny</span></div>
+ <h4>Chiny: od protoporcelany do porcelany</h4>
+ <p>Chińscy garncarze jako pierwsi opanowali wypał wysokotemperaturowy. Za dynastii Szang powstają szkliwione protoporcelanowe kamionki, a w epoce Han (202 p.n.e.–220 n.e.) w prowincji Zhejiang wypalane są naczynia uznawane za pierwszą porcelanę/celadonową kamionkę (piece Yue). Terakotowa Armia (ok. 210 p.n.e.) pokazuje skalę ówczesnej produkcji ceramicznej.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Ameryki" data-ep="Starożytność" data-kul="Moche i Nazca">
+ <div class="hist-h"><div class="hist-d"><b>~100–800 n.e.</b><i>Andy prekolumbijskie</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Ameryki</span><span class="tag ep">Starożytność</span><span class="tag kul">Moche / Nazca</span></div>
+ <h4>Ameryka prekolumbijska: ceramika bez koła</h4>
+ <p>Cywilizacje Ameryk nie znały koła garncarskiego, a mimo to tworzyły arcydzieła: figuralne naczynia portretowe Moche (formy i modelowanie ręczne, naczynia strzemiączkowe), polichromie Nazca, później majolikę kolonialną. W Ameryce Północnej rozwinęły się tradycje pueblo — polerowane czarne naczynia z San Ildefonso (María Martínez, XX w.) to ich kontynuacja.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Bliski Wschód i świat islamu" data-ep="Średniowiecze" data-kul="Kalifat Abbasydów">
+ <div class="hist-h"><div class="hist-d"><b>IX w.</b><i>Abbasydzi</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Bliski Wschód</span><span class="tag ep">Średniowiecze</span><span class="tag kul">Abbasydzi</span></div>
+ <h4>Basra: lustry i białe szkliwo cynowe</h4>
+ <p>Garncarze abbasydzkiego Iraku, konkurując z importowaną chińską ceramiką, wynajdują lustry metaliczne i rozwijają kryjące białe szkliwo cynowe z kobaltową dekoracją — technologiczny fundament późniejszej majoliki, fajansu i delftów. Jedna z najważniejszych innowacji w historii zdobienia ceramiki.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Średniowiecze" data-kul="Chiny — dynastie Tang i Song">
+ <div class="hist-h"><div class="hist-d"><b>618–1279</b><i>Tang → Song</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Średniowiecze</span><span class="tag kul">Chiny</span></div>
+ <h4>Złoty wiek chińskiej ceramiki: sancai, seladony, tenmoku</h4>
+ <p>Dynastia Tang: trójbarwne szkliwa ołowiowe sancai na figurach grobowych i eksport porcelany Jedwabnym Szlakiem. Dynastia Song: szczyt wyrafinowania — seladony Longquan, błękitnawe ru i guan ze szlachetnymi kraklami, czarki jian (tenmoku) cenione przez mistrzów herbaty. Estetyka Song do dziś jest punktem odniesienia ceramiki artystycznej.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Średniowiecze" data-kul="Korea — dynastia Goryeo">
+ <div class="hist-h"><div class="hist-d"><b>918–1392</b><i>Goryeo</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Średniowiecze</span><span class="tag kul">Korea</span></div>
+ <h4>Seladony Goryeo i inkrustacja sanggam</h4>
+ <p>Koreańscy garncarze, wychodząc od chińskich wzorów, tworzą seladony uznawane za jedne z najpiękniejszych w historii — z „zimorodkowym” odcieniem szkliwa i unikatową techniką inkrustacji sanggam (biała i czarna glinka wkładana w ryty wzór pod szkliwem).</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Średniowiecze" data-kul="Chiny — dynastia Yuan">
+ <div class="hist-h"><div class="hist-d"><b>XIV w.</b><i>Yuan</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Średniowiecze</span><span class="tag kul">Chiny</span></div>
+ <h4>Jingdezhen: narodziny „blue and white”</h4>
+ <p>W Jingdezhen (do dziś „stolica porcelany”) za dynastii Yuan (1271–1368) rusza wielkoskalowa produkcja porcelany malowanej podszkliwnie kobaltem — początkowo głównie na eksport do świata islamu, skąd pochodził kobalt. Biało-niebieska porcelana stanie się najbardziej naśladowanym stylem ceramicznym świata.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="Nowożytność" data-kul="Renesansowe Włochy">
+ <div class="hist-h"><div class="hist-d"><b>XV–XVI w.</b><i>renesans</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">Nowożytność</span><span class="tag kul">Włochy</span></div>
+ <h4>Majolika włoska</h4>
+ <p>Przez mauretańską Hiszpanię (ceramika hiszpańsko-mauretańska, przeładunek przez Majorkę — stąd nazwa) technika białego szkliwa cynowego dociera do Włoch. Warsztaty Faenzy (stąd „fajans”), Deruty, Urbino malują na surowym szkliwie sceny mitologiczne i biblijne (istoriato); złoty wiek przypada na XVI stulecie.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Bliski Wschód i świat islamu" data-ep="Nowożytność" data-kul="Imperium Osmańskie">
+ <div class="hist-h"><div class="hist-d"><b>XVI w.</b><i>szczyt İznik</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Bliski Wschód</span><span class="tag ep">Nowożytność</span><span class="tag kul">Osmanowie</span></div>
+ <h4>İznik: tulipany i czerwień Armenii</h4>
+ <p>Osmańskie warsztaty w İzniku osiągają szczyt w XVI w. (za Sulejmana Wspaniałego): kwarcowa biała masa, kobalt, turkus i wypukła czerwień koralowa; tulipany i goździki na naczyniach oraz kaflach zdobiących meczety Stambułu.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Azja Wschodnia" data-ep="Nowożytność" data-kul="Japonia — Momoyama/Edo">
+ <div class="hist-h"><div class="hist-d"><b>XVI–XVII w.</b><i>Momoyama → Edo</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Azja Wschodnia</span><span class="tag ep">Nowożytność</span><span class="tag kul">Japonia</span></div>
+ <h4>Raku, shino, oribe i porcelana Arita</h4>
+ <p>Kultura ceremonii herbaty rodzi estetykę wabi-sabi: czarki raku Chōjirō (Kioto, XVI w.), szkliwa shino i zielone oribe z pieców Mino. Po 1616 r. w Arita rusza pierwsza japońska porcelana; style imari i kakiemon podbijają Europę, gdy eksport z Chin załamuje się w połowie XVII w.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="Nowożytność" data-kul="Niderlandy">
+ <div class="hist-h"><div class="hist-d"><b>XVII w.</b><i>złoty wiek Niderlandów</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">Nowożytność</span><span class="tag kul">Niderlandy</span></div>
+ <h4>Delft — fajansowa odpowiedź na chińską porcelanę</h4>
+ <p>Gdy dostawy chińskiej porcelany słabną, warsztaty w Delft doskonalą fajans (białe szkliwo cynowe) malowany kobaltem tak, by udawał porcelanę. Kafle, talerze i tulipaniery delfckie stają się ikoną — choć technologicznie to wciąż glina niskotopliwa, nie porcelana.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Polska" data-ep="Nowożytność" data-kul="Śląsk — Bolesławiec">
+ <div class="hist-h"><div class="hist-d"><b>od 1380 / XVIII w.</b><i>Śląsk</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Polska</span><span class="tag ep">Nowożytność</span><span class="tag kul">Bolesławiec</span></div>
+ <h4>Bolesławiec: śląska kamionka i stempelki</h4>
+ <p>Garncarze bolesławieccy wzmiankowani są w źródłach od 1380 r.; miasto wyspecjalizowało się w trwałej kamionce z miejscowych glin. W XVIII w. rozwija się zdobienie stempelkowe — kobaltowe kropki i „pawie oczko” nakładane gąbkowymi stemplami, do dziś znak rozpoznawczy polskiej ceramiki na świecie.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="XVIII–XIX w." data-kul="Saksonia — Miśnia">
+ <div class="hist-h"><div class="hist-d"><b>1708–1710</b><i>barok</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">XVIII–XIX w.</span><span class="tag kul">Saksonia</span></div>
+ <h4>Miśnia: Europa łamie sekret porcelany</h4>
+ <p>Na dworze Augusta II Mocnego Johann Friedrich Böttger (z Ehrenfriedem von Tschirnhausem) opracowuje w 1708 r. pierwszą europejską twardą porcelanę; w 1710 r. rusza manufaktura w Miśni. „Białe złoto”, którego receptury Europa szukała od stuleci, przestaje być chińskim monopolem. Wkrótce powstają Wiedeń, Sèvres (od 1756, z Vincennes) i inne manufaktury.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="XVIII–XIX w." data-kul="Anglia — rewolucja przemysłowa">
+ <div class="hist-h"><div class="hist-d"><b>1759 / 1774</b><i>rewolucja przemysłowa</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">XVIII–XIX w.</span><span class="tag kul">Anglia</span></div>
+ <h4>Wedgwood i uprzemysłowienie ceramiki</h4>
+ <p>Josiah Wedgwood (firma zał. 1759) wprowadza do ceramiki metody przemysłowe: podział pracy, kontrolę jakości (pyrometr), marketing. Kremowa „Queen's ware” i doskonalona do 1774 r. jasperware (matowa barwiona kamionka z białymi reliefami nakładanymi techniką sprigging) czynią ze Staffordshire ceramiczne centrum świata; druk transferowy udostępnia dekorowaną zastawę masowemu odbiorcy.</p>
+ </div></div>
+</div>
+
+<div class="hist" data-reg="Europa" data-ep="XX w." data-kul="Ruch studio pottery">
+ <div class="hist-h"><div class="hist-d"><b>1920 / 1940</b><i>XX wiek</i></div><div class="hist-t">
+ <div class="tags"><span class="tag reg">Europa</span><span class="tag ep">XX w.</span><span class="tag kul">Studio pottery</span></div>
+ <h4>Bernard Leach i narodziny ceramiki studyjnej</h4>
+ <p>W 1920 r. Bernard Leach zakłada z Shōjim Hamadą warsztat w St Ives (Kornwalia), łącząc tradycje japońskie i angielskie; jego „A Potter's Book” (1940) staje się biblią ruchu studio pottery: artysta prowadzi cały proces od gliny po wypał. Równolegle Bauhaus i moderniści (potem m.in. Lucie Rie, Hans Coper, Peter Voulkos) wprowadzają ceramikę do sztuki współczesnej; w Polsce rozkwitają Ćmielów (porcelanowe figurki lat 50.–60.) i wzornictwo Instytutu Wzornictwa Przemysłowego.</p>
+ </div></div>
+</div>
+
+</div>
+<p class="nores" id="histBrak">Brak wyników dla wybranych filtrów.</p>
+</section>
+
+<!-- ============ KALKULATORY ============ -->
+<section class="panel" id="p-kalk">
+<div class="box"><h2>🧮 Kalkulatory ceramika</h2>
+<p style="font-size:.9rem;margin:0">Praktyczne przeliczniki (inspirowane clayshrinks.com i claycalculators.com). Kalkulator harmonogramu wypału z krzywą znajdziesz w zakładce „🔥 Wypał i piece”.</p></div>
+
+<div class="box">
+<h2>📏 Kalkulator skurczu — projektowanie wymiarów</h2>
+<p style="font-size:.9rem;margin:0 0 10px">Glina kurczy się przy schnięciu i wypale (typowo łącznie ok. 10–15%, zależnie od masy). Wpisz skurcz całkowity swojej masy i dowolną stronę równania — druga przeliczy się sama (jednostki dowolne: cm, mm, cale).</p>
+<div class="kalk">
+<div>
+<label style="font-size:.85rem;color:var(--mut)">Skurcz całkowity masy [%]:
+<input type="number" id="sPct" value="12" min="0" max="30" step="0.5"></label>
+<table style="margin-top:9px"><thead><tr><th>Wymiar</th><th>Na mokro (świeżo uformowany)</th><th>Po wypale ostrym</th></tr></thead>
+<tbody>
+<tr><td>wysokość</td><td><input type="number" class="sWet" step="0.1" value="10"></td><td><input type="number" class="sFired" step="0.1"></td></tr>
+<tr><td>szerokość / średnica</td><td><input type="number" class="sWet" step="0.1" value="8"></td><td><input type="number" class="sFired" step="0.1"></td></tr>
+<tr><td>głębokość / długość</td><td><input type="number" class="sWet" step="0.1"></td><td><input type="number" class="sFired" step="0.1"></td></tr>
+</tbody></table>
+<p class="src">Wzór: wymiar po wypale = wymiar na mokro × (1 − skurcz/100). Działa w obie strony — wpisz wymiar docelowy, a poznasz wymiar, jaki musisz uformować.</p>
+</div>
+<div class="ksum">💡 <b>Dlaczego to ważne:</b> kubek toczony na 10 cm przy skurczu 12% będzie miał po wypale ~8,8 cm. Projektując pokrywki, zestawy i kafle, zawsze licz od wymiaru docelowego „w górę”. Pamiętaj, że skurcz bywa różny w pionie i poziomie (toczenie porządkuje cząstki gliny kierunkowo).</div>
+</div>
+</div>
+
+<div class="box">
+<h2>🧪 Pomiar skurczu własnej masy</h2>
+<p style="font-size:.9rem;margin:0 0 10px">Zrób belkę testową, naryt na niej odcinek 100 mm, wysusz i wypal. Zmierz odcinek po wypale i wpisz poniżej.</p>
+<div class="kalk">
+<div>
+<label style="font-size:.85rem;color:var(--mut)">Odcinek na mokro [mm]: <input type="number" id="mWet" value="100" step="0.5"></label><br>
+<label style="font-size:.85rem;color:var(--mut);margin-top:6px;display:inline-block">Odcinek po wypale [mm]: <input type="number" id="mFired" value="88" step="0.5"></label>
+</div>
+<div class="ksum" id="mOut"></div>
+</div>
+</div>
+
+<div class="box">
+<h2>⚡ Koszt wypału w piecu elektrycznym</h2>
+<p style="font-size:.9rem;margin:0 0 10px">Orientacyjny koszt energii: moc pieca × czas × współczynnik pracy grzałek × cena prądu. Grzałki nie pracują cały czas na pełnej mocy — sterownik je dołącza i odłącza (typowo 50–70% czasu przy wypale ostrym).</p>
+<div class="kalk">
+<div>
+<label style="font-size:.85rem;color:var(--mut)">Moc pieca [kW]: <input type="number" id="cKw" value="7" step="0.5" min="0"></label><br>
+<label style="font-size:.85rem;color:var(--mut)">Czas wypału [h]: <input type="number" id="cH" value="9" step="0.5" min="0"></label><br>
+<label style="font-size:.85rem;color:var(--mut)">Praca grzałek [% czasu]: <input type="number" id="cDuty" value="60" step="5" min="0" max="100"></label><br>
+<label style="font-size:.85rem;color:var(--mut)">Cena energii [zł/kWh]: <input type="number" id="cPln" value="1.20" step="0.05" min="0"></label>
+</div>
+<div class="ksum" id="cOut"></div>
+</div>
+<p class="src">Wartości domyślne: typowy piec pracowniany ~7 kW, wypał ~9 h, współczynnik 60%. Podstaw dane swojego pieca i taryfy.</p>
+</div>
+</section>
+
+<!-- ============ QUIZY ============ -->
+<section class="panel" id="p-quiz">
+<div class="box"><h2>❓ Quizy — sprawdź się bez notatek</h2>
+<p style="font-size:.92rem;margin:0">Najpierw odpowiedz w myślach (albo na głos), dopiero potem rozwiń odpowiedź. Aktywne przypominanie działa o wiele lepiej niż ponowne czytanie.</p></div>
+
+<div class="qb"><h3>🧱 Glina i masy <span class="qcount qc"></span></h3>
+<details class="q"><summary><span class="qn">1</span>Skąd bierze się plastyczność gliny?</summary><div class="a">Z mikroskopijnych, płaskich cząstek minerałów ilastych (głównie kaolinitu), które zwilżone wodą ślizgają się po sobie. Im drobniejsze cząstki, tym większa plastyczność — i większy skurcz.</div></details>
+<details class="q"><summary><span class="qn">2</span>Dlaczego gliny czerwone wypala się nisko?</summary><div class="a">Zawierają dużo tlenków żelaza, które barwią czerep na ceglasto i działają jak topnik — obniżają temperaturę spiekania; przepalona glina czerwona się deformuje i pęcherzy.</div></details>
+<details class="q"><summary><span class="qn">3</span>Czym różni się kaolin od ball clay?</summary><div class="a">Kaolin jest biały i czysty chemicznie, ale mało plastyczny; ball clay ma najdrobniejsze cząstki — jest bardzo plastyczna (duży skurcz) i lekko zanieczyszczona organiką. W masach porcelanowych występują razem.</div></details>
+<details class="q"><summary><span class="qn">4</span>Jak sprawdzić skład dzikiej gliny testem słoikowym?</summary><div class="a">Rozmieszać próbkę w wodzie i pozwolić opaść: piasek osiada w minutę, pył w kilka godzin, frakcja ilasta po 1–2 dniach — proporcje warstw pokazują, ile w glinie jest iłu.</div></details>
+<details class="q"><summary><span class="qn">5</span>Po co wyrabia się glinę (wedging) i jakie są metody?</summary><div class="a">Żeby usunąć pęcherze powietrza i wyrównać wilgotność. Metody: „barani łeb”, wyrabianie spiralne (kikumomi) i przecinanie strunką ze zbijaniem połówek. Kontrola: przekrój strunką bez dziurek.</div></details>
+<details class="q"><summary><span class="qn">6</span>Co robi szamot dodany do masy?</summary><div class="a">Zmniejsza skurcz i ryzyko pęknięć przy suszeniu, zwiększa odporność na szok termiczny — dlatego masy szamotowe wybiera się do rzeźby, raku i dużych form.</div></details>
+</div>
+
+<div class="qb"><h3>🏺 Formowanie <span class="qcount qc"></span></h3>
+<details class="q"><summary><span class="qn">1</span>Jakie są trzy podstawowe techniki ręcznego formowania?</summary><div class="a">Wyciskanie z kuli (pinching), technika wałeczkowa (coiling) i technika płatowa (slab building).</div></details>
+<details class="q"><summary><span class="qn">2</span>Wymień po kolei etapy toczenia naczynia na kole.</summary><div class="a">Wyrabianie gliny → centrowanie → otwieranie → ciągnięcie ścianek → profilowanie → zdjęcie z koła → (po podeschnięciu) obtaczanie/trimming stopki.</div></details>
+<details class="q"><summary><span class="qn">3</span>Jak łączy się ze sobą elementy z gliny (np. ucho z kubkiem)?</summary><div class="a">Obie powierzchnie nacina się (karbuje), smaruje szlikrem i dociska; łączyć należy elementy o podobnej wilgotności, najlepiej w stanie skórzanym.</div></details>
+<details class="q"><summary><span class="qn">4</span>Na czym polega odlewanie ze szlikru i po co dodaje się upłynniacz?</summary><div class="a">Płynną masę wlewa się do chłonnej formy gipsowej, która odciąga wodę i buduje ściankę odlewu; nadmiar się wylewa. Upłynniacz (np. szkło wodne) czyni masę lejną przy małej ilości wody — mniejszy skurcz, szybsze i mocniejsze odlewy.</div></details>
+<details class="q"><summary><span class="qn">5</span>Czym różni się jiggering od jolleyingu?</summary><div class="a">Oba to maszynowe formowanie na obrotowej formie gipsowej z metalowym profilem: jiggering formuje płaskie naczynia (talerze — profil kształtuje spód), jolleying naczynia głębokie (profil kształtuje wnętrze).</div></details>
+<details class="q"><summary><span class="qn">6</span>Gdzie i kiedy upowszechniło się koło garncarskie?</summary><div class="a">W Mezopotamii w IV tysiącleciu p.n.e. (najpierw koło wolnoobrotowe do obtaczania, potem szybkie do toczenia z bryły).</div></details>
+</div>
+
+<div class="qb"><h3>🔥 Wypał <span class="qcount qc"></span></h3>
+<details class="q"><summary><span class="qn">1</span>Podaj typowe zakresy temperatur: biskwit, glina niskotopliwa, kamionka, porcelana.</summary><div class="a">Biskwit ok. 900–1060 °C; wypał ostry gliny niskotopliwej ok. 1000–1150 °C; kamionka ok. 1200–1300 °C; porcelana ok. 1280–1400 °C.</div></details>
+<details class="q"><summary><span class="qn">2</span>Co to jest inwersja kwarcu i dlaczego jest groźna?</summary><div class="a">Przy 573 °C kwarc przechodzi z odmiany α w β, zmieniając objętość o ok. 1–2%. Zbyt szybkie grzanie, a zwłaszcza studzenie przez ten próg powoduje pękanie naczyń (dunting).</div></details>
+<details class="q"><summary><span class="qn">3</span>Po co robi się osobny wypał na biskwit?</summary><div class="a">Biskwit utrwala naczynie (łatwiej je szkliwić bez rozmoczenia), a zachowana porowatość czerepu pozwala mu zassać wodę ze szkliwa i utrzymać równą warstwę.</div></details>
+<details class="q"><summary><span class="qn">4</span>Czym różni się atmosfera utleniająca od redukcyjnej i jakie daje efekty?</summary><div class="a">Utleniająca = nadmiar tlenu (piec elektryczny): czyste kolory, miedź daje zieleń, żelazo miody. Redukcyjna = niedobór tlenu (piec gazowy/drzewny): płomień odbiera tlen tlenkom — żelazo daje seladony, miedź czerwień miedziową (oxblood).</div></details>
+<details class="q"><summary><span class="qn">5</span>Co mierzą stożki pyrometryczne?</summary><div class="a">Nie samą temperaturę, lecz „pracę cieplną” (łączny efekt temperatury i czasu). Stożek wygina się, gdy ceramika otrzymała określoną dawkę ciepła — np. stożek 06 ≈ 1000 °C, 6 ≈ 1220–1240 °C, 10 ≈ 1300 °C.</div></details>
+<details class="q"><summary><span class="qn">6</span>Skąd wzięło się raku i czym różni się wersja zachodnia od japońskiej?</summary><div class="a">Raku stworzył w XVI-wiecznym Kioto garncarz Chōjirō na zamówienie mistrza herbaty Sen no Rikyū (czarki do ceremonii herbaty, wyjmowane z pieca na gorąco). Raku zachodnie (XX w., m.in. Paul Soldner) dodaje redukcję poszkliwną w trocinach — metaliczne lustry i dymione krakle.</div></details>
+<details class="q"><summary><span class="qn">7</span>Jak powstaje szkliwo w wypale drzewnym bez szkliwienia naczyń?</summary><div class="a">Lecący popiół drzewny osiada na naczyniach i w wysokiej temperaturze stapia się z powierzchnią czerepu w naturalne szkliwo popiołowe.</div></details>
+</div>
+
+<div class="qb"><h3>✨ Szkliwa i zdobienie <span class="qcount qc"></span></h3>
+<details class="q"><summary><span class="qn">1</span>Z jakich trzech głównych składników zbudowane jest szkliwo?</summary><div class="a">Szkłotwórca (krzemionka SiO₂), topniki obniżające temperaturę topnienia (skalenie, kreda, związki sodu/potasu/boru itd.) i stabilizator (tlenek glinu Al₂O₃), plus barwniki/zmętniacze.</div></details>
+<details class="q"><summary><span class="qn">2</span>Jakie kolory dają: kobalt, miedź, żelazo, cyna?</summary><div class="a">Kobalt — intensywny błękit; miedź — zieleń (w redukcji czerwień); żelazo — od miodów i brązów po seladony (redukcja); cyna — mętni szkliwo na kryjącą biel.</div></details>
+<details class="q"><summary><span class="qn">3</span>Czym różni się malowanie podszkliwne, na surowym szkliwie (majolika) i naszkliwne?</summary><div class="a">Podszkliwne: na biskwit, przykryte transparentnym szkliwem — najtrwalsze. Majolika: na surowe (niewypalone) białe szkliwo cynowe, wtapia się podczas wypału, bez możliwości poprawek. Naszkliwne: emalie na wypalonym szkliwie, utrwalane trzecim niskim wypałem (ok. 700–850 °C) — najszersza paleta, mniejsza odporność.</div></details>
+<details class="q"><summary><span class="qn">4</span>Na czym polega sgraffito, a na czym mishima/sanggam?</summary><div class="a">Sgraffito: wydrapywanie wzoru przez warstwę angoby do koloru gliny. Mishima (kor. sanggam): wzór ryty w glinie wypełnia się kontrastową angobą i zeskrobuje nadmiar — inkrustowana, ostra linia. Sanggam to specjalność seladonów koreańskiej dynastii Goryeo.</div></details>
+<details class="q"><summary><span class="qn">5</span>Co to jest terra sigillata jako technika?</summary><div class="a">Ultradrobna frakcja gliny (odstana zawiesina), nakładana cienko i polerowana — daje jedwabisty połysk bez szkliwa. Tak wykończona była seryjna czerwona ceramika rzymska (I w. p.n.e.–III w. n.e.).</div></details>
+<details class="q"><summary><span class="qn">6</span>Kto i kiedy wynalazł lustry metaliczne na ceramice?</summary><div class="a">Garncarze abbasydzkiego Iraku (Basra) w IX w.; technika przeszła do Persji i mauretańskiej Hiszpanii, a stamtąd do renesansowych Włoch.</div></details>
+<details class="q"><summary><span class="qn">7</span>Czym jest nerikomi/agateware?</summary><div class="a">Techniką wzorów z barwionych mas: kolorowe gliny skleja się w blok, a cięte plastry mają wzór biegnący przez całą grubość ścianki (nie namalowany na powierzchni).</div></details>
+<details class="q"><summary><span class="qn">8</span>Co to jest kintsugi?</summary><div class="a">Japońska sztuka naprawy ceramiki laką urushi z pyłem złota — pęknięcie zostaje celowo podkreślone jako część historii przedmiotu (estetyka wabi-sabi).</div></details>
+<details class="q"><summary><span class="qn">9</span>Co to jest formuła UMF i po co się jej używa?</summary><div class="a">Unity Molecular Formula: zapis chemii szkliwa, w którym wszystkie topniki sumują się do 1,0 mola — dzięki temu widać od razu, ile SiO₂ i Al₂O₃ przypada na porcję topnika, i można porównywać receptury (tak działa Glazy.org).</div></details>
+<details class="q"><summary><span class="qn">10</span>Jaka proporcja topników R₂O:RO i jaki stosunek SiO₂:Al₂O₃ dają stabilne szkliwo?</summary><div class="a">Typowo R₂O:RO ok. 0,2:0,8–0,3:0,7. Stosunek SiO₂:Al₂O₃ ok. 5–7 to stabilne błyszczące szkliwa kamionkowe; ok. 3–5 — maty/niedopalone; ok. 9+ — bardzo błyszczące z ryzykiem crazingu.</div></details>
+<details class="q"><summary><span class="qn">11</span>Czym różni się crazing od shiveringu i która wada jest groźniejsza w naczyniach?</summary><div class="a">Crazing: szkliwo kurczy się mocniej niż czerep → siatka spękań. Shivering: szkliwo zbyt ściśnięte → odpryskuje płatkami z krawędzi; groźniejszy w naczyniach (ostre odpryski). Naprawa działa w przeciwnych kierunkach: przy crazingu więcej krzemionki, przy shiveringu więcej topników alkalicznych.</div></details>
+</div>
+
+<div class="qb"><h3>📖 Historia <span class="qcount qc"></span></h3>
+<details class="q"><summary><span class="qn">1</span>Jaki jest najstarszy znany przedmiot ceramiczny i skąd pochodzi?</summary><div class="a">Wenus z Dolních Věstonic (Morawy, Czechy) — figurka z wypalonej gliny sprzed ok. 29–25 tys. lat p.n.e. Najstarsze naczynia (jaskinia Xianrendong, Chiny) są młodsze — sprzed ok. 20–19 tys. lat.</div></details>
+<details class="q"><summary><span class="qn">2</span>Dlaczego nazwa „Jōmon” wiąże się z techniką zdobienia?</summary><div class="a">Jōmon znaczy „wzór sznura” — naczynia tej japońskiej kultury (od ok. 14 500 p.n.e.) zdobiono odciskami sznura; nazwa ceramiki dała nazwę całej epoce.</div></details>
+<details class="q"><summary><span class="qn">3</span>Kiedy powstały style czarno- i czerwonofigurowy w Grecji?</summary><div class="a">Czarnofigurowy w Koryncie ok. 700 p.n.e., czerwonofigurowy w Atenach ok. 530 p.n.e.</div></details>
+<details class="q"><summary><span class="qn">4</span>Gdzie i kiedy pojawiła się pierwsza porcelana?</summary><div class="a">W Chinach — protoporcelana już za dynastii Szang, a wyroby uznawane za pierwszą porcelanę wypalano w prowincji Zhejiang za dynastii Han (202 p.n.e.–220 n.e.).</div></details>
+<details class="q"><summary><span class="qn">5</span>Jak Europa poznała sekret twardej porcelany?</summary><div class="a">Johann Friedrich Böttger (z E.W. von Tschirnhausem) opracował ją w 1708 r. na dworze Augusta II Mocnego; w 1710 r. ruszyła manufaktura w Miśni.</div></details>
+<details class="q"><summary><span class="qn">6</span>Co łączy Basrę, majolikę i Delft?</summary><div class="a">Kryjące białe szkliwo cynowe: wynalezione w abbasydzkim Iraku (IX w.), przez mauretańską Hiszpanię trafiło do włoskiej majoliki (XV–XVI w.), a jego dopracowaną wersją jest fajans z Delft (XVII w.) udający chińską porcelanę.</div></details>
+<details class="q"><summary><span class="qn">7</span>Od kiedy wzmiankowani są garncarze w Bolesławcu i kiedy powstały słynne stempelki?</summary><div class="a">Pierwsze pisemne wzmianki o bolesławieckich garncarzach pochodzą z 1380 r.; zdobienie stempelkowe (kobaltowe kropki, „pawie oczko”) rozwinęło się w XVIII w.</div></details>
+<details class="q"><summary><span class="qn">8</span>Czym zasłynęli Josiah Wedgwood i Bernard Leach?</summary><div class="a">Wedgwood (firma od 1759) uprzemysłowił ceramikę (Queen's ware, jasperware 1774, marketing i organizacja produkcji). Leach założył w 1920 r. warsztat w St Ives i książką „A Potter's Book” (1940) zapoczątkował ruch ceramiki studyjnej.</div></details>
+</div>
+</section>
+
+<!-- ============ FISZKI ============ -->
+<section class="panel" id="p-fisz">
+<div class="box"><h2>🃏 Fiszki</h2>
+<p style="font-size:.92rem;margin:0">Kliknij kartę, żeby ją odwrócić. Przechodź całą talię, aż wszystkie odpowiedzi przyjdą Ci bez wysiłku.</p></div>
+
+<div class="fkat"><h3>Pojęcia i techniki <span class="qcount fc"></span></h3>
+<div class="fgrid">
+<div class="fk"><div class="fk-in"><div class="fk-f">Stan skórzany</div><div class="fk-b">Glina podeschnięta: sztywna, ale dająca się ciąć i rzeźbić — czas na obtaczanie, doklejanie uch, sgraffito</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Szliker</div><div class="fk-b">Płynna glina — „klej” do łączenia elementów oraz masa lejna do odlewów</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Szamot</div><div class="fk-b">Zmielona wypalona glina dodawana do mas — mniejszy skurcz, odporność na szok termiczny</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Biskwit</div><div class="fk-b">Czerep po pierwszym wypale (ok. 900–1060 °C): trwały, ale porowaty — gotowy do szkliwienia</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Angoba</div><div class="fk-b">Barwiona glinka do malowania, zwykle na stan skórzany; matowy kolor pod transparentne szkliwo</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Sgraffito</div><div class="fk-b">Wydrapywanie wzoru przez warstwę angoby do koloru gliny</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Mishima / sanggam</div><div class="fk-b">Inkrustacja: ryty wzór wypełniony kontrastową angobą, nadmiar zeskrobany; perła seladonów Goryeo</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Terra sigillata</div><div class="fk-b">Ultradrobna glinka polerowana na połysk bez szkliwa — wykończenie rzymskiej ceramiki seryjnej</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Nerikomi / agateware</div><div class="fk-b">Wzory z barwionych mas przechodzące przez całą grubość ścianki</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Sprigging</div><div class="fk-b">Doklejanie odciskanych w formach reliefów — technika zdobienia jasperware Wedgwooda</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Witryfikacja</div><div class="fk-b">Zeszklenie czerepu w wysokiej temperaturze — masa staje się szczelna i dźwięczna</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Dunting</div><div class="fk-b">Pękanie naczyń przy zbyt szybkim przejściu progu inwersji kwarcu (573 °C), zwykle przy studzeniu</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Kaolin</div><div class="fk-b">Biała, czysta glinka — podstawa porcelany; mało plastyczna, ogniotrwała</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Ball clay</div><div class="fk-b">Najdrobniejsza, najplastyczniejsza glina — dodatek uplastyczniający mas</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Wedging (wyrabianie)</div><div class="fk-b">Usuwanie pęcherzy i ujednolicanie masy: barani łeb, spirala, cięcie strunką</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Lewigacja</div><div class="fk-b">Oczyszczanie gliny przez sedymentację: piasek opada, zlewa się drobną zawiesinę</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">UMF</div><div class="fk-b">Unity Molecular Formula — chemia szkliwa z topnikami zsumowanymi do 1,0 mola (Glazy.org)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Crazing</div><div class="fk-b">Siatka spękań: szkliwo kurczy się mocniej niż czerep; lek: więcej SiO₂, mniej topników alkalicznych</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Shivering</div><div class="fk-b">Odpryskiwanie szkliwa z krawędzi — szkliwo zbyt ściśnięte; wada groźna w naczyniach</div></div></div>
+</div></div>
+
+<div class="fkat"><h3>Liczby i daty <span class="qcount fc"></span></h3>
+<div class="fgrid">
+<div class="fk"><div class="fk-in"><div class="fk-f">573 °C</div><div class="fk-b">Inwersja kwarcu α→β — najniebezpieczniejszy próg wypału i studzenia</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">900–1060 °C</div><div class="fk-b">Typowy zakres wypału na biskwit (stożki 08–04)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">1200–1300 °C</div><div class="fk-b">Wypał kamionki (stożki 5–10); porcelana do ok. 1400 °C</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">~29–25 tys. p.n.e.</div><div class="fk-b">Wenus z Dolních Věstonic — najstarsza ceramika świata (Morawy)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">~20 tys. lat temu</div><div class="fk-b">Najstarsze naczynia — jaskinia Xianrendong, Chiny</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">IV tys. p.n.e.</div><div class="fk-b">Koło garncarskie upowszechnia się w Mezopotamii</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">~700 / ~530 p.n.e.</div><div class="fk-b">Grecja: styl czarnofigurowy (Korynt) / czerwonofigurowy (Ateny)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">dynastia Han</div><div class="fk-b">202 p.n.e.–220 n.e. — pierwsza porcelana (prowincja Zhejiang, Chiny)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">IX w., Basra</div><div class="fk-b">Lustry metaliczne i białe szkliwo cynowe — Irak Abbasydów</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">918–1392</div><div class="fk-b">Dynastia Goryeo — koreańskie seladony z inkrustacją sanggam</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">XIV w., Jingdezhen</div><div class="fk-b">Rozkwit porcelany „blue and white” za dynastii Yuan</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">1708 / 1710</div><div class="fk-b">Böttger łamie sekret porcelany / rusza manufaktura w Miśni</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">1380</div><div class="fk-b">Pierwsza pisemna wzmianka o garncarzach z Bolesławca</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">1759 / 1774</div><div class="fk-b">Wedgwood: założenie firmy / dopracowanie jasperware</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">1920 / 1940</div><div class="fk-b">Leach Pottery w St Ives / „A Potter's Book” — start ceramiki studyjnej</div></div></div>
+</div></div>
+
+<div class="fkat"><h3>Style i szkliwa <span class="qcount fc"></span></h3>
+<div class="fgrid">
+<div class="fk"><div class="fk-in"><div class="fk-f">Seladon</div><div class="fk-b">Szarozielone szkliwo żelazowe wypalane w redukcji — klasyka Chin i Korei</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Tenmoku</div><div class="fk-b">Ciemne szkliwa nasycone żelazem („zajęcza sierść”) — czarki jian dynastii Song</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Shino</div><div class="fk-b">Gęste białoróżowe szkliwo skaleniowe z pieców Mino (Japonia, XVI w.)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Oxblood / sang de boeuf</div><div class="fk-b">Głęboka czerwień miedziowa uzyskiwana w wypale redukcyjnym</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Krakle</div><div class="fk-b">Dekoracyjna siatka spękań szkliwa (większy skurcz szkliwa niż czerepu)</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Szkliwo solne</div><div class="fk-b">Sól wrzucana do gorącego pieca; faktura „skórki pomarańczy” — Nadrenia, od XIV w.</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Majolika</div><div class="fk-b">Malowanie na surowym białym szkliwie cynowym — renesansowe Włochy</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Fajans egipski</div><div class="fk-b">Turkusowa masa kwarcowa (nie glina!) starożytnego Egiptu</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">İznik</div><div class="fk-b">Osmańska ceramika: tulipany, kobalt, turkus i koralowa czerwień — szczyt w XVI w.</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Delft</div><div class="fk-b">Holenderski fajans malowany kobaltem, XVII-wieczna „podróbka” chińskiej porcelany</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Raku</div><div class="fk-b">Czarki z pieca wyjmowane na gorąco — Chōjirō, Kioto, XVI w.; na Zachodzie + redukcja w trocinach</div></div></div>
+<div class="fk"><div class="fk-in"><div class="fk-f">Kintsugi</div><div class="fk-b">Naprawa złotem i laką — pęknięcie jako ozdoba (wabi-sabi)</div></div></div>
+</div></div>
+</section>
+
+</div>
+
+<div class="toast" id="toast" role="status">
+<b>💾 Postęp zapisuje się lokalnie</b><br>
+Twoje odhaczone techniki i wybrana zakładka zapisują się automatycznie <b>na tym urządzeniu, w tej przeglądarce</b> — po ponownym otwarciu aplikacji wszystko będzie na swoim miejscu. Każda osoba korzystająca ze swojego urządzenia ma własny, niezależny postęp.<br>
+<span style="opacity:.8">Uwaga: tryb prywatny lub wyczyszczenie danych przeglądarki kasuje zapis.</span><br>
+<button id="toastOk">Rozumiem</button>
+</div>
+
+<footer>Kompendium ceramiczne · fakty (daty, temperatury) zweryfikowane ze źródłami encyklopedycznymi i branżowymi · postęp zapisywany lokalnie w przeglądarce</footer>
+
+<script>
+(function(){
+"use strict";
+var LS="ceramika_v1";
+function load(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){return{}}}
+function save(s){try{localStorage.setItem(LS,JSON.stringify(s))}catch(e){}}
+var st=load();
+
+/* zakładki */
+var tabs=document.querySelectorAll("nav.zk button"),panels=document.querySelectorAll(".panel");
+tabs.forEach(function(b){b.addEventListener("click",function(){
+ tabs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");
+ panels.forEach(function(p){p.classList.remove("on")});
+ document.getElementById("p-"+b.dataset.p).classList.add("on");
+ st.tab=b.dataset.p;save(st);window.scrollTo({top:0});
+})});
+if(st.tab){var tb=document.querySelector('nav.zk button[data-p="'+st.tab+'"]');if(tb)tb.click();}
+
+/* checkboxy technik + pasek postępu */
+var tks=document.querySelectorAll(".tk[data-tid]");
+st.done=st.done||{};
+function refresh(){
+ var n=0;tks.forEach(function(t){if(st.done[t.dataset.tid])n++});
+ var pct=tks.length?Math.round(100*n/tks.length):0;
+ document.getElementById("pbar").style.width=pct+"%";
+ document.getElementById("ptxt").textContent=n+" z "+tks.length+" technik opanowanych ("+pct+"%)";
+}
+tks.forEach(function(t){
+ var ch=t.querySelector(".chkwrap input");
+ if(st.done[t.dataset.tid]){ch.checked=true;t.classList.add("done")}
+ ch.addEventListener("change",function(){
+  st.done[t.dataset.tid]=ch.checked;t.classList.toggle("done",ch.checked);save(st);refresh();
+ });
+});
+
+/* liczniki w hero */
+document.getElementById("mTech").textContent=tks.length;
+var histy=document.querySelectorAll("#histLista .hist");
+document.getElementById("mHist").textContent=histy.length;
+document.getElementById("mQuiz").textContent=document.querySelectorAll("details.q").length;
+document.getElementById("mFisz").textContent=document.querySelectorAll(".fk").length;
+document.querySelectorAll(".qb").forEach(function(q){q.querySelector(".qc").textContent=q.querySelectorAll("details.q").length+" pytań"});
+document.querySelectorAll(".fkat").forEach(function(f){f.querySelector(".fc").textContent=f.querySelectorAll(".fk").length+" fiszek"});
+refresh();
+
+/* fiszki */
+document.querySelectorAll(".fk").forEach(function(k){k.addEventListener("click",function(){k.classList.toggle("flip")})});
+
+/* filtry historii */
+var fReg=document.getElementById("fReg"),fEp=document.getElementById("fEp"),
+    fSzuk=document.getElementById("fSzuk"),brak=document.getElementById("histBrak");
+function filtruj(){
+ var r=fReg.value,e=fEp.value,q=fSzuk.value.trim().toLowerCase(),vis=0;
+ histy.forEach(function(h){
+  var ok=true;
+  if(r)ok=h.dataset.reg===r;
+  if(ok&&e)ok=h.dataset.ep===e;
+  if(ok&&q)ok=(h.textContent+" "+h.dataset.kul).toLowerCase().indexOf(q)>-1;
+  h.style.display=ok?"":"none";if(ok)vis++;
+ });
+ brak.style.display=vis?"none":"block";
+}
+[fReg,fEp].forEach(function(x){x.addEventListener("change",filtruj)});
+fSzuk.addEventListener("input",filtruj);
+document.getElementById("fClear").addEventListener("click",function(){fReg.value="";fEp.value="";fSzuk.value="";filtruj()});
+
+/* dymek o zapisie lokalnym */
+var toast=document.getElementById("toast");
+if(!st.toastSeen){toast.classList.add("show")}
+document.getElementById("toastOk").addEventListener("click",function(){
+ toast.classList.remove("show");st.toastSeen=true;save(st);
+});
+
+/* ===== kalkulator harmonogramu wypału + krzywa ===== */
+var PRESETY={
+ biskwit:{segs:[[50,100,30],[100,600,0],[150,1060,10]],cool:0},
+ biskwit06:{segs:[[50,100,30],[100,600,0],[150,1000,10]],cool:0},
+ szkliwK:{segs:[[100,120,15],[150,600,0],[120,1240,15]],cool:150},
+ szkliwE:{segs:[[100,120,15],[150,600,0],[120,1060,10]],cool:0}
+};
+var kRows=document.getElementById("kRows"),kCool=document.getElementById("kCool"),
+    kSum=document.getElementById("kSum"),kChart=document.getElementById("kChart"),
+    kPreset=document.getElementById("kPreset");
+var segi=[];
+function segInputs(){return[].map.call(kRows.querySelectorAll("tr"),function(tr){
+ var i=tr.querySelectorAll("input");
+ return[+i[0].value||1,+i[1].value||0,+i[2].value||0];
+})}
+function renderRows(){
+ kRows.innerHTML=segi.map(function(s,n){
+  return'<tr><td>'+(n+1)+'</td>'+
+  '<td><input type="number" value="'+s[0]+'" min="5" step="5"></td>'+
+  '<td><input type="number" value="'+s[1]+'" min="30" step="10"></td>'+
+  '<td><input type="number" value="'+s[2]+'" min="0" step="5"></td>'+
+  '<td><button class="kbtn del" data-n="'+n+'" title="usuń segment">✕</button></td></tr>';
+ }).join("");
+ [].forEach.call(kRows.querySelectorAll("input"),function(inp){
+  inp.addEventListener("input",function(){segi=segInputs();rysuj()});
+ });
+ [].forEach.call(kRows.querySelectorAll("button.del"),function(b){
+  b.addEventListener("click",function(){if(segi.length>1){segi.splice(+b.dataset.n,1);renderRows();rysuj()}});
+ });
+}
+function fmt(min){var h=Math.floor(min/60),m=Math.round(min%60);return h+" h "+(m<10?"0":"")+m+" min"}
+function rysuj(){
+ var pts=[[0,20]],t=0,temp=20,i,s;
+ for(i=0;i<segi.length;i++){s=segi[i];
+  if(s[1]>temp){t+=(s[1]-temp)/s[0]*60;temp=s[1];pts.push([t,temp]);}
+  if(s[2]>0){t+=s[2];pts.push([t,temp]);}
+ }
+ var heatT=t,peak=temp,cool=+kCool.value||0,coolPts=[],ct=t,ctemp=temp;
+ var rate=cool>0?cool:120;
+ while(ctemp>200){var prev=ctemp;ctemp=Math.max(200,ctemp-rate);ct+=(prev-ctemp)/rate*60;coolPts.push([ct,ctemp]);}
+ var totT=ct;
+ var W=460,H=240,mL=44,mB=26,mT=14,mR=10,pw=W-mL-mR,ph=H-mT-mB;
+ var maxT=Math.max(peak+60,700),maxX=totT;
+ function X(x){return mL+x/maxX*pw}function Y(y){return mT+ph-(y/maxT)*ph}
+ var grid="",ty;
+ for(ty=200;ty<=maxT;ty+=200){grid+='<line x1="'+mL+'" y1="'+Y(ty)+'" x2="'+(W-mR)+'" y2="'+Y(ty)+'" stroke="#eee5d8"/><text x="4" y="'+(Y(ty)+3)+'" font-size="9" fill="#8a7a68">'+ty+'°</text>';}
+ var tx;for(tx=0;tx<=maxX;tx+=120){grid+='<text x="'+(X(tx)-8)+'" y="'+(H-8)+'" font-size="9" fill="#8a7a68">'+(tx/60)+'h</text>';}
+ var line=pts.map(function(p,n){return(n?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)}).join(" ");
+ var cline="M"+X(heatT).toFixed(1)+" "+Y(peak).toFixed(1)+coolPts.map(function(p){return" L"+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)}).join("");
+ kChart.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fcf9f4;border:1px solid var(--lin);border-radius:10px">'+grid+
+ '<line x1="'+mL+'" y1="'+Y(573)+'" x2="'+(W-mR)+'" y2="'+Y(573)+'" stroke="#c25b4a" stroke-dasharray="5 4"/><text x="'+(mL+4)+'" y="'+(Y(573)-4)+'" font-size="9" fill="#c25b4a">573 °C — inwersja kwarcu</text>'+
+ '<path d="'+line+'" fill="none" stroke="#a0522d" stroke-width="2.5"/>'+
+ '<path d="'+cline+'" fill="none" stroke="#7a6a3f" stroke-width="2" stroke-dasharray="'+(cool>0?"none":"6 4")+'"/>'+
+ '<text x="'+(X(heatT)+4)+'" y="'+(Y(peak)+12)+'" font-size="9" fill="#7a6a3f">'+(cool>0?"studzenie "+cool+" °C/h":"studzenie naturalne (orient.)")+'</text>'+
+ '<circle cx="'+X(heatT)+'" cy="'+Y(peak)+'" r="4" fill="#c9a227"/></svg>';
+ kSum.innerHTML="Szczyt: <b>"+peak+" °C</b> · grzanie: <b>"+fmt(heatT)+"</b> · studzenie do 200 °C: <b>~"+fmt(totT-heatT)+"</b>"+(cool>0?"":" (naturalne, orientacyjnie)")+" · razem: <b>~"+fmt(totT)+"</b><br><span style='font-size:.8rem;color:var(--mut)'>Nie otwieraj pieca powyżej ~200 °C.</span>";
+}
+function loadPreset(k){var p=PRESETY[k];segi=p.segs.map(function(s){return s.slice()});kCool.value=p.cool;renderRows();rysuj()}
+if(kRows){
+ kPreset.addEventListener("change",function(){loadPreset(kPreset.value)});
+ kCool.addEventListener("input",rysuj);
+ document.getElementById("kAdd").addEventListener("click",function(){
+  var last=segi[segi.length-1];segi.push([last[0],last[1]+100,0]);renderRows();rysuj();
+ });
+ loadPreset("biskwit");
+}
+
+/* ===== kalkulator skurczu (dwukierunkowy) ===== */
+var sPct=document.getElementById("sPct");
+function sfx(){return 1-(+sPct.value||0)/100}
+if(sPct){
+ [].forEach.call(document.querySelectorAll("#p-kalk tbody tr"),function(tr){
+  var w=tr.querySelector(".sWet"),f=tr.querySelector(".sFired");
+  function fromWet(){if(w.value!=="")f.value=(+w.value*sfx()).toFixed(2);else f.value=""}
+  function fromFired(){if(f.value!=="")w.value=(+f.value/sfx()).toFixed(2);else w.value=""}
+  w.addEventListener("input",fromWet);f.addEventListener("input",fromFired);
+  fromWet();
+ });
+ sPct.addEventListener("input",function(){
+  [].forEach.call(document.querySelectorAll("#p-kalk .sWet"),function(w){
+   w.dispatchEvent(new Event("input"));});
+ });
+}
+/* pomiar skurczu */
+var mWet=document.getElementById("mWet"),mFired=document.getElementById("mFired"),mOut=document.getElementById("mOut");
+function mCalc(){
+ var w=+mWet.value,f=+mFired.value;
+ if(w>0&&f>0&&f<=w){var s=(1-f/w)*100;
+  mOut.innerHTML="Skurcz całkowity Twojej masy: <b>"+s.toFixed(1)+"%</b><br><span style='font-size:.8rem;color:var(--mut)'>Wpisz tę wartość w kalkulatorze wymiarów powyżej.</span>";
+ }else{mOut.textContent="Wpisz poprawne pomiary (odcinek po wypale ≤ odcinek na mokro)."}
+}
+if(mWet){mWet.addEventListener("input",mCalc);mFired.addEventListener("input",mCalc);mCalc()}
+/* koszt wypału */
+var cKw=document.getElementById("cKw"),cH=document.getElementById("cH"),cDuty=document.getElementById("cDuty"),cPln=document.getElementById("cPln"),cOut=document.getElementById("cOut");
+function cCalc(){
+ var kwh=(+cKw.value||0)*(+cH.value||0)*((+cDuty.value||0)/100);
+ cOut.innerHTML="Zużycie energii: <b>"+kwh.toFixed(1)+" kWh</b><br>Koszt wypału: <b>"+(kwh*(+cPln.value||0)).toFixed(2)+" zł</b>";
+}
+if(cKw){[cKw,cH,cDuty,cPln].forEach(function(x){x.addEventListener("input",cCalc)});cCalc()}
+})();
+</script>
+</body>
+</html>
