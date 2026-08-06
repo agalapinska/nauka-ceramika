@@ -21,7 +21,34 @@ h1{margin:0 0 4px;font-size:1.75rem;letter-spacing:-.4px}
 .prg{margin-top:14px;background:rgba(255,255,255,.2);border-radius:99px;height:13px;overflow:hidden;border:1px solid rgba(255,255,255,.3)}
 .prg i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffe082,#ffd54f);transition:width .35s}
 .pinfo{font-size:.83rem;margin-top:6px;opacity:.95;display:flex;gap:14px;flex-wrap:wrap}
-nav.zk{display:flex;gap:4px;flex-wrap:wrap;margin:20px 0 18px;border-bottom:2px solid var(--lin)}
+nav.gl{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 6px}
+nav.gl button{background:var(--pap);border:1px solid var(--lin);border-radius:99px;padding:9px 18px;font:inherit;font-weight:700;font-size:.95rem;color:var(--mut);cursor:pointer}
+nav.gl button:hover{color:var(--ink);border-color:#cbbfa9}
+nav.gl button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.lek{display:flex;gap:12px;background:var(--pap);border:1px solid var(--lin);border-left:5px solid var(--pc,#a0522d);border-radius:12px;padding:12px 14px;margin-bottom:8px;align-items:flex-start}
+.lek .chkwrap{padding-top:1px}
+.lek-t{flex:1;min-width:0}
+.lek-h{font-size:.95rem;line-height:1.4}
+.lek-h b{color:var(--pc,#a0522d)}
+.czas{display:inline-block;background:#f3ede3;color:#6b5c48;border-radius:20px;padding:1px 9px;font-size:.72rem;font-weight:700;margin-left:6px;white-space:nowrap}
+.lek p{margin:4px 0 7px;font-size:.88rem;color:#544838}
+.lek.done{opacity:.55}
+.lek.done .lek-h{text-decoration:line-through}
+.lek.next{box-shadow:0 0 0 2px var(--acc2)}
+.nextbadge{display:none;background:var(--acc2);color:#3d3005;border-radius:20px;padding:1px 9px;font-size:.72rem;font-weight:700;margin-left:6px;white-space:nowrap}
+.lek.next .nextbadge{display:inline-block}
+.goto{background:#fff;border:1px solid var(--lin);color:var(--acc);border-radius:8px;padding:4px 11px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;margin:2px 6px 0 0}
+.goto:hover{border-color:var(--acc)}
+.modh{display:flex;align-items:center;gap:12px;margin:22px 0 10px}
+.modh h3{margin:0;font-size:1rem;color:var(--pc,#a0522d);white-space:nowrap}
+.lbar{flex:1;background:#eee5d8;height:9px;border-radius:99px;overflow:hidden;min-width:60px}
+.lbar i{display:block;height:100%;width:0;background:var(--pc,#a0522d);transition:width .3s}
+.modtxt{font-size:.78rem;font-weight:700;color:var(--mut);min-width:34px;text-align:right}
+.npostep{background:var(--pap);border:1px solid var(--lin);border-radius:14px;padding:16px 18px;margin-bottom:18px}
+.npostep .lbar{height:13px;margin:8px 0 6px}
+textarea.nt{width:100%;font:inherit;font-size:.9rem;border:1px solid var(--lin);border-radius:10px;padding:11px;resize:vertical;background:#fdfdf9;min-height:150px}
+.ntst{font-size:.78rem;color:#3f7f45;font-weight:600;min-height:1.1em;display:block;margin-top:4px}
+nav.zk{display:flex;gap:4px;flex-wrap:wrap;margin:14px 0 18px;border-bottom:2px solid var(--lin)}
 nav.zk button{background:none;border:none;border-bottom:3px solid transparent;padding:10px 14px;font:inherit;font-weight:600;font-size:.93rem;color:var(--mut);cursor:pointer;border-radius:8px 8px 0 0}
 nav.zk button:hover{background:#f0e8dd;color:var(--ink)}
 nav.zk button.on{color:var(--acc);border-bottom-color:var(--acc);background:var(--pap)}
@@ -138,6 +165,7 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:24px 0}
 <h1>🏺 Ceramika — techniki i historia</h1>
 <p class="sub">Kompendium metod formowania, wypału, szkliwienia i zdobienia ceramiki oraz interaktywna historia ceramiki od prehistorii do współczesności.</p>
 <div class="met">
+ <div><b id="mLek">0</b><span>lekcji w ścieżce</span></div>
  <div><b id="mTech">0</b><span>technik opisanych</span></div>
  <div><b id="mHist">0</b><span>epizodów historii</span></div>
  <div><b id="mQuiz">0</b><span>pytań w quizach</span></div>
@@ -148,6 +176,13 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:24px 0}
 </div></header>
 
 <div class="wrap">
+
+<nav class="gl">
+<button data-g="nauka" class="on">🎓 Ścieżka nauki</button>
+<button data-g="wiedza">📚 Wiedza</button>
+<button data-g="notatki">📝 Notatki</button>
+<button data-g="prac">🏠 Moja pracownia</button>
+</nav>
 
 <nav class="zk">
 <button class="on" data-p="glina">🧱 Glina</button>
@@ -1511,11 +1546,241 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:24px 0}
 </div></div>
 </section>
 
+<!-- ============ ŚCIEŻKA NAUKI ============ -->
+<section class="panel" id="p-nauka">
+<div class="npostep">
+<h2 style="margin:0 0 4px;font-size:1.15rem">🎓 Twoja ścieżka nauki</h2>
+<p style="font-size:.9rem;margin:0">Cały materiał serwisu rozłożony na krótkie lekcje po 10–15 minut — jedna dziennie wystarczy, by przejść ścieżkę w nieco ponad miesiąc. Odhaczaj ukończone lekcje; podświetlona jest zawsze Twoja następna.</p>
+<div class="lbar" style="--pc:#a0522d"><i id="nbar"></i></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+<span id="ntxt" style="font-size:.9rem;font-weight:700">0 z 0 lekcji</span>
+<button class="goto" id="nNext" style="margin:0">▶ Przejdź do następnej lekcji</button>
+</div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#7a6a3f"><h3>Moduł 1 · Glina</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#7a6a3f" data-lid="l01"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 1</b> · Czym jest glina i jakie ma rodzaje<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Przeczytaj wstęp zakładki Glina i tabelę rodzajów glin. Zapamiętaj: co odróżnia kaolin od ball clay i dlaczego gliny czerwone wypala się nisko.</p>
+<button class="goto" data-goto="glina">→ otwórz: Glina</button></div></div>
+
+<div class="lek" style="--pc:#7a6a3f" data-lid="l02"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 2</b> · Dzika glina: pozyskiwanie i oczyszczanie<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Przeczytaj karty „Pozyskiwanie dzikiej gliny” i „Oczyszczanie” ze schematami. Umiej opisać test słoikowy i kolejne kroki szlamowania.</p>
+<button class="goto" data-goto="glina">→ otwórz: Glina</button></div></div>
+
+<div class="lek" style="--pc:#7a6a3f" data-lid="l03"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 3</b> · Wyrabianie i odzyskiwanie gliny<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Przeczytaj karty o wedgingu (3 metody!) i reclaimie. Zamknij stronę i wymień z pamięci metody wyrabiania oraz po co się je stosuje.</p>
+<button class="goto" data-goto="glina">→ otwórz: Glina</button></div></div>
+
+<div class="lek" style="--pc:#7a6a3f" data-lid="l04"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 4</b> · Quiz: Glina i masy<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Bez zaglądania do notatek odpowiedz na 6 pytań quizu „Glina i masy”, potem przejrzyj fiszki: kaolin, ball clay, wedging, lewigacja, szamot.</p>
+<button class="goto" data-goto="quiz">→ Quizy</button><button class="goto" data-goto="fisz">→ Fiszki</button></div></div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#b0603a"><h3>Moduł 2 · Formowanie</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#b0603a" data-lid="l05"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 5</b> · Techniki ręczne: wyciskanie i wałeczki<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Przeczytaj karty pinching i coiling (ze schematami i szczegółami). Zapamiętaj, jak łączy się wałeczki i dlaczego duże formy buduje się etapami.</p>
+<button class="goto" data-goto="form">→ otwórz: Formowanie</button></div></div>
+
+<div class="lek" style="--pc:#b0603a" data-lid="l06"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 6</b> · Technika płatowa<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Karta „slab building”: jak przygotować równy płat, jak skleja się złącza i czym są formy slump/hump (schemat w karcie „Wyciskanie w formach”).</p>
+<button class="goto" data-goto="form">→ otwórz: Formowanie</button></div></div>
+
+<div class="lek" style="--pc:#b0603a" data-lid="l07"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 7</b> · Toczenie na kole — etapy<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Naucz się kolejności: wyrabianie → centrowanie → otwieranie → ciągnięcie → profilowanie → zdjęcie → obtaczanie. Odtwórz listę z pamięci, sprawdzając ze schematem.</p>
+<button class="goto" data-goto="form">→ otwórz: Formowanie</button></div></div>
+
+<div class="lek" style="--pc:#b0603a" data-lid="l08"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 8</b> · Odlewanie ze szlikru i formy gipsowe<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Karty „slip casting” i „press molding”: rola gipsu i upłynniacza, formy wieloczęściowe. Prześledź 3 kroki na schemacie odlewania.</p>
+<button class="goto" data-goto="form">→ otwórz: Formowanie</button></div></div>
+
+<div class="lek" style="--pc:#b0603a" data-lid="l09"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 9</b> · Produkcja seryjna i druk 3D<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Jiggering vs jolleying, ekstruzja, druk 3D — czym się różnią i do czego służą. Zwróć uwagę na obtaczanie i techniki mieszane.</p>
+<button class="goto" data-goto="form">→ otwórz: Formowanie</button></div></div>
+
+<div class="lek" style="--pc:#b0603a" data-lid="l10"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 10</b> · Quiz: Formowanie<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>6 pytań quizu „Formowanie” bez notatek. Pomyłki? Wróć do odpowiedniej karty i odhacz ją w zakładce Formowanie jako opanowaną dopiero, gdy umiesz odpowiedzieć.</p>
+<button class="goto" data-goto="quiz">→ Quizy</button></div></div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#c25b4a"><h3>Moduł 3 · Wypał</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#c25b4a" data-lid="l11"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 11</b> · Masy i ich temperatury<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Tabela mas w zakładce Formowanie: zapamiętaj zakresy dla gliny niskotopliwej, kamionki i porcelany oraz czym różni się biskwit od wypału ostrego.</p>
+<button class="goto" data-goto="form">→ tabela mas</button><button class="goto" data-goto="wypal">→ Wypał</button></div></div>
+
+<div class="lek" style="--pc:#c25b4a" data-lid="l12"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 12</b> · Co dzieje się w piecu — progi i etapy<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Etapy 1–4 i kluczowe progi: woda fizyczna, organika, <b>573 °C</b>, witryfikacja. Umiej wyjaśnić, czym jest dunting i co mierzą stożki Ortona.</p>
+<button class="goto" data-goto="wypal">→ otwórz: Wypał</button></div></div>
+
+<div class="lek" style="--pc:#c25b4a" data-lid="l13"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 13</b> · Krzywa wypału w praktyce<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Zadanie z kalkulatorem: załaduj harmonogram biskwitu, potem zmień go na szkliwny kamionkowy i porównaj czasy. Ułóż własny harmonogram dla grubej rzeźby (wolniejszy start!).</p>
+<button class="goto" data-goto="wypal">→ kalkulator krzywej</button></div></div>
+
+<div class="lek" style="--pc:#c25b4a" data-lid="l14"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 14</b> · Piece: elektryczny, gazowy, drzewny<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Porównaj schematy trzech pieców. Kluczowe pojęcie: atmosfera utleniająca vs redukcyjna — co daje żelazu i miedzi?</p>
+<button class="goto" data-goto="wypal">→ otwórz: Wypał</button></div></div>
+
+<div class="lek" style="--pc:#c25b4a" data-lid="l15"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 15</b> · Raku i wypały alternatywne<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Raku (historia + wersja zachodnia), wypał mielerzowy, obvara, ceramika siwa. Skąd się biorą efekty dymne i krakle?</p>
+<button class="goto" data-goto="wypal">→ otwórz: Wypał</button></div></div>
+
+<div class="lek" style="--pc:#c25b4a" data-lid="l16"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 16</b> · Quiz: Wypał + fiszki liczb<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>7 pytań quizu „Wypał”, a potem talia fiszek „Liczby i daty” — same temperatury (573, 900–1060, 1200–1300…).</p>
+<button class="goto" data-goto="quiz">→ Quizy</button><button class="goto" data-goto="fisz">→ Fiszki</button></div></div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#3f6e8a"><h3>Moduł 4 · Szkliwienie</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#3f6e8a" data-lid="l17"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 17</b> · Z czego składa się szkliwo<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Szkłotwórca, topniki, stabilizator, barwniki — umiej przypisać do każdej roli po 2 surowce i podać kolory z kobaltu, miedzi, żelaza i cyny.</p>
+<button class="goto" data-goto="szklo">→ otwórz: Szkliwienie</button></div></div>
+
+<div class="lek" style="--pc:#3f6e8a" data-lid="l18"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 18</b> · Nakładanie szkliwa<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Zanurzanie, polewanie, natrysk, pędzlowanie, rezerważ woskiem — przejrzyj schematy i zapamiętaj, kiedy która metoda wygrywa.</p>
+<button class="goto" data-goto="szklo">→ otwórz: Szkliwienie</button></div></div>
+
+<div class="lek" style="--pc:#3f6e8a" data-lid="l19"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 19</b> · Typy i efekty szkliw<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Seladon, tenmoku, shino, krystaliczne, krakle, solne… Wybierz 3 ulubione i umiej opisać, jak powstaje ich efekt.</p>
+<button class="goto" data-goto="szklo">→ otwórz: Szkliwienie</button></div></div>
+
+<div class="lek" style="--pc:#3f6e8a" data-lid="l20"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 20</b> · Chemia UMF wg Glazy<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Formuła UMF, proporcja R₂O:RO i stosunek SiO₂:Al₂O₃ (maty / stabilne / błyszczące). Zajrzyj na glazy.org i znajdź recepturę seladonu — spójrz na jej wykres Stulla.</p>
+<button class="goto" data-goto="szklo">→ sekcja UMF</button></div></div>
+
+<div class="lek" style="--pc:#3f6e8a" data-lid="l21"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 21</b> · Wady szkliw + quiz<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Crazing, shivering, crawling, pinholing, blistering, spływanie — przyczyna i naprawa każdej wady. Potem pytania 1–11 quizu „Szkliwa i zdobienie”.</p>
+<button class="goto" data-goto="szklo">→ wady szkliw</button><button class="goto" data-goto="quiz">→ Quizy</button></div></div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#8d5f8c"><h3>Moduł 5 · Zdobienie</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#8d5f8c" data-lid="l22"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 22</b> · Zdobienie w glinie<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Faktury i stemplowanie (Jōmon! Bolesławiec!), rzeźbienie, ażur, sprigging — przejrzyj karty ze schematami.</p>
+<button class="goto" data-goto="zdob">→ otwórz: Zdobienie</button></div></div>
+
+<div class="lek" style="--pc:#8d5f8c" data-lid="l23"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 23</b> · Angoby: sgraffito, mishima, terra sigillata<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Cztery techniki angobowe + nerikomi. Kluczowe rozróżnienie: sgraffito (wydrapywanie) vs mishima (inkrustacja) — porównaj schematy krok po kroku.</p>
+<button class="goto" data-goto="zdob">→ otwórz: Zdobienie</button></div></div>
+
+<div class="lek" style="--pc:#8d5f8c" data-lid="l24"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 24</b> · Malowanie: pod szkliwem, na surowym, na wypalonym<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Trzy przekroje: podszkliwne / majolika / naszkliwne — umiej narysować z pamięci kolejność warstw i podać po jednym historycznym przykładzie.</p>
+<button class="goto" data-goto="zdob">→ otwórz: Zdobienie</button></div></div>
+
+<div class="lek" style="--pc:#8d5f8c" data-lid="l25"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 25</b> · Lustry, kalkomania, kintsugi<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Dokończ karty zdobienia. Potem talia fiszek „Style i szkliwa” — przejdź całą raz.</p>
+<button class="goto" data-goto="zdob">→ Zdobienie</button><button class="goto" data-goto="fisz">→ Fiszki</button></div></div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#5f7470"><h3>Moduł 6 · Historia</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#5f7470" data-lid="l26"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 26</b> · Prehistoria: pierwsza ceramika świata<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Ustaw filtr epoki na „Prehistoria”: Wenus z Dolních Věstonic, Xianrendong, Jōmon, koło garncarskie, pierwsi garncarze na ziemiach polskich.</p>
+<button class="goto" data-goto="hist">→ otwórz: Historia</button></div></div>
+
+<div class="lek" style="--pc:#5f7470" data-lid="l27"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 27</b> · Starożytność: Grecja, Rzym, Chiny, Nok<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Filtr „Starożytność”. Daty-kotwice: style czarno- (~700 p.n.e.) i czerwonofigurowy (~530 p.n.e.), terra sigillata, pierwsza porcelana (dyn. Han).</p>
+<button class="goto" data-goto="hist">→ otwórz: Historia</button></div></div>
+
+<div class="lek" style="--pc:#5f7470" data-lid="l28"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 28</b> · Średniowiecze: Basra, Song, Goryeo, Jingdezhen<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Filtr „Średniowiecze”. Wątek przewodni: jak białe szkliwo cynowe i kobalt wędrowały między Chinami a światem islamu.</p>
+<button class="goto" data-goto="hist">→ otwórz: Historia</button></div></div>
+
+<div class="lek" style="--pc:#5f7470" data-lid="l29"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 29</b> · Nowożytność: majolika → İznik → Delft → Bolesławiec<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Filtr „Nowożytność” + karta raku. Umiej opowiedzieć drogę szkliwa cynowego z Basry do Delft i historię bolesławieckich stempelków.</p>
+<button class="goto" data-goto="hist">→ otwórz: Historia</button></div></div>
+
+<div class="lek" style="--pc:#5f7470" data-lid="l30"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 30</b> · Porcelana w Europie i ceramika studyjna + quiz<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Filtry „XVIII–XIX w.” i „XX w.”: Miśnia 1708/1710, Wedgwood, Leach. Na koniec 8 pytań quizu „Historia”.</p>
+<button class="goto" data-goto="hist">→ Historia</button><button class="goto" data-goto="quiz">→ Quizy</button></div></div>
+</div>
+
+<div class="mod">
+<div class="modh" style="--pc:#c9a227"><h3>Moduł 7 · Wielka powtórka</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
+
+<div class="lek" style="--pc:#c9a227" data-lid="l31"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 31</b> · Wszystkie fiszki<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Przejdź wszystkie 3 talie. Fiszki, których nie umiesz, wypisz do Notatek — wrócisz do nich jutro.</p>
+<button class="goto" data-goto="fisz">→ Fiszki</button><button class="goto" data-gg="notatki">→ Notatki</button></div></div>
+
+<div class="lek" style="--pc:#c9a227" data-lid="l32"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 32</b> · Wszystkie quizy bez notatek<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Kompletny przegląd: 38 pytań. Wynik poniżej 80%? Zaplanuj powtórkę słabszego modułu — odznacz jego lekcje i przejdź je ponownie.</p>
+<button class="goto" data-goto="quiz">→ Quizy</button></div></div>
+
+<div class="lek" style="--pc:#c9a227" data-lid="l33"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek-h"><b>Lekcja 33</b> · Kalkulatory w praktyce<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
+<p>Finał: policz wymiary „na mokro” kubka, który po wypale ma mieć 9 cm, ułóż harmonogram wypału szkliwnego i oszacuj jego koszt. Wyniki zapisz w Notatkach.</p>
+<button class="goto" data-goto="kalk">→ Kalkulatory</button><button class="goto" data-gg="notatki">→ Notatki</button></div></div>
+</div>
+</section>
+
+<!-- ============ NOTATKI ============ -->
+<section class="panel" id="p-notatki">
+<div class="box"><h2>📝 Notatki</h2>
+<p style="font-size:.9rem;margin:0">Trzy notatniki zapisywane automatycznie na tym urządzeniu — do nauki, receptur i dziennika wypałów.</p></div>
+<div class="box"><h2>📖 Notatki z nauki</h2>
+<textarea class="nt" id="nt1" placeholder="Trudne fiszki, rzeczy do powtórki, własne skojarzenia i mnemotechniki…"></textarea>
+<span class="ntst" id="nt1s"></span></div>
+<div class="box"><h2>🧪 Receptury i szkliwa</h2>
+<textarea class="nt" id="nt2" placeholder="Receptury szkliw i angob, proporcje, wyniki testów (line blend, płytki)…"></textarea>
+<span class="ntst" id="nt2s"></span></div>
+<div class="box"><h2>🔥 Dziennik wypałów</h2>
+<textarea class="nt" id="nt3" placeholder="Data, program pieca, co było w środku, wynik, wnioski na następny raz…"></textarea>
+<span class="ntst" id="nt3s"></span></div>
+</section>
+
+<!-- ============ MOJA PRACOWNIA ============ -->
+<section class="panel" id="p-prac">
+<div class="box" style="text-align:center;padding:48px 24px">
+<div style="font-size:3rem">🏗️🏺</div>
+<h2 style="margin:10px 0 6px">Moja pracownia — w rozbudowie</h2>
+<p style="font-size:.95rem;color:var(--mut);max-width:520px;margin:0 auto">Ta część serwisu dopiero powstaje. W planach: ewidencja Twoich prac (od gliny po wypał), lista mas i szkliw w pracowni, planer wypałów pieca i galeria zdjęć.</p>
+</div>
+</section>
+
 </div>
 
 <div class="toast" id="toast" role="status">
 <b>💾 Postęp zapisuje się lokalnie</b><br>
-Twoje odhaczone techniki i wybrana zakładka zapisują się automatycznie <b>na tym urządzeniu, w tej przeglądarce</b> — po ponownym otwarciu aplikacji wszystko będzie na swoim miejscu. Każda osoba korzystająca ze swojego urządzenia ma własny, niezależny postęp.<br>
+Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisują się automatycznie <b>na tym urządzeniu, w tej przeglądarce</b> — po ponownym otwarciu aplikacji wszystko będzie na swoim miejscu. Każda osoba korzystająca ze swojego urządzenia ma własny, niezależny postęp.<br>
 <span style="opacity:.8">Uwaga: tryb prywatny lub wyczyszczenie danych przeglądarki kasuje zapis.</span><br>
 <button id="toastOk">Rozumiem</button>
 </div>
@@ -1530,15 +1795,85 @@ function load(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){ret
 function save(s){try{localStorage.setItem(LS,JSON.stringify(s))}catch(e){}}
 var st=load();
 
-/* zakładki */
-var tabs=document.querySelectorAll("nav.zk button"),panels=document.querySelectorAll(".panel");
-tabs.forEach(function(b){b.addEventListener("click",function(){
- tabs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");
+/* nawigacja: 4 części + podzakładki Wiedzy */
+var tabs=document.querySelectorAll("nav.zk button"),panels=document.querySelectorAll(".panel"),
+    gbtns=document.querySelectorAll("nav.gl button"),subnav=document.querySelector("nav.zk");
+var GMAP={nauka:"p-nauka",notatki:"p-notatki",prac:"p-prac"};
+st.tab=st.tab||"glina";
+function showTab(id){
  panels.forEach(function(p){p.classList.remove("on")});
- document.getElementById("p-"+b.dataset.p).classList.add("on");
- st.tab=b.dataset.p;save(st);window.scrollTo({top:0});
+ var el=document.getElementById(id);if(el)el.classList.add("on");
+}
+function showCzesc(c,noscroll){
+ gbtns.forEach(function(x){x.classList.toggle("on",x.dataset.g===c)});
+ if(c==="wiedza"){
+  subnav.style.display="";
+  tabs.forEach(function(x){x.classList.toggle("on",x.dataset.p===st.tab)});
+  showTab("p-"+st.tab);
+ }else{subnav.style.display="none";showTab(GMAP[c]);}
+ st.czesc=c;save(st);
+ if(!noscroll)window.scrollTo({top:0});
+}
+tabs.forEach(function(b){b.addEventListener("click",function(){
+ st.tab=b.dataset.p;
+ tabs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");
+ showTab("p-"+st.tab);save(st);window.scrollTo({top:0});
 })});
-if(st.tab){var tb=document.querySelector('nav.zk button[data-p="'+st.tab+'"]');if(tb)tb.click();}
+gbtns.forEach(function(b){b.addEventListener("click",function(){showCzesc(b.dataset.g)})});
+showCzesc(st.czesc||"nauka",true);
+
+/* przyciski „przejdź do” w lekcjach */
+document.querySelectorAll(".goto[data-goto]").forEach(function(b){
+ b.addEventListener("click",function(){st.tab=b.dataset.goto;showCzesc("wiedza")});
+});
+document.querySelectorAll(".goto[data-gg]").forEach(function(b){
+ b.addEventListener("click",function(){showCzesc(b.dataset.gg)});
+});
+
+/* ścieżka nauki: lekcje */
+var leks=document.querySelectorAll(".lek[data-lid]");
+st.lek=st.lek||{};
+function lekRefresh(){
+ var n=0;leks.forEach(function(l){if(st.lek[l.dataset.lid])n++});
+ var pct=leks.length?Math.round(100*n/leks.length):0;
+ document.getElementById("nbar").style.width=pct+"%";
+ document.getElementById("ntxt").textContent=n+" z "+leks.length+" lekcji · "+pct+"%";
+ document.getElementById("mLek").textContent=n+"/"+leks.length;
+ document.querySelectorAll(".mod").forEach(function(m){
+  var ls=m.querySelectorAll(".lek"),d=0;
+  ls.forEach(function(l){if(st.lek[l.dataset.lid])d++});
+  m.querySelector(".lbar i").style.width=(ls.length?100*d/ls.length:0)+"%";
+  m.querySelector(".modtxt").textContent=d+"/"+ls.length;
+ });
+ var next=null;
+ leks.forEach(function(l){l.classList.remove("next");if(!next&&!st.lek[l.dataset.lid])next=l});
+ if(next)next.classList.add("next");
+ document.getElementById("nNext").style.display=next?"":"none";
+ if(!next)document.getElementById("ntxt").textContent+=" — ścieżka ukończona! 🎉";
+}
+leks.forEach(function(l){
+ var ch=l.querySelector(".chkwrap input");
+ if(st.lek[l.dataset.lid]){ch.checked=true;l.classList.add("done")}
+ ch.addEventListener("change",function(){
+  st.lek[l.dataset.lid]=ch.checked;l.classList.toggle("done",ch.checked);save(st);lekRefresh();
+ });
+});
+document.getElementById("nNext").addEventListener("click",function(){
+ var n=document.querySelector(".lek.next");
+ if(n)n.scrollIntoView({behavior:"smooth",block:"center"});
+});
+lekRefresh();
+
+/* notatki — autozapis */
+["nt1","nt2","nt3"].forEach(function(id){
+ var t=document.getElementById(id);if(!t)return;
+ t.value=st[id]||"";
+ t.addEventListener("input",function(){
+  st[id]=t.value;save(st);
+  var s=document.getElementById(id+"s");s.textContent="✓ zapisano";
+  clearTimeout(t._tm);t._tm=setTimeout(function(){s.textContent=""},1500);
+ });
+});
 
 /* checkboxy technik + pasek postępu */
 var tks=document.querySelectorAll(".tk[data-tid]");
