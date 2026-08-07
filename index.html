@@ -31,6 +31,28 @@ nav.gl button{background:none;border:none;padding:9px 15px;font:inherit;font-wei
 nav.gl button:hover{color:var(--ink);background:#f3eee1}
 nav.gl button.on{background:var(--acc);color:#fff}
 nav.gl button.right{margin-left:auto}
+nav.gl button.brand{font-weight:700;color:var(--ink);font-size:1rem;margin-right:12px}
+nav.gl button.brand.on{background:var(--acc);color:#fff}
+a{color:var(--acc)}
+.dashg{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px;align-items:start}
+.dashg .box{margin:0}
+.stickies{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.sticky{background:#fdf3c0;border:1px solid #e7d489;position:relative;padding:10px 8px 6px}
+.sticky:nth-child(even){background:#fbe7c4;border-color:#e7cd89}
+.sticky textarea{width:100%;border:none;background:none;font:inherit;font-size:.85rem;line-height:1.45;resize:none;min-height:92px;outline:none;display:block}
+.sticky .x{position:absolute;top:1px;right:5px;border:none;background:none;color:#a08a2f;cursor:pointer;font-weight:700;font-size:.9rem}
+.todo{list-style:none;margin:10px 0 0;padding:0}
+.todo li{display:flex;gap:9px;align-items:center;border-bottom:1px solid var(--lin);padding:7px 0;font-size:.9rem}
+.todo li:last-child{border-bottom:none}
+.todo li.done .tx{text-decoration:line-through;opacity:.55}
+.todo .tx{flex:1;min-width:0}
+.ttyp{font-size:.66rem;font-weight:700;padding:1px 8px;color:#fff;white-space:nowrap}
+.todo .x{border:none;background:none;color:var(--acc);cursor:pointer;font-weight:700}
+.dlink{display:block;padding:8px 0;border-bottom:1px solid var(--lin);font-size:.9rem;text-decoration:none}
+.dlink:last-child{border-bottom:none}
+.dlink:hover{text-decoration:underline}
+.dlek{font-size:.92rem;margin:8px 0}
+.dlek b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);font-weight:600;margin-bottom:2px}
 .kbtn{background:var(--acc);color:#fff;border:none;padding:7px 13px;font:inherit;font-size:.84rem;font-weight:600;cursor:pointer}
 .kbtn.alt{background:#fff;color:var(--ink);border:1px solid var(--lin)}
 .kbtn.del{background:#fff;color:var(--acc);border:1px solid var(--lin);padding:4px 9px}
@@ -209,7 +231,7 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 <body>
 
 <nav class="gl"><div class="gnav">
-<span class="brand">🏺 Ceramika</span>
+<button class="brand" data-g="dash">🏺 Ceramika</button>
 <button data-g="nauka" class="on">🎓 Ścieżka nauki</button>
 <button data-g="wiedza">📚 Wiedza</button>
 <button data-g="notatki">📝 Notatki</button>
@@ -1585,6 +1607,40 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 </div></div>
 </section>
 
+<!-- ============ PULPIT ============ -->
+<section class="panel" id="p-dash">
+<div class="dashg">
+
+<div class="box"><h2>📦 Zamówienia i do zrobienia</h2>
+<p style="font-size:.85rem;color:var(--mut);margin:0">Wysyłki, produkty, wypały, zakupy — odhaczaj zrobione.</p>
+<ul class="todo" id="tdLista"></ul>
+<p class="puste" id="tdBrak">Pusto — dodaj pierwsze zadanie.</p>
+<div class="dodaj">
+<select id="tdTyp"><option>Produkt</option><option>Wysyłka</option><option>Wypał</option><option>Kupno</option><option>Inne</option></select>
+<input type="text" id="tdTekst" placeholder="np. 6 kubków dla p. Anny do 20.08" style="flex:1 1 160px">
+<button class="kbtn" id="tdDodaj">Dodaj</button>
+</div></div>
+
+<div class="box"><h2>🎓 Twoja nauka</h2>
+<div id="dashLek"></div>
+<button class="goto" id="dashGo" style="margin-top:6px">→ przejdź do ścieżki nauki</button></div>
+
+<div class="box"><h2>🗒️ Szybkie notatki</h2>
+<p style="font-size:.85rem;color:var(--mut);margin:0 0 4px">Podręczne karteczki — żyją tylko na tym pulpicie.</p>
+<button class="kbtn alt" id="stDodaj">＋ nowa karteczka</button>
+<div class="stickies" id="stLista"></div></div>
+
+<div class="box"><h2>🌍 Nowinki ze świata ceramiki</h2>
+<p style="font-size:.85rem;color:var(--mut);margin:0 0 4px">Mały podgląd Glazy i okolic (otwiera się w nowej karcie):</p>
+<a class="dlink" href="https://glazy.org" target="_blank" rel="noopener">🧪 Glazy — najnowsze receptury szkliw społeczności</a>
+<a class="dlink" href="https://glazy.org/materials" target="_blank" rel="noopener">⚗️ Glazy Materials — baza materiałów i analiz</a>
+<a class="dlink" href="https://help.glazy.org" target="_blank" rel="noopener">📖 Przewodnik Glazy — chemia szkliw krok po kroku</a>
+<a class="dlink" href="https://ceramicartsnetwork.org/daily/" target="_blank" rel="noopener">📰 Ceramic Arts Daily — artykuły, techniki, receptury</a>
+</div>
+
+</div>
+</section>
+
 <!-- ============ ŚCIEŻKA NAUKI ============ -->
 <section class="panel" id="p-nauka">
 <div class="npostep">
@@ -1871,6 +1927,21 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 <button class="kbtn" id="wyDodaj">Zaplanuj wypał</button>
 </div>
 </div>
+
+<div class="box">
+<h2>👥 Klienci</h2>
+<table class="prtab"><thead><tr><th>Klient</th><th style="width:180px">Mail</th><th style="width:130px">Telefon</th><th style="width:110px">Link</th><th>Komentarz</th><th style="width:40px"></th></tr></thead>
+<tbody id="prKlienci"></tbody></table>
+<p class="puste" id="prKlienciB">Brak klientów w kartotece.</p>
+<div class="dodaj">
+<input type="text" id="klImie" placeholder="Imię i nazwisko" style="flex:1 1 160px">
+<input type="text" id="klMail" placeholder="Mail" style="flex:1 1 150px">
+<input type="text" id="klTel" placeholder="Telefon" style="flex:0 1 120px">
+<input type="text" id="klLink" placeholder="Link (IG, strona…)" style="flex:1 1 150px">
+<input type="text" id="klKom" placeholder="Komentarz" style="flex:1 1 180px">
+<button class="kbtn" id="klDodaj">Dodaj klienta</button>
+</div>
+</div>
 </section>
 
 </div>
@@ -1910,7 +1981,7 @@ var st=load();
 /* nawigacja: 4 części + podzakładki Wiedzy */
 var tabs=document.querySelectorAll("nav.zk button"),panels=document.querySelectorAll(".panel"),
     gbtns=document.querySelectorAll("nav.gl button"),subnav=document.querySelector("nav.zk");
-var GMAP={nauka:"p-nauka",notatki:"p-notatki",prac:"p-prac"};
+var GMAP={dash:"p-dash",nauka:"p-nauka",notatki:"p-notatki",prac:"p-prac"};
 st.tab=st.tab||"glina";
 function showTab(id){
  panels.forEach(function(p){p.classList.remove("on")});
@@ -1967,7 +2038,10 @@ leks.forEach(function(l){
  var ch=l.querySelector(".chkwrap input");
  if(st.lek[l.dataset.lid]){ch.checked=true;l.classList.add("done")}
  ch.addEventListener("change",function(){
-  st.lek[l.dataset.lid]=ch.checked;l.classList.toggle("done",ch.checked);save(st);lekRefresh();
+  st.lek[l.dataset.lid]=ch.checked;l.classList.toggle("done",ch.checked);
+  if(ch.checked)st.lastLek=l.dataset.lid;
+  save(st);lekRefresh();
+  if(typeof dashLekRender==="function")dashLekRender();
  });
 });
 document.getElementById("nNext").addEventListener("click",function(){
@@ -2268,6 +2342,89 @@ function cCalc(){
  cOut.innerHTML="Zużycie energii: <b>"+kwh.toFixed(1)+" kWh</b><br>Koszt wypału: <b>"+(kwh*(+cPln.value||0)).toFixed(2)+" zł</b>";
 }
 if(cKw){[cKw,cH,cDuty,cPln].forEach(function(x){x.addEventListener("input",cCalc)});cCalc()}
+
+/* ===== klienci ===== */
+st.prac.klienci=st.prac.klienci||[];
+function klRender(){
+ document.getElementById("prKlienci").innerHTML=st.prac.klienci.map(function(k,i){
+  return"<tr><td>"+esc(k.n)+"</td><td>"+(k.m?'<a href="mailto:'+esc(k.m)+'">'+esc(k.m)+"</a>":"—")+"</td><td>"+esc(k.t||"—")+"</td>"+
+  "<td>"+(k.l?'<a href="'+esc(/^https?:\/\//.test(k.l)?k.l:"https://"+k.l)+'" target="_blank" rel="noopener">otwórz</a>':"—")+"</td><td>"+esc(k.k||"")+"</td>"+delBtn(i)+"</tr>";
+ }).join("");
+ document.getElementById("prKlienciB").style.display=st.prac.klienci.length?"none":"block";
+}
+document.getElementById("prKlienci").addEventListener("click",function(e){
+ var b=e.target.closest("button.del");if(!b)return;
+ st.prac.klienci.splice(+b.dataset.i,1);save(st);klRender();
+});
+document.getElementById("klDodaj").addEventListener("click",function(){
+ var n=document.getElementById("klImie");if(!n.value.trim())return;
+ st.prac.klienci.push({n:n.value.trim(),m:document.getElementById("klMail").value.trim(),
+  t:document.getElementById("klTel").value.trim(),l:document.getElementById("klLink").value.trim(),
+  k:document.getElementById("klKom").value.trim()});
+ ["klImie","klMail","klTel","klLink","klKom"].forEach(function(id){document.getElementById(id).value=""});
+ save(st);klRender();
+});
+klRender();
+
+/* ===== pulpit: zamówienia / do zrobienia ===== */
+st.todo=st.todo||[];
+var TTYP={"Wysyłka":"#5f7470","Produkt":"#b4552d","Wypał":"#c25b4a","Kupno":"#7a6a3f","Inne":"#8d5f8c"};
+function tdRender(){
+ document.getElementById("tdLista").innerHTML=st.todo.map(function(t,i){
+  return'<li class="'+(t.done?"done":"")+'"><input type="checkbox" data-i="'+i+'"'+(t.done?" checked":"")+'>'+
+  '<span class="ttyp" style="background:'+(TTYP[t.t]||"#8d5f8c")+'">'+esc(t.t)+'</span><span class="tx">'+esc(t.x)+'</span>'+
+  '<button class="x" data-i="'+i+'" title="usuń">✕</button></li>';
+ }).join("");
+ document.getElementById("tdBrak").style.display=st.todo.length?"none":"block";
+}
+document.getElementById("tdLista").addEventListener("click",function(e){
+ if(e.target.matches("button.x")){st.todo.splice(+e.target.dataset.i,1);save(st);tdRender();return}
+ if(e.target.matches("input[type=checkbox]")){st.todo[+e.target.dataset.i].done=e.target.checked;save(st);tdRender()}
+});
+document.getElementById("tdDodaj").addEventListener("click",function(){
+ var x=document.getElementById("tdTekst");if(!x.value.trim())return;
+ st.todo.push({t:document.getElementById("tdTyp").value,x:x.value.trim(),done:false});
+ x.value="";save(st);tdRender();
+});
+tdRender();
+
+/* ===== pulpit: ostatnia / następna lekcja ===== */
+function lekTitle(lid){
+ var el=document.querySelector('.lek[data-lid="'+lid+'"] .lek-h');if(!el)return lid;
+ var out="";el.childNodes.forEach(function(n){if(n.nodeType===3)out+=n.textContent;if(n.nodeType===1&&n.tagName==="B")out+=n.textContent});
+ return out.trim();
+}
+function dashLekRender(){
+ var next=null,done=0;
+ leks.forEach(function(l){if(!next&&!st.lek[l.dataset.lid])next=l.dataset.lid;if(st.lek[l.dataset.lid])done++});
+ var html="";
+ html+='<div class="dlek"><b>Postęp ścieżki</b>'+done+" z "+leks.length+" lekcji</div>";
+ html+='<div class="dlek"><b>Ostatnio ukończona</b>'+(st.lastLek?esc(lekTitle(st.lastLek)):"jeszcze żadna — czas zacząć!")+"</div>";
+ html+='<div class="dlek"><b>Następna lekcja</b>'+(next?esc(lekTitle(next)):"ścieżka ukończona 🎉")+"</div>";
+ document.getElementById("dashLek").innerHTML=html;
+}
+document.getElementById("dashGo").addEventListener("click",function(){showCzesc("nauka")});
+dashLekRender();
+
+/* ===== pulpit: szybkie notatki (karteczki) ===== */
+st.sticky=st.sticky||[];
+function stRender(){
+ document.getElementById("stLista").innerHTML=st.sticky.map(function(s,i){
+  return'<div class="sticky"><button class="x" data-i="'+i+'" title="usuń">✕</button>'+
+  '<textarea data-i="'+i+'" placeholder="pisz…">'+esc(s.txt)+"</textarea></div>";
+ }).join("");
+}
+document.getElementById("stDodaj").addEventListener("click",function(){
+ st.sticky.push({txt:""});save(st);stRender();
+ var ta=document.querySelector('#stLista .sticky:last-child textarea');if(ta)ta.focus();
+});
+document.getElementById("stLista").addEventListener("click",function(e){
+ if(e.target.matches("button.x")){st.sticky.splice(+e.target.dataset.i,1);save(st);stRender()}
+});
+document.getElementById("stLista").addEventListener("input",function(e){
+ if(e.target.matches("textarea")){st.sticky[+e.target.dataset.i].txt=e.target.value;save(st)}
+});
+stRender();
 })();
 </script>
 </body>
