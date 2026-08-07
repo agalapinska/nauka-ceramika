@@ -58,9 +58,12 @@ a{color:var(--acc)}
 .dlink:hover{text-decoration:underline}
 .dlek{font-size:.92rem;margin:8px 0}
 .dlek b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);font-weight:600;margin-bottom:2px}
-.kbtn{background:var(--acc);color:#fff;border:none;padding:7px 13px;font:inherit;font-size:.84rem;font-weight:600;cursor:pointer}
+.kbtn{background:var(--acc);color:#fff;border:none;padding:7px 13px;font:inherit;font-size:.84rem;font-weight:600;cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.kbtn:hover{background:#9c4823}
 .kbtn.alt{background:#fff;color:var(--ink);border:1px solid var(--lin)}
+.kbtn.alt:hover{background:#fff;color:var(--acc);border-color:var(--acc)}
 .kbtn.del{background:#fff;color:var(--acc);border:1px solid var(--lin);padding:4px 9px}
+.kbtn.del:hover{background:#fdf1ea;border-color:var(--acc)}
 .note{background:var(--sur);border:1px solid var(--lin);padding:14px 17px;margin-bottom:9px;cursor:pointer}
 .note:hover{border-color:#c9bfa7}
 .note-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
@@ -70,7 +73,8 @@ a{color:var(--acc)}
 .ntag{background:#f3eee1;color:#77653f;font-size:.72rem;font-weight:600;padding:1px 9px}
 .note-x{margin:6px 0 0;font-size:.88rem;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tagfilter{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-.tagchip{border:1px solid var(--lin);background:#fff;padding:3px 11px;font:inherit;font-size:.8rem;font-weight:600;color:var(--mut);cursor:pointer}
+.tagchip{border:1px solid var(--lin);background:#fff;padding:3px 11px;font:inherit;font-size:.8rem;font-weight:600;color:var(--mut);cursor:pointer;transition:color .12s,border-color .12s}
+.tagchip:hover{color:var(--acc);border-color:var(--acc)}
 .tagchip.on{background:var(--acc);border-color:var(--acc);color:#fff}
 .modal{display:none;position:fixed;inset:0;background:rgba(38,34,28,.45);z-index:100;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto}
 .modal.show{display:flex}
@@ -138,7 +142,8 @@ details.szcz ul{margin:4px 0 0;padding-left:20px}
 .narz{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px;background:var(--sur);border:1px solid var(--lin);padding:12px 14px;position:sticky;top:52px;z-index:20}
 .narz select,.narz button,.narz input[type=search]{font:inherit;font-size:.9rem;padding:7px 12px;border:1px solid var(--lin);background:#fff;cursor:pointer;min-width:0}
 .narz input[type=search]{cursor:text;flex:1 1 190px;max-width:280px}
-.narz button{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
+.narz button{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600;transition:background .12s}
+.narz button:hover{background:#9c4823}
 .narz label{font-size:.84rem;color:var(--mut);display:inline-flex;align-items:center;gap:6px;min-width:0}
 .hist{background:var(--sur);border:1px solid var(--lin);padding:16px 18px;margin-bottom:10px}
 .hist-h{display:flex;gap:16px;align-items:flex-start}
@@ -185,7 +190,8 @@ figure.schemat figcaption{font-size:.78rem;color:var(--mut);text-align:center;ma
 .toast.show{display:block;animation:tin .3s}
 @keyframes tin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .toast b{color:var(--acc)}
-.toast button{margin-top:10px;background:var(--acc);color:#fff;border:none;padding:7px 15px;font:inherit;font-size:.86rem;font-weight:600;cursor:pointer}
+.toast button{margin-top:10px;background:var(--acc);color:#fff;border:none;padding:7px 15px;font:inherit;font-size:.86rem;font-weight:600;cursor:pointer;transition:background .12s}
+.toast button:hover{background:#9c4823}
 .kalk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}
 .kalk table{width:100%;border-collapse:collapse;font-size:.88rem}
 .kalk th,.kalk td{border:1px solid var(--lin);padding:6px 8px;text-align:center}
@@ -1522,14 +1528,14 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <p class="puste" id="tdPrevB">Nic do zrobienia 🎉</p>
 <button class="goto" id="tdGo" style="margin-top:8px">→ wszystkie zamówienia (Moja pracownia)</button></div>
 
-<div class="box"><h2>🎓 Twoja nauka</h2>
-<div id="dashLek"></div>
-<button class="goto" id="dashGo" style="margin-top:6px">→ przejdź do ścieżki nauki</button></div>
-
 <div class="box"><h2>🗒️ Szybkie notatki</h2>
 <p style="font-size:.85rem;color:var(--mut);margin:0 0 4px">Podręczne karteczki — żyją tylko na tym pulpicie.</p>
 <button class="kbtn alt" id="stDodaj">＋ nowa karteczka</button>
 <div class="stickies" id="stLista"></div></div>
+
+<div class="box"><h2>🎓 Twoja nauka</h2>
+<div id="dashLek"></div>
+<button class="goto" id="dashGo" style="margin-top:6px">→ przejdź do ścieżki nauki</button></div>
 
 <div class="box"><h2>🌍 Nowinki ze świata ceramiki</h2>
 <p style="font-size:.85rem;color:var(--mut);margin:0 0 4px">Mały podgląd Glazy i okolic (otwiera się w nowej karcie):</p>
