@@ -99,6 +99,21 @@ nav.zk button{background:none;border:none;border-bottom:3px solid transparent;pa
 nav.zk button:hover{color:var(--ink);background:#f3eee1}
 nav.zk button.on{color:var(--acc);border-bottom-color:var(--acc)}
 .panel{display:none}.panel.on{display:block}
+.tk[data-tid],.lek[data-lid],#masy,#kalkwypal,#umf,#wady,#typyszkliw,#fbMsg{scroll-margin-top:64px}
+.qoceny{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px dashed var(--lin);font-size:.8rem;color:var(--mut)}
+.qoceny .kbtn{padding:4px 10px;font-size:.76rem}
+details.q.qok{border-left:3px solid #4c7a34}
+details.q.qzle{border-left:3px solid var(--acc)}
+.qwyn{margin-left:0}
+.qreset{background:none;border:none;font:inherit;font-size:.72rem;color:var(--mut);cursor:pointer;text-decoration:underline;padding:0}
+.qreset:hover{color:var(--acc)}
+tr.editing td,li.editing{background:#fdf1ea}
+.anuluj{margin-left:2px}
+.linklike{background:none;border:none;color:var(--acc);cursor:pointer;font:inherit;font-size:inherit;text-decoration:underline;padding:0}
+.zr{list-style:none;margin:8px 0 0;padding:0}
+.zr li{padding:7px 0;border-bottom:1px solid var(--lin);font-size:.92rem}
+.zr li:last-child{border-bottom:none}
+.zr span{color:var(--mut);font-size:.84rem}
 nav.nk{display:flex;gap:2px;flex-wrap:wrap;margin:0 0 18px;border-bottom:1px solid var(--lin)}
 nav.nk button{background:none;border:none;border-bottom:3px solid transparent;padding:9px 14px;font:inherit;font-weight:600;font-size:.9rem;color:var(--mut);cursor:pointer}
 nav.nk button:hover{color:var(--ink);background:#f3eee1}
@@ -234,6 +249,8 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 .fleft{flex:1 1 460px;min-width:0}
 .fright{flex:0 0 auto}
 @media(max-width:840px){
+ nav.gl{position:static}
+ .tk[data-tid],.lek[data-lid],#masy,#kalkwypal,#umf,#wady,#typyszkliw,#fbMsg{scroll-margin-top:12px}
  h1{font-size:1.45rem}.wrap{padding:0 14px 60px}
  .met div{min-width:92px;padding:8px 12px}.met b{font-size:1.15rem}
  .narz{position:static;flex-direction:column;align-items:stretch}
@@ -1991,6 +2008,72 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 </div>
 </section>
 
+<!-- ============ ŹRÓDŁA ============ -->
+<section class="panel" id="p-zrodla">
+<div class="box">
+<h2>📚 Źródła</h2>
+<p style="font-size:.95rem;margin:0">Fakty w tym kompendium (daty, temperatury, atrybucje technik) zostały zweryfikowane przed publikacją w poniższych źródłach. Zakresy temperatur podajemy jako orientacyjne — w pracowni zawsze obowiązuje specyfikacja producenta masy i szkliwa.</p>
+</div>
+
+<div class="box">
+<h3 style="margin-top:0">Technologia, temperatury, wypał</h3>
+<ul class="zr">
+<li><a href="https://www.soulceramics.com/pages/guide-to-kiln-temperature-ranges-for-pottery" target="_blank" rel="noopener">Soul Ceramics — Guide to Kiln Temperature Ranges</a> <span>· zakresy wypału mas i stożki</span></li>
+<li><a href="https://ceramicartsnetwork.org/daily/article/Quartz-Inversion-and-Other-Important-Stages-of-Firing-Pottery" target="_blank" rel="noopener">Ceramic Arts Network — Quartz Inversion and Stages of Firing</a> <span>· inwersja kwarcu 573 °C, etapy wypału</span></li>
+<li><a href="https://digitalfire.com/glossary/quartz+inversion" target="_blank" rel="noopener">Digitalfire — Quartz Inversion</a> <span>· chemia procesu wypału</span></li>
+<li><a href="https://ceramicartsnetwork.org/daily/article/Terra-Sigillata-101-How-to-Make-Apply-and-Troubleshoot-Terra-Sig" target="_blank" rel="noopener">Ceramic Arts Network — Terra Sigillata 101</a> <span>· technika terra sigillata</span></li>
+</ul>
+</div>
+
+<div class="box">
+<h3 style="margin-top:0">Szkliwa i chemia (zakładka Szkliwienie)</h3>
+<ul class="zr">
+<li><a href="https://help.glazy.org" target="_blank" rel="noopener">Przewodnik Glazy (help.glazy.org)</a> <span>· UMF, formuły graniczne, wady szkliw, harmonogramy wypału</span></li>
+<li><a href="https://glazy.org" target="_blank" rel="noopener">Glazy.org</a> <span>· otwarta baza receptur i materiałów</span></li>
+</ul>
+</div>
+
+<div class="box">
+<h3 style="margin-top:0">Historia ceramiki</h3>
+<ul class="zr">
+<li><a href="https://en.wikipedia.org/wiki/Venus_of_Doln%C3%AD_V%C4%9Bstonice" target="_blank" rel="noopener">Wikipedia — Venus of Dolní Věstonice</a> <span>· najstarsza ceramika świata</span></li>
+<li><a href="https://www.britannica.com/art/black-figure-pottery" target="_blank" rel="noopener">Britannica — Black-figure pottery</a> i <a href="https://www.britannica.com/art/red-figure-pottery" target="_blank" rel="noopener">Red-figure pottery</a> <span>· wazy greckie, daty ~700 / ~530 p.n.e.</span></li>
+<li><a href="https://www.britannica.com/art/terra-sigillata-ware" target="_blank" rel="noopener">Britannica — Terra sigillata ware</a> <span>· rzymska ceramika seryjna</span></li>
+<li><a href="https://www.metmuseum.org/essays/maiolica-in-the-renaissance" target="_blank" rel="noopener">The Met — Maiolica in the Renaissance</a> <span>· majolika włoska</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Iznik_pottery" target="_blank" rel="noopener">Wikipedia — Iznik pottery</a> <span>· ceramika osmańska</span></li>
+<li><a href="https://www.samfogg.com/exhibitions/65/" target="_blank" rel="noopener">Sam Fogg — Lustreware: from Abbasid Iraq to Renaissance Italy</a> <span>· lustry z Basry (IX w.)</span></li>
+<li><a href="https://www.metmuseum.org/essays/goryeo-celadon" target="_blank" rel="noopener">The Met — Goryeo Celadon</a> i <a href="https://www.worldhistory.org/article/945/korean-celadon-pottery/" target="_blank" rel="noopener">World History Encyclopedia — Korean Celadon</a> <span>· seladony i sanggam</span></li>
+<li><a href="https://www.britannica.com/art/Meissen-porcelain" target="_blank" rel="noopener">Britannica — Meissen porcelain</a> <span>· Böttger, 1708/1710</span></li>
+<li><a href="https://www.britannica.com/art/raku-ware" target="_blank" rel="noopener">Britannica — Raku ware</a> <span>· Chōjirō i Sen no Rikyū</span></li>
+<li><a href="https://www.britannica.com/art/Wedgwood-ware" target="_blank" rel="noopener">Britannica — Wedgwood ware</a> i <a href="https://www.britannica.com/art/jasperware" target="_blank" rel="noopener">Jasperware</a> <span>· 1759 / 1774</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Vincennes_porcelain" target="_blank" rel="noopener">Wikipedia — Vincennes porcelain</a> i <a href="https://www.britannica.com/art/Sevres-porcelain" target="_blank" rel="noopener">Britannica — Sèvres</a> <span>· 1740 / 1756</span></li>
+<li><a href="https://www.leachpottery.com/history" target="_blank" rel="noopener">Leach Pottery — History</a> <span>· St Ives 1920, „A Potter's Book" 1940</span></li>
+</ul>
+</div>
+
+<div class="box">
+<h3 style="margin-top:0">Ceramika polska</h3>
+<ul class="zr">
+<li><a href="https://art.boleslawiec.pl/historia-tradycja-ceramiki-boleslawieckiej/" target="_blank" rel="noopener">art.boleslawiec.pl — Historia i tradycja ceramiki bolesławieckiej</a> <span>· wzmianki od 1380 r., stempelki XVIII w.</span></li>
+<li><a href="https://kropkanakubku.pl/pl/n/6" target="_blank" rel="noopener">Kropka na Kubku — Historia ceramiki bolesławieckiej</a></li>
+</ul>
+</div>
+
+<div class="box">
+<h3 style="margin-top:0">Kalkulatory — inspiracje</h3>
+<ul class="zr">
+<li><a href="https://www.clayshrinks.com/" target="_blank" rel="noopener">clayshrinks.com</a> <span>· dwukierunkowy kalkulator skurczu</span></li>
+<li><a href="https://www.claycalculators.com/" target="_blank" rel="noopener">claycalculators.com</a> <span>· zestaw kalkulatorów ceramicznych</span></li>
+</ul>
+</div>
+
+<div class="box">
+<h3 style="margin-top:0">🐛 Znalazłaś/eś błąd?</h3>
+<p style="font-size:.92rem;margin:0 0 10px">Jeśli któraś data, temperatura albo opis techniki wygląda podejrzanie — daj znać. Każde zgłoszenie trafia prosto na maila autorki i zostanie zweryfikowane.</p>
+<button class="kbtn" id="zrodlaZglos">Zgłoś błąd</button>
+</div>
+</section>
+
 </div>
 
 <div class="modal" id="notModal">
@@ -2025,7 +2108,7 @@ Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisuj
 <input type="file" id="impFile" accept=".json" style="display:none">
 </div>
 <p class="kophint">Dane zapisują się automatycznie w tej przeglądarce. Eksport pobiera plik z rozszerzeniem <b>.json</b> — to zabezpieczenie na wypadek, gdyby wprowadzone dane się nie zapisały (nowe urządzenie, wyczyszczona przeglądarka): plik można wtedy wgrać ręcznie i wszystko wróci.</p>
-<p class="fcredit">Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi</p>
+<p class="fcredit">Kompendium ceramiczne · fakty zweryfikowane — zobacz <button class="linklike" id="zrodlaLink">źródła</button></p>
 </div>
 <div class="fright">
 <button class="kbtn" id="fbGo">💬 Wyślij sugestię</button>
@@ -2044,7 +2127,7 @@ var st=load();
 /* nawigacja: 4 części + podzakładki Wiedzy */
 var tabs=document.querySelectorAll("nav.zk button"),panels=document.querySelectorAll(".panel"),
     gbtns=document.querySelectorAll("nav.gl button"),subnav=document.querySelector("nav.zk");
-var GMAP={dash:"p-dash",nauka:"p-nauka",notatki:"p-notatki",prac:"p-prac"};
+var GMAP={dash:"p-dash",nauka:"p-nauka",notatki:"p-notatki",prac:"p-prac",zrodla:"p-zrodla"};
 st.tab=st.tab||"glina";
 function showTab(id){
  panels.forEach(function(p){p.classList.remove("on")});
@@ -2219,28 +2302,56 @@ st.prac=st.prac||{prace:[],masy:[],szkliwa:[],wypaly:[]};
 var ETAPY=["Pomysł","Formowanie","Suszenie","Biskwit","Szkliwienie","Wypał ostry","Gotowe"];
 var EDITS={};
 function delBtn(i){return'<td class="akc"><button class="kbtn ed" data-i="'+i+'" title="edytuj">✎</button><button class="kbtn del" data-i="'+i+'" title="usuń">✕</button></td>'}
+function rerenderSec(sec){
+ if(sec==="klienci"&&typeof klRender==="function")klRender();
+ else if(sec==="todo"&&typeof tdRender==="function")tdRender();
+ else if(typeof pracRender==="function")pracRender();
+}
 function trybEdycji(btnId,sec,on){
  var b=document.getElementById(btnId);
- if(on){b.textContent="Zapisz zmiany";b.dataset.edit="1"}
- else{b.textContent=b.dataset.orig||b.textContent;delete b.dataset.edit;EDITS[sec]=null}
+ if(on){
+  b.textContent="Zapisz zmiany";b.dataset.edit="1";
+  if(b._cancel)b._cancel.style.display="";
+  b.scrollIntoView({behavior:"smooth",block:"center"});
+ }else{
+  b.textContent=b.dataset.orig||b.textContent;delete b.dataset.edit;EDITS[sec]=null;
+  if(b._cancel)b._cancel.style.display="none";
+ }
+ rerenderSec(sec);
 }
 ["prDodaj","maDodaj","szDodaj","wyDodaj","klDodaj","tdDodaj"].forEach(function(id){
- var b=document.getElementById(id);if(b)b.dataset.orig=b.textContent;
+ var b=document.getElementById(id);if(!b)return;
+ b.dataset.orig=b.textContent;
+ var c=document.createElement("button");
+ c.className="kbtn alt anuluj";c.textContent="Anuluj edycję";c.style.display="none";c.type="button";
+ b.parentNode.insertBefore(c,b.nextSibling);
+ b._cancel=c;
+ var SEKCJE={prDodaj:"prace",maDodaj:"masy",szDodaj:"szkliwa",wyDodaj:"wypaly",klDodaj:"klienci",tdDodaj:"todo"};
+ c.addEventListener("click",function(){trybEdycji(id,SEKCJE[id],false)});
+});
+/* Enter w formularzach dodawania = klik przycisku */
+document.addEventListener("keydown",function(e){
+ if(e.key!=="Enter")return;
+ var inp=e.target.closest(".dodaj input");
+ if(!inp)return;
+ e.preventDefault();
+ var btn=inp.closest(".dodaj").querySelector("button.kbtn");
+ if(btn)btn.click();
 });
 function pracRender(){
  var p=st.prac;
  document.getElementById("prPrace").innerHTML=p.prace.map(function(r,i){
-  return"<tr><td>"+esc(r.n)+'</td><td><select data-i="'+i+'">'+ETAPY.map(function(e){return"<option"+(e===r.e?" selected":"")+">"+e+"</option>"}).join("")+"</select></td><td>"+fmtD(r.d)+"</td>"+delBtn(i)+"</tr>";
+  return"<tr"+(EDITS.prace===i?' class="editing"':"")+"><td>"+esc(r.n)+'</td><td><select data-i="'+i+'">'+ETAPY.map(function(e){return"<option"+(e===r.e?" selected":"")+">"+e+"</option>"}).join("")+"</select></td><td>"+fmtD(r.d)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  document.getElementById("prMasy").innerHTML=p.masy.map(function(r,i){
-  return"<tr><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.s)+"</td>"+delBtn(i)+"</tr>";
+  return"<tr"+(EDITS.masy===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.s)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  document.getElementById("prSzkliwa").innerHTML=p.szkliwa.map(function(r,i){
-  return"<tr><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
+  return"<tr"+(EDITS.szkliwa===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  p.wypaly.sort(function(a,b){return(a.data||"").localeCompare(b.data||"")});
  document.getElementById("prWypaly").innerHTML=p.wypaly.map(function(r,i){
-  return"<tr><td>"+esc(r.data||"—")+"</td><td>"+esc(r.typ)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
+  return"<tr"+(EDITS.wypaly===i?' class="editing"':"")+"><td>"+esc(r.data||"—")+"</td><td>"+esc(r.typ)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  ["Prace","Masy","Szkliwa","Wypaly"].forEach(function(k){
   var arr={Prace:p.prace,Masy:p.masy,Szkliwa:p.szkliwa,Wypaly:p.wypaly}[k];
@@ -2463,7 +2574,7 @@ if(cKw){[cKw,cH,cDuty,cPln].forEach(function(x){x.addEventListener("input",cCalc
 st.prac.klienci=st.prac.klienci||[];
 function klRender(){
  document.getElementById("prKlienci").innerHTML=st.prac.klienci.map(function(k,i){
-  return"<tr><td>"+esc(k.n)+"</td><td>"+(k.m?'<a href="mailto:'+esc(k.m)+'">'+esc(k.m)+"</a>":"—")+"</td><td>"+esc(k.t||"—")+"</td>"+
+  return"<tr"+(EDITS.klienci===i?' class="editing"':"")+"><td>"+esc(k.n)+"</td><td>"+(k.m?'<a href="mailto:'+esc(k.m)+'">'+esc(k.m)+"</a>":"—")+"</td><td>"+esc(k.t||"—")+"</td>"+
   "<td>"+(k.l?'<a href="'+esc(/^https?:\/\//.test(k.l)?k.l:"https://"+k.l)+'" target="_blank" rel="noopener">otwórz</a>':"—")+"</td><td>"+esc(k.k||"")+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  document.getElementById("prKlienciB").style.display=st.prac.klienci.length?"none":"block";
@@ -2502,7 +2613,7 @@ klRender();tdKlientFill();
 st.todo=st.todo||[];
 var TTYP={"Wysyłka":"#5f7470","Produkt":"#b4552d","Wypał":"#c25b4a","Kupno":"#7a6a3f","Inne":"#8d5f8c"};
 function tdItem(t,i,edit){
- return'<li class="'+(t.done?"done":"")+'"><input type="checkbox" data-i="'+i+'"'+(t.done?" checked":"")+'>'+
+ return'<li class="'+(t.done?"done":"")+(edit&&EDITS.todo===i?" editing":"")+'"><input type="checkbox" data-i="'+i+'"'+(t.done?" checked":"")+'>'+
  '<span class="ttyp" style="background:'+(TTYP[t.t]||"#8d5f8c")+'">'+esc(t.t)+'</span>'+
  '<span class="tx">'+esc(t.x)+(t.k?' <i style="font-style:normal;color:var(--mut);font-size:.8rem">· '+esc(t.k)+"</i>":"")+'</span>'+
  (edit?'<button class="x edt" data-i="'+i+'" title="edytuj">✎</button><button class="x" data-i="'+i+'" title="usuń">✕</button>':"")+"</li>";
@@ -2637,6 +2748,66 @@ document.getElementById("stLista").addEventListener("input",function(e){
  if(e.target.matches("textarea")){st.sticky[+e.target.dataset.i].txt=e.target.value;save(st)}
 });
 stRender();
+
+/* ===== quizy: samoocena i wynik ===== */
+st.quiz=st.quiz||{};
+document.querySelectorAll("#nk-quiz .qb").forEach(function(qb,qi){
+ var h=qb.querySelector("h3"),qs=qb.querySelectorAll("details.q");
+ var chip=document.createElement("span");chip.className="qcount qwyn";h.appendChild(chip);
+ var res=document.createElement("button");res.className="qreset";res.type="button";res.textContent="wyczyść wynik";h.appendChild(res);
+ function wyn(){
+  var ok=0,zle=0;
+  qs.forEach(function(_,i){var v=st.quiz["q"+qi+"_"+i];if(v===true)ok++;else if(v===false)zle++});
+  chip.textContent="✓ "+ok+" · ✗ "+zle+" · z "+qs.length;
+  res.style.display=(ok+zle)?"":"none";
+ }
+ qs.forEach(function(q,i){
+  var id="q"+qi+"_"+i,a=q.querySelector(".a");
+  var bar=document.createElement("div");bar.className="qoceny";
+  bar.innerHTML='<span>Umiesz odpowiedzieć bez podglądania?</span><button type="button" class="kbtn alt qtak">✓ Umiem</button><button type="button" class="kbtn alt qnie">✗ Jeszcze nie</button>';
+  a.appendChild(bar);
+  function mark(){
+   q.classList.toggle("qok",st.quiz[id]===true);
+   q.classList.toggle("qzle",st.quiz[id]===false);
+  }
+  bar.querySelector(".qtak").addEventListener("click",function(){st.quiz[id]=true;save(st);mark();wyn()});
+  bar.querySelector(".qnie").addEventListener("click",function(){st.quiz[id]=false;save(st);mark();wyn()});
+  mark();
+ });
+ res.addEventListener("click",function(){
+  qs.forEach(function(q,i){delete st.quiz["q"+qi+"_"+i];q.classList.remove("qok","qzle")});
+  save(st);wyn();
+ });
+ wyn();
+});
+
+/* ===== dostępność: fiszki i checkboxy z klawiatury ===== */
+document.querySelectorAll(".fk").forEach(function(k){
+ k.setAttribute("tabindex","0");k.setAttribute("role","button");
+ var f=k.querySelector(".fk-f");
+ if(f)k.setAttribute("aria-label","Fiszka: "+f.textContent.trim()+" — Enter odwraca");
+ k.addEventListener("keydown",function(e){
+  if(e.key==="Enter"||e.key===" "){e.preventDefault();k.classList.toggle("flip")}
+ });
+});
+document.querySelectorAll(".tk[data-tid]").forEach(function(t){
+ var ch=t.querySelector(".chkwrap input"),h=t.querySelector("h4");
+ if(ch&&h)ch.setAttribute("aria-label","Opanowane: "+h.textContent);
+});
+leks.forEach(function(l){
+ var ch=l.querySelector(".chkwrap input"),h=l.querySelector(".lek-h b");
+ if(ch&&h)ch.setAttribute("aria-label","Ukończona: "+h.textContent);
+});
+
+/* ===== źródła ===== */
+document.getElementById("zrodlaLink").addEventListener("click",function(){showCzesc("zrodla")});
+document.getElementById("zrodlaZglos").addEventListener("click",function(){
+ showCzesc("dash");
+ setTimeout(function(){
+  var t=document.getElementById("fbMsg");
+  if(t){t.scrollIntoView({behavior:"smooth",block:"center"});t.focus()}
+ },80);
+});
 })();
 </script>
 </body>
