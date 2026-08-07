@@ -1979,6 +1979,24 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 </div>
 </section>
 
+<div class="box" id="kopia" style="margin-top:26px">
+<h2>💾 Kopia zapasowa danych</h2>
+<p style="font-size:.92rem;margin:0 0 6px">Wszystko, co wprowadzasz (postęp nauki, notatki, zamówienia, pracownia), zapisuje się automatycznie w tej przeglądarce. Na wszelki wypadek możesz też trzymać własną kopię:</p>
+<div class="kalk">
+<div class="ksum">
+<h3 style="margin:0 0 6px;font-size:1rem;color:var(--acc)">⬇ Eksport kopii zapasowej</h3>
+<p style="font-size:.86rem;margin:0 0 10px">Pobierze się plik z rozszerzeniem <b>.json</b> (np. <i>ceramika-kopia-2026-08-07.json</i>) zawierający komplet Twoich danych. Przechowaj go na dysku lub w chmurze.</p>
+<button class="kbtn" id="expBtn">Eksport kopii zapasowej</button>
+</div>
+<div class="ksum">
+<h3 style="margin:0 0 6px;font-size:1rem;color:var(--acc)">⬆ Zaimportuj swój plik kopii</h3>
+<p style="font-size:.86rem;margin:0 0 10px">Gdyby wprowadzone dane się nie zapisały (nowe urządzenie, inna przeglądarka, wyczyszczone dane) — to jest Twoje zabezpieczenie: wgraj zapisany wcześniej plik <b>.json</b>, a wszystko wróci na miejsce.</p>
+<button class="kbtn alt" id="impBtn">Zaimportuj swój plik kopii</button>
+<input type="file" id="impFile" accept=".json" style="display:none">
+</div>
+</div>
+</div>
+
 </div>
 
 <div class="modal" id="notModal">
@@ -2003,10 +2021,7 @@ Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisuj
 <button id="toastOk">Rozumiem</button>
 </div>
 
-<footer>
-<div style="margin-bottom:10px"><button class="kbtn alt" id="expBtn">⬇ Eksportuj kopię danych (JSON)</button> <button class="kbtn alt" id="impBtn">⬆ Importuj kopię</button><input type="file" id="impFile" accept=".json" style="display:none"></div>
-Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi · dane zapisywane lokalnie na tym urządzeniu
-</footer>
+<footer>Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi · dane zapisywane lokalnie na tym urządzeniu</footer>
 
 <script>
 (function(){
