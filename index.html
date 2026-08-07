@@ -107,8 +107,9 @@ nav.nk button.on{color:var(--acc);border-bottom-color:var(--acc)}
 .todo .x.edt{color:var(--mut)}
 .todo .x.edt:hover{color:var(--acc)}
 footer .kbtn.alt{font-size:.78rem;padding:5px 11px}
-.kopia-f{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;color:var(--ink);font-size:.82rem;margin-bottom:6px}
-.kophint{font-size:.76rem;color:var(--mut);max-width:640px;margin:0 auto 14px;line-height:1.5}
+.kopia-f{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--ink);font-size:.82rem;margin-bottom:8px}
+.kophint{font-size:.76rem;color:var(--mut);max-width:640px;margin:0 0 12px;line-height:1.5}
+.fcredit{margin:0;font-size:.76rem}
 .box{background:var(--sur);border:1px solid var(--lin);padding:24px 26px;margin-bottom:20px}
 .box h2{font-size:1.3rem;font-weight:700;margin-bottom:10px}
 .box h3{font-size:1.02rem;font-weight:700;color:var(--acc);margin:20px 0 8px}
@@ -222,7 +223,10 @@ figure.schemat figcaption{font-size:.78rem;color:var(--mut);text-align:center;ma
 .npostep .lbar i{background:var(--acc)}
 textarea.nt{width:100%;font:inherit;font-size:.92rem;border:1px solid var(--lin);padding:12px;resize:vertical;background:#fff;min-height:150px}
 .ntst{font-size:.78rem;color:#4c7a34;font-weight:600;min-height:1.1em;display:block;margin-top:5px}
-footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
+footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);font-size:.8rem;padding:24px 0;margin-top:30px}
+.fwrap{max-width:1140px;margin:0 auto;padding:0 22px;display:flex;gap:24px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.fleft{flex:1 1 460px;min-width:0}
+.fright{flex:0 0 auto}
 @media(max-width:840px){
  h1{font-size:1.45rem}.wrap{padding:0 14px 60px}
  .met div{min-width:92px;padding:8px 12px}.met b{font-size:1.15rem}
@@ -2006,6 +2010,8 @@ Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisuj
 </div>
 
 <footer>
+<div class="fwrap">
+<div class="fleft">
 <div class="kopia-f">
 <b>💾 Kopia zapasowa:</b>
 <button class="kbtn alt" id="expBtn">⬇ Eksport kopii zapasowej (.json)</button>
@@ -2013,7 +2019,12 @@ Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisuj
 <input type="file" id="impFile" accept=".json" style="display:none">
 </div>
 <p class="kophint">Dane zapisują się automatycznie w tej przeglądarce. Eksport pobiera plik z rozszerzeniem <b>.json</b> — to zabezpieczenie na wypadek, gdyby wprowadzone dane się nie zapisały (nowe urządzenie, wyczyszczona przeglądarka): plik można wtedy wgrać ręcznie i wszystko wróci.</p>
-Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi
+<p class="fcredit">Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi</p>
+</div>
+<div class="fright">
+<button class="kbtn" id="fbGo">💬 Wyślij sugestię</button>
+</div>
+</div>
 </footer>
 
 <script>
@@ -2555,6 +2566,15 @@ document.getElementById("impFile").addEventListener("change",function(){
 /* ===== modal: Esc ===== */
 document.addEventListener("keydown",function(e){
  if(e.key==="Escape"&&notModal.classList.contains("show"))notClose();
+});
+
+/* skrót w stopce → okienko sugestii na Pulpicie */
+document.getElementById("fbGo").addEventListener("click",function(){
+ showCzesc("dash");
+ setTimeout(function(){
+  var t=document.getElementById("fbMsg");
+  if(t){t.scrollIntoView({behavior:"smooth",block:"center"});t.focus()}
+ },80);
 });
 
 /* ===== sugestie i zgłoszenia (mail) ===== */
