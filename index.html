@@ -24,10 +24,45 @@ h1{font-size:1.85rem;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
 .prg{margin-top:18px;background:#eee7d7;height:10px;overflow:hidden}
 .prg i{display:block;height:100%;width:0;background:var(--acc);transition:width .35s}
 .pinfo{font-size:.8rem;margin-top:8px;display:flex;gap:16px;flex-wrap:wrap;color:var(--mut)}
-nav.gl{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 4px}
-nav.gl button{background:var(--sur);border:1px solid var(--lin);padding:10px 18px;font:inherit;font-weight:600;font-size:.92rem;color:var(--mut);cursor:pointer}
-nav.gl button:hover{color:var(--ink);border-color:#cbc1aa}
-nav.gl button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+nav.gl{position:sticky;top:0;z-index:60;background:var(--sur);border-bottom:1px solid var(--lin)}
+.gnav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;max-width:1140px;margin:0 auto;padding:8px 22px}
+.brand{font-weight:700;font-size:1rem;margin-right:14px;white-space:nowrap}
+nav.gl button{background:none;border:none;padding:9px 15px;font:inherit;font-weight:600;font-size:.92rem;color:var(--mut);cursor:pointer}
+nav.gl button:hover{color:var(--ink);background:#f3eee1}
+nav.gl button.on{background:var(--acc);color:#fff}
+nav.gl button.right{margin-left:auto}
+.kbtn{background:var(--acc);color:#fff;border:none;padding:7px 13px;font:inherit;font-size:.84rem;font-weight:600;cursor:pointer}
+.kbtn.alt{background:#fff;color:var(--ink);border:1px solid var(--lin)}
+.kbtn.del{background:#fff;color:var(--acc);border:1px solid var(--lin);padding:4px 9px}
+.note{background:var(--sur);border:1px solid var(--lin);padding:14px 17px;margin-bottom:9px;cursor:pointer}
+.note:hover{border-color:#c9bfa7}
+.note-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.note-h b{font-size:1.02rem}
+.note-d{font-size:.78rem;color:var(--mut);margin-left:auto;white-space:nowrap}
+.note-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.ntag{background:#f3eee1;color:#77653f;font-size:.72rem;font-weight:600;padding:1px 9px}
+.note-x{margin:6px 0 0;font-size:.88rem;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tagfilter{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tagchip{border:1px solid var(--lin);background:#fff;padding:3px 11px;font:inherit;font-size:.8rem;font-weight:600;color:var(--mut);cursor:pointer}
+.tagchip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.modal{display:none;position:fixed;inset:0;background:rgba(38,34,28,.45);z-index:100;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto}
+.modal.show{display:flex}
+.modal-card{background:#fff;border:1px solid var(--lin);max-width:660px;width:100%;padding:22px 26px}
+.modal-card h2{font-size:1.2rem;margin-bottom:14px}
+.modal-card label{display:block;font-size:.84rem;font-weight:600;color:var(--mut);margin-bottom:12px}
+.modal-card input[type=text]{display:block;width:100%;font:inherit;font-size:.95rem;padding:8px 11px;border:1px solid var(--lin);margin-top:4px;background:#fff}
+.sugtags{display:flex;gap:5px;flex-wrap:wrap;margin:-6px 0 12px}
+.sugtags button{border:1px dashed var(--lin);background:#fdfcf8;padding:2px 10px;font:inherit;font-size:.76rem;color:var(--mut);cursor:pointer}
+.sugtags button:hover{color:var(--acc);border-color:var(--acc)}
+.modal-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.modal-actions .del{margin-left:auto}
+.prtab{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:10px}
+.prtab th,.prtab td{border:1px solid var(--lin);padding:7px 10px;text-align:left;vertical-align:middle}
+.prtab th{background:#f3eee1;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+.prtab select,.prtab input{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--lin);background:#fff;max-width:100%}
+.dodaj{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.dodaj input,.dodaj select{font:inherit;font-size:.9rem;padding:7px 10px;border:1px solid var(--lin);background:#fff;min-width:0}
+.puste{font-size:.86rem;color:var(--mut);margin:10px 0 0}
 nav.zk{display:flex;gap:2px;flex-wrap:wrap;margin:18px 0 24px;border-bottom:1px solid var(--lin)}
 nav.zk button{background:none;border:none;border-bottom:3px solid transparent;padding:10px 14px;font:inherit;font-weight:600;font-size:.9rem;color:var(--mut);cursor:pointer}
 nav.zk button:hover{color:var(--ink);background:#f3eee1}
@@ -58,7 +93,7 @@ details[open]>summary::before{content:"▾ "}
 details.szcz p,details.szcz li{margin:6px 0 0;font-size:.92rem;color:#48412f}
 details.szcz ul{margin:4px 0 0;padding-left:20px}
 .pill{display:inline-block;background:var(--pc,#b4552d);color:#fff;padding:2px 10px;font-size:.74rem;font-weight:600;white-space:nowrap;margin-right:5px}
-.narz{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px;background:var(--sur);border:1px solid var(--lin);padding:12px 14px;position:sticky;top:0;z-index:20}
+.narz{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px;background:var(--sur);border:1px solid var(--lin);padding:12px 14px;position:sticky;top:52px;z-index:20}
 .narz select,.narz button,.narz input[type=search]{font:inherit;font-size:.9rem;padding:7px 12px;border:1px solid var(--lin);background:#fff;cursor:pointer;min-width:0}
 .narz input[type=search]{cursor:text;flex:1 1 190px;max-width:280px}
 .narz button{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
@@ -173,19 +208,20 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 </head>
 <body>
 
+<nav class="gl"><div class="gnav">
+<span class="brand">🏺 Ceramika</span>
+<button data-g="nauka" class="on">🎓 Ścieżka nauki</button>
+<button data-g="wiedza">📚 Wiedza</button>
+<button data-g="notatki">📝 Notatki</button>
+<button data-g="prac" class="right">🏠 Moja pracownia</button>
+</div></nav>
+
 <header class="hero"><div class="wrap">
 <h1>🏺 Ceramika — techniki i historia</h1>
 <p class="sub" style="margin-bottom:0">Kompendium metod formowania, wypału, szkliwienia i zdobienia ceramiki oraz interaktywna historia ceramiki od prehistorii do współczesności.</p>
 </div></header>
 
 <div class="wrap">
-
-<nav class="gl">
-<button data-g="nauka" class="on">🎓 Ścieżka nauki</button>
-<button data-g="wiedza">📚 Wiedza</button>
-<button data-g="notatki">📝 Notatki</button>
-<button data-g="prac">🏠 Moja pracownia</button>
-</nav>
 
 <nav class="zk">
 <button class="on" data-p="glina">🧱 Glina</button>
@@ -1766,28 +1802,92 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 
 <!-- ============ NOTATKI ============ -->
 <section class="panel" id="p-notatki">
-<div class="box"><h2>📝 Notatki</h2>
-<p style="font-size:.9rem;margin:0">Trzy notatniki zapisywane automatycznie na tym urządzeniu — do nauki, receptur i dziennika wypałów.</p></div>
-<div class="box"><h2>📖 Notatki z nauki</h2>
-<textarea class="nt" id="nt1" placeholder="Trudne fiszki, rzeczy do powtórki, własne skojarzenia i mnemotechniki…"></textarea>
-<span class="ntst" id="nt1s"></span></div>
-<div class="box"><h2>🧪 Receptury i szkliwa</h2>
-<textarea class="nt" id="nt2" placeholder="Receptury szkliw i angob, proporcje, wyniki testów (line blend, płytki)…"></textarea>
-<span class="ntst" id="nt2s"></span></div>
-<div class="box"><h2>🔥 Dziennik wypałów</h2>
-<textarea class="nt" id="nt3" placeholder="Data, program pieca, co było w środku, wynik, wnioski na następny raz…"></textarea>
-<span class="ntst" id="nt3s"></span></div>
+<div class="box">
+<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+<h2 style="margin:0">📝 Notatki</h2>
+<button class="kbtn" id="notNew">＋ Utwórz notatkę</button>
+</div>
+<p style="font-size:.9rem;margin:10px 0 0;color:var(--mut)">Lista notatek z datami i tytułami, zapisywana na tym urządzeniu. Taguj rozdziałami (np. <i>Szkliwienie</i>, <i>Wypał</i>) i filtruj klikając tag.</p>
+<div class="tagfilter" id="notTags"></div>
+</div>
+<div id="notLista"></div>
+<p class="nores" id="notBrak">Brak notatek — kliknij „Utwórz notatkę”.</p>
 </section>
 
 <!-- ============ MOJA PRACOWNIA ============ -->
 <section class="panel" id="p-prac">
-<div class="box" style="text-align:center;padding:48px 24px">
-<div style="font-size:3rem">🏗️🏺</div>
-<h2 style="margin:10px 0 6px">Moja pracownia — w rozbudowie</h2>
-<p style="font-size:.95rem;color:var(--mut);max-width:520px;margin:0 auto">Ta część serwisu dopiero powstaje. W planach: ewidencja Twoich prac (od gliny po wypał), lista mas i szkliw w pracowni, planer wypałów pieca i galeria zdjęć.</p>
+<div class="box">
+<h2>🏠 Moja pracownia</h2>
+<p style="font-size:.9rem;margin:0;color:var(--mut)">Panel organizacji pracowni: prace w toku z etapami, Twoje masy i szkliwa oraz planer wypałów. Wszystko zapisuje się na tym urządzeniu.</p>
+</div>
+
+<div class="box">
+<h2>🏺 Prace w toku</h2>
+<table class="prtab"><thead><tr><th>Praca</th><th style="width:170px">Etap</th><th style="width:110px">Dodano</th><th style="width:40px"></th></tr></thead>
+<tbody id="prPrace"></tbody></table>
+<p class="puste" id="prPraceB">Brak prac — dodaj pierwszą poniżej.</p>
+<div class="dodaj">
+<input type="text" id="prNazwa" placeholder="np. Zestaw kubków dla mamy" style="flex:1 1 220px">
+<select id="prEtap"><option>Pomysł</option><option>Formowanie</option><option>Suszenie</option><option>Biskwit</option><option>Szkliwienie</option><option>Wypał ostry</option><option>Gotowe</option></select>
+<button class="kbtn" id="prDodaj">Dodaj pracę</button>
+</div>
+</div>
+
+<div class="box">
+<h2>🧱 Moje masy</h2>
+<table class="prtab"><thead><tr><th>Masa</th><th style="width:150px">Temperatura</th><th style="width:110px">Skurcz</th><th style="width:40px"></th></tr></thead>
+<tbody id="prMasy"></tbody></table>
+<p class="puste" id="prMasyB">Brak mas w ewidencji.</p>
+<div class="dodaj">
+<input type="text" id="maNazwa" placeholder="np. Kamionka jasna z szamotem 25%" style="flex:1 1 220px">
+<input type="text" id="maTemp" placeholder="np. 1200–1250 °C" style="flex:0 1 150px">
+<input type="text" id="maSkurcz" placeholder="np. 11%" style="flex:0 1 100px">
+<button class="kbtn" id="maDodaj">Dodaj masę</button>
+</div>
+</div>
+
+<div class="box">
+<h2>✨ Moje szkliwa</h2>
+<table class="prtab"><thead><tr><th>Szkliwo</th><th style="width:150px">Stożek / temp.</th><th>Uwagi</th><th style="width:40px"></th></tr></thead>
+<tbody id="prSzkliwa"></tbody></table>
+<p class="puste" id="prSzkliwaB">Brak szkliw w ewidencji.</p>
+<div class="dodaj">
+<input type="text" id="szNazwa" placeholder="np. Seladon butelkowy" style="flex:1 1 200px">
+<input type="text" id="szTemp" placeholder="np. stożek 6" style="flex:0 1 130px">
+<input type="text" id="szUwagi" placeholder="np. 2 warstwy, spływa przy 3" style="flex:1 1 200px">
+<button class="kbtn" id="szDodaj">Dodaj szkliwo</button>
+</div>
+</div>
+
+<div class="box">
+<h2>🔥 Planer wypałów</h2>
+<table class="prtab"><thead><tr><th style="width:140px">Data</th><th style="width:170px">Typ</th><th>Co w piecu / uwagi</th><th style="width:40px"></th></tr></thead>
+<tbody id="prWypaly"></tbody></table>
+<p class="puste" id="prWypalyB">Brak zaplanowanych wypałów.</p>
+<div class="dodaj">
+<input type="date" id="wyData">
+<select id="wyTyp"><option>Biskwit</option><option>Szkliwny</option><option>Raku / inny</option></select>
+<input type="text" id="wyUwagi" placeholder="np. kubki + miski, program C04" style="flex:1 1 220px">
+<button class="kbtn" id="wyDodaj">Zaplanuj wypał</button>
+</div>
 </div>
 </section>
 
+</div>
+
+<div class="modal" id="notModal">
+<div class="modal-card">
+<h2 id="notModalT">Nowa notatka</h2>
+<label>Tytuł<input type="text" id="notTitle" placeholder="np. Wnioski z wypału biskwitowego"></label>
+<label>Tagi (po przecinku)<input type="text" id="notTagsIn" placeholder="np. Wypał, dziennik"></label>
+<div class="sugtags" id="notSug"></div>
+<label>Treść<textarea class="nt" id="notBody" style="margin-top:4px"></textarea></label>
+<div class="modal-actions">
+<button class="kbtn" id="notSave">Zapisz</button>
+<button class="kbtn alt" id="notCancel">Anuluj</button>
+<button class="kbtn del" id="notDel">Usuń notatkę</button>
+</div>
+</div>
 </div>
 
 <div class="toast" id="toast" role="status">
@@ -1876,16 +1976,143 @@ document.getElementById("nNext").addEventListener("click",function(){
 });
 lekRefresh();
 
-/* notatki — autozapis */
-["nt1","nt2","nt3"].forEach(function(id){
- var t=document.getElementById(id);if(!t)return;
- t.value=st[id]||"";
- t.addEventListener("input",function(){
-  st[id]=t.value;save(st);
-  var s=document.getElementById(id+"s");s.textContent="✓ zapisano";
-  clearTimeout(t._tm);t._tm=setTimeout(function(){s.textContent=""},1500);
+/* ===== notatki: lista + tagi + edytor ===== */
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function fmtD(ts){var d=new Date(ts);function p(n){return(n<10?"0":"")+n}return p(d.getDate())+"."+p(d.getMonth()+1)+"."+d.getFullYear()}
+if(!st.notes){
+ st.notes=[];
+ var mig=[["nt1","Notatki z nauki",["Nauka"]],["nt2","Receptury i szkliwa",["Szkliwienie","receptura"]],["nt3","Dziennik wypałów",["Wypał","dziennik"]]];
+ mig.forEach(function(m){
+  if(st[m[0]]&&st[m[0]].trim()){st.notes.push({id:"n"+Date.now()+m[0],title:m[1],tags:m[2],body:st[m[0]],created:Date.now(),updated:Date.now()})}
+  delete st[m[0]];
  });
+ save(st);
+}
+var notFilter=null,notEdit=null,
+ notLista=document.getElementById("notLista"),notBrak=document.getElementById("notBrak"),
+ notTagsEl=document.getElementById("notTags"),notModal=document.getElementById("notModal"),
+ notTitle=document.getElementById("notTitle"),notTagsIn=document.getElementById("notTagsIn"),
+ notBody=document.getElementById("notBody");
+var SUGTAGS=["Glina","Formowanie","Wypał","Szkliwienie","Zdobienie","Historia","Nauka","Pracownia","receptura","dziennik"];
+document.getElementById("notSug").innerHTML="dodaj tag: "+SUGTAGS.map(function(t){return'<button type="button" data-t="'+t+'">'+t+"</button>"}).join("");
+document.getElementById("notSug").addEventListener("click",function(e){
+ var t=e.target.dataset&&e.target.dataset.t;if(!t)return;
+ var cur=notTagsIn.value.split(",").map(function(x){return x.trim()}).filter(Boolean);
+ if(cur.indexOf(t)<0)cur.push(t);notTagsIn.value=cur.join(", ");
 });
+function notRender(){
+ var wszystkie=[];st.notes.forEach(function(n){(n.tags||[]).forEach(function(t){if(wszystkie.indexOf(t)<0)wszystkie.push(t)})});
+ notTagsEl.innerHTML=wszystkie.length?('<button class="tagchip'+(notFilter===null?" on":"")+'" data-t="">wszystkie</button>'+
+  wszystkie.map(function(t){return'<button class="tagchip'+(notFilter===t?" on":"")+'" data-t="'+esc(t)+'">'+esc(t)+"</button>"}).join("")):"";
+ var lista=st.notes.slice().sort(function(a,b){return b.updated-a.updated})
+  .filter(function(n){return!notFilter||(n.tags||[]).indexOf(notFilter)>-1});
+ notLista.innerHTML=lista.map(function(n){
+  return'<div class="note" data-id="'+n.id+'"><div class="note-h"><b>'+esc(n.title)+'</b><span class="note-d">'+fmtD(n.updated)+(n.updated!==n.created?" (utw. "+fmtD(n.created)+")":"")+"</span></div>"+
+  ((n.tags||[]).length?'<div class="note-tags">'+n.tags.map(function(t){return'<span class="ntag">'+esc(t)+"</span>"}).join("")+"</div>":"")+
+  (n.body?'<p class="note-x">'+esc(n.body.slice(0,160))+"</p>":"")+"</div>";
+ }).join("");
+ notBrak.style.display=lista.length?"none":"block";
+}
+notTagsEl.addEventListener("click",function(e){
+ var b=e.target.closest(".tagchip");if(!b)return;
+ notFilter=b.dataset.t||null;notRender();
+});
+function notOpen(id){
+ notEdit=id;
+ var n=id?st.notes.find(function(x){return x.id===id}):null;
+ document.getElementById("notModalT").textContent=n?"Edytuj notatkę":"Nowa notatka";
+ notTitle.value=n?n.title:"";notTagsIn.value=n?(n.tags||[]).join(", "):(notFilter||"");
+ notBody.value=n?n.body:"";
+ document.getElementById("notDel").style.display=n?"":"none";
+ notModal.classList.add("show");notTitle.focus();
+}
+function notClose(){notModal.classList.remove("show");notEdit=null}
+notLista.addEventListener("click",function(e){
+ var el=e.target.closest(".note");if(el)notOpen(el.dataset.id);
+});
+document.getElementById("notNew").addEventListener("click",function(){notOpen(null)});
+document.getElementById("notCancel").addEventListener("click",notClose);
+notModal.addEventListener("click",function(e){if(e.target===notModal)notClose()});
+document.getElementById("notSave").addEventListener("click",function(){
+ var tytul=notTitle.value.trim()||"Bez tytułu",
+     tagi=notTagsIn.value.split(",").map(function(x){return x.trim()}).filter(Boolean),
+     tresc=notBody.value;
+ if(notEdit){
+  var n=st.notes.find(function(x){return x.id===notEdit});
+  n.title=tytul;n.tags=tagi;n.body=tresc;n.updated=Date.now();
+ }else{
+  st.notes.push({id:"n"+Date.now(),title:tytul,tags:tagi,body:tresc,created:Date.now(),updated:Date.now()});
+ }
+ save(st);notClose();notRender();
+});
+document.getElementById("notDel").addEventListener("click",function(){
+ if(notEdit&&confirm("Usunąć tę notatkę?")){
+  st.notes=st.notes.filter(function(x){return x.id!==notEdit});
+  save(st);notClose();notRender();
+ }
+});
+notRender();
+
+/* ===== moja pracownia ===== */
+st.prac=st.prac||{prace:[],masy:[],szkliwa:[],wypaly:[]};
+var ETAPY=["Pomysł","Formowanie","Suszenie","Biskwit","Szkliwienie","Wypał ostry","Gotowe"];
+function delBtn(i){return'<td><button class="kbtn del" data-i="'+i+'" title="usuń">✕</button></td>'}
+function pracRender(){
+ var p=st.prac;
+ document.getElementById("prPrace").innerHTML=p.prace.map(function(r,i){
+  return"<tr><td>"+esc(r.n)+'</td><td><select data-i="'+i+'">'+ETAPY.map(function(e){return"<option"+(e===r.e?" selected":"")+">"+e+"</option>"}).join("")+"</select></td><td>"+fmtD(r.d)+"</td>"+delBtn(i)+"</tr>";
+ }).join("");
+ document.getElementById("prMasy").innerHTML=p.masy.map(function(r,i){
+  return"<tr><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.s)+"</td>"+delBtn(i)+"</tr>";
+ }).join("");
+ document.getElementById("prSzkliwa").innerHTML=p.szkliwa.map(function(r,i){
+  return"<tr><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
+ }).join("");
+ p.wypaly.sort(function(a,b){return(a.data||"").localeCompare(b.data||"")});
+ document.getElementById("prWypaly").innerHTML=p.wypaly.map(function(r,i){
+  return"<tr><td>"+esc(r.data||"—")+"</td><td>"+esc(r.typ)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
+ }).join("");
+ ["Prace","Masy","Szkliwa","Wypaly"].forEach(function(k){
+  var arr={Prace:p.prace,Masy:p.masy,Szkliwa:p.szkliwa,Wypaly:p.wypaly}[k];
+  document.getElementById("pr"+k+"B").style.display=arr.length?"none":"block";
+ });
+}
+function pracBind(tbodyId,arrName){
+ document.getElementById(tbodyId).addEventListener("click",function(e){
+  var b=e.target.closest("button.del");if(!b)return;
+  st.prac[arrName].splice(+b.dataset.i,1);save(st);pracRender();
+ });
+}
+pracBind("prPrace","prace");pracBind("prMasy","masy");pracBind("prSzkliwa","szkliwa");pracBind("prWypaly","wypaly");
+document.getElementById("prPrace").addEventListener("change",function(e){
+ var s=e.target.closest("select");if(!s)return;
+ st.prac.prace[+s.dataset.i].e=s.value;save(st);
+});
+document.getElementById("prDodaj").addEventListener("click",function(){
+ var n=document.getElementById("prNazwa");if(!n.value.trim())return;
+ st.prac.prace.push({n:n.value.trim(),e:document.getElementById("prEtap").value,d:Date.now()});
+ n.value="";save(st);pracRender();
+});
+document.getElementById("maDodaj").addEventListener("click",function(){
+ var n=document.getElementById("maNazwa");if(!n.value.trim())return;
+ st.prac.masy.push({n:n.value.trim(),t:document.getElementById("maTemp").value.trim(),s:document.getElementById("maSkurcz").value.trim()});
+ n.value="";document.getElementById("maTemp").value="";document.getElementById("maSkurcz").value="";
+ save(st);pracRender();
+});
+document.getElementById("szDodaj").addEventListener("click",function(){
+ var n=document.getElementById("szNazwa");if(!n.value.trim())return;
+ st.prac.szkliwa.push({n:n.value.trim(),t:document.getElementById("szTemp").value.trim(),u:document.getElementById("szUwagi").value.trim()});
+ n.value="";document.getElementById("szTemp").value="";document.getElementById("szUwagi").value="";
+ save(st);pracRender();
+});
+document.getElementById("wyDodaj").addEventListener("click",function(){
+ var d=document.getElementById("wyData").value,u=document.getElementById("wyUwagi").value.trim();
+ if(!d&&!u)return;
+ st.prac.wypaly.push({data:d,typ:document.getElementById("wyTyp").value,u:u});
+ document.getElementById("wyData").value="";document.getElementById("wyUwagi").value="";
+ save(st);pracRender();
+});
+pracRender();
 
 /* checkboxy technik + pasek postępu */
 var tks=document.querySelectorAll(".tk[data-tid]");
