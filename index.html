@@ -106,7 +106,9 @@ nav.nk button.on{color:var(--acc);border-bottom-color:var(--acc)}
 .kbtn.ed:hover{color:var(--acc);border-color:var(--acc)}
 .todo .x.edt{color:var(--mut)}
 .todo .x.edt:hover{color:var(--acc)}
-footer .kbtn.alt{font-size:.8rem}
+footer .kbtn.alt{font-size:.78rem;padding:5px 11px}
+.kopia-f{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;color:var(--ink);font-size:.82rem;margin-bottom:6px}
+.kophint{font-size:.76rem;color:var(--mut);max-width:640px;margin:0 auto 14px;line-height:1.5}
 .box{background:var(--sur);border:1px solid var(--lin);padding:24px 26px;margin-bottom:20px}
 .box h2{font-size:1.3rem;font-weight:700;margin-bottom:10px}
 .box h3{font-size:1.02rem;font-weight:700;color:var(--acc);margin:20px 0 8px}
@@ -1979,24 +1981,6 @@ footer{text-align:center;color:var(--mut);font-size:.8rem;padding:26px 0}
 </div>
 </section>
 
-<div class="box" id="kopia" style="margin-top:26px">
-<h2>💾 Kopia zapasowa danych</h2>
-<p style="font-size:.92rem;margin:0 0 6px">Wszystko, co wprowadzasz (postęp nauki, notatki, zamówienia, pracownia), zapisuje się automatycznie w tej przeglądarce. Na wszelki wypadek możesz też trzymać własną kopię:</p>
-<div class="kalk">
-<div class="ksum">
-<h3 style="margin:0 0 6px;font-size:1rem;color:var(--acc)">⬇ Eksport kopii zapasowej</h3>
-<p style="font-size:.86rem;margin:0 0 10px">Pobierze się plik z rozszerzeniem <b>.json</b> (np. <i>ceramika-kopia-2026-08-07.json</i>) zawierający komplet Twoich danych. Przechowaj go na dysku lub w chmurze.</p>
-<button class="kbtn" id="expBtn">Eksport kopii zapasowej</button>
-</div>
-<div class="ksum">
-<h3 style="margin:0 0 6px;font-size:1rem;color:var(--acc)">⬆ Zaimportuj swój plik kopii</h3>
-<p style="font-size:.86rem;margin:0 0 10px">Gdyby wprowadzone dane się nie zapisały (nowe urządzenie, inna przeglądarka, wyczyszczone dane) — to jest Twoje zabezpieczenie: wgraj zapisany wcześniej plik <b>.json</b>, a wszystko wróci na miejsce.</p>
-<button class="kbtn alt" id="impBtn">Zaimportuj swój plik kopii</button>
-<input type="file" id="impFile" accept=".json" style="display:none">
-</div>
-</div>
-</div>
-
 </div>
 
 <div class="modal" id="notModal">
@@ -2021,7 +2005,16 @@ Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisuj
 <button id="toastOk">Rozumiem</button>
 </div>
 
-<footer>Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi · dane zapisywane lokalnie na tym urządzeniu</footer>
+<footer>
+<div class="kopia-f">
+<b>💾 Kopia zapasowa:</b>
+<button class="kbtn alt" id="expBtn">⬇ Eksport kopii zapasowej (.json)</button>
+<button class="kbtn alt" id="impBtn">⬆ Zaimportuj swój plik kopii</button>
+<input type="file" id="impFile" accept=".json" style="display:none">
+</div>
+<p class="kophint">Dane zapisują się automatycznie w tej przeglądarce. Eksport pobiera plik z rozszerzeniem <b>.json</b> — to zabezpieczenie na wypadek, gdyby wprowadzone dane się nie zapisały (nowe urządzenie, wyczyszczona przeglądarka): plik można wtedy wgrać ręcznie i wszystko wróci.</p>
+Kompendium ceramiczne · fakty zweryfikowane ze źródłami encyklopedycznymi i branżowymi
+</footer>
 
 <script>
 (function(){
