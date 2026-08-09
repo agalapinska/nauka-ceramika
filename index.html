@@ -12,7 +12,7 @@
 
 <style>
 *{box-sizing:border-box}
-:root{--bg:#faf8f3;--sur:#fff;--pap:#fff;--paper2:#fdfcf8;--ink:#26221c;--mut:#71685a;--lin:#e4ddcd;--acc:#b4552d;--acc2:#d9a441}
+:root{--bg:#faf8f3;--sur:#fff;--pap:#fff;--paper2:#fdfcf8;--ink:#26221c;--mut:#645a4a;--lin:#e4ddcd;--acc:#b4552d;--acc2:#d9a441}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
 ::selection{background:var(--acc);color:#fff}
@@ -46,6 +46,11 @@ a{color:var(--acc)}
 .sticky:nth-child(even){background:#fbe7c4;border-color:#e7cd89}
 .sticky textarea{width:100%;border:none;background:none;font:inherit;font-size:.85rem;line-height:1.45;resize:none;min-height:92px;outline:none;display:block}
 .sticky .x{position:absolute;top:1px;right:5px;border:none;background:none;color:#a08a2f;cursor:pointer;font-weight:700;font-size:.9rem}
+.sticky .dn{position:absolute;top:2px;right:26px;border:none;background:none;cursor:pointer;font-size:.78rem;opacity:.7}
+.sticky .dn:hover{opacity:1}
+tr.najbl td{background:#fdf6ec}
+.najbl-b{display:inline-block;background:var(--acc2);color:#5a4310;font-size:.68rem;font-weight:700;padding:1px 7px;margin-left:6px;white-space:nowrap}
+tr.minelo td{opacity:.55}
 .todo{list-style:none;margin:10px 0 0;padding:0}
 .todo li{display:flex;gap:9px;align-items:center;border-bottom:1px solid var(--lin);padding:7px 0;font-size:.9rem}
 .todo li:last-child{border-bottom:none}
@@ -362,7 +367,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Im grubsza warstwa najdrobniejszej frakcji (na górze osadu), tym bardziej „tłusta” (plastyczna) glina.</li>
   <li>Glina bardzo tłusta pęka przy schnięciu — schudza się ją piaskiem lub szamotem; zbyt chuda kruszy się przy formowaniu.</li>
   <li>Zawsze wypal próbkę nowej gliny w niskiej temperaturze zanim włożysz do pieca większą pracę — nieznana glina może mieć za niską temperaturę topnienia.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#7a6a3f" data-tid="oczyszczanie">
@@ -386,7 +391,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Oczyszczoną zawiesinę zagęszcza się przez odparowanie lub rozlanie na płycie gipsowej / w płóciennym worku, aż osiągnie konsystencję plastyczną.</li>
   <li>Dojrzewanie (aging): masa odłożona na tygodnie w szczelnym worku staje się wyraźnie bardziej plastyczna (równomierne nawilżenie i praca mikroorganizmów).</li>
   <li>Na koniec wykonaj testy: belka 10 cm do pomiaru skurczu suszenia i wypału oraz próbki wypalane na kilka temperatur (spiek, nasiąkliwość, kolor).</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#7a6a3f" data-tid="wyrabianie">
@@ -412,7 +417,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li><b>Wyrabianie spiralne (jap. kikumomi, „ugniatanie chryzantemy”)</b>: bryła obracana o kąt przy każdym docisku tworzy spiralę; metoda na duże ilości gliny.</li>
   <li><b>Przecinanie strunką</b>: bryłę tnie się na pół i zbija połówki na blacie — szybko miesza dwie masy lub twarde z miękkim.</li>
   <li>Kontrola: przetnij wyrobioną bryłę strunką — przekrój ma być gładki, bez dziurek po pęcherzach.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#7a6a3f" data-tid="reclaim">
@@ -423,7 +428,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Suche kawałki rozmakają błyskawicznie i równomiernie — mokrych resztek nie warto rozmiękczać „na siłę”.</li>
   <li>Nie mieszaj mas o różnych temperaturach wypału; odzysk trzymaj osobno dla każdej masy.</li>
   <li>Raz wypalonej gliny nie da się odzyskać — biskwit można najwyżej zmielić na szamot.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 </section>
 
@@ -431,7 +436,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <section class="panel" id="p-form">
 <div class="box">
 <h2>Techniki formowania naczyń i rzeźby</h2>
-<p style="font-size:.92rem;margin:0">Od najprostszych metod ręcznych, znanych od tysiącleci, po przemysłowe odlewanie i druk 3D. Zaznacz ✓ przy technikach, które już znasz — postęp widać na pasku u góry.</p>
+<p style="font-size:.92rem;margin:0">Od najprostszych metod ręcznych, znanych od tysiącleci, po przemysłowe odlewanie i druk 3D. Traktuj tę zakładkę jak wewnętrzną encyklopedię — lekcje ścieżki nauki linkują do konkretnych kart, ale możesz tu wracać w dowolnym momencie, także po ukończeniu całej ścieżki.</p>
 </div>
 
 <div class="tk" style="--pc:#b0603a" data-tid="szczypanie">
@@ -454,7 +459,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <ul><li>Ścianki wyciska się od dna ku górze, cienko i równomiernie — zbyt szybkie ściskanie krawędzi prowadzi do pęknięć.</li>
   <li>Pękającą krawędź można nawilżyć i zagładzić; praca w zbyt suchej glinie to najczęstszy błąd początkujących.</li>
   <li>Dwie połączone czarki szczypane tworzą pustą kulę — punkt wyjścia do rzeźby figuralnej.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b0603a" data-tid="waleczki">
@@ -481,7 +486,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Duże formy buduje się etapami — dolna część musi stężeć (do stanu „skórzanego”), zanim doda się kolejne partie, inaczej ścianki osiadają.</li>
   <li>Ślady wałeczków można zostawić jako dekorację lub całkowicie zagładzić cykliną/żeberkiem.</li>
   <li>Japońska ceramika Jōmon (od ok. 14 500 lat temu) i wielkie greckie pitosy powstawały właśnie tą techniką.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b0603a" data-tid="platy">
@@ -509,7 +514,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <ul><li>Płaty łączy się na złączach nacinanych i smarowanych szlikrem; spoinę wzmacnia się cienkim wałeczkiem gliny wciśniętym w kąt.</li>
   <li>Miękkie płaty można układać na formach garbujących (hump mold) lub w formach wklęsłych (slump mold) — tak powstają miski i półmiski.</li>
   <li>Płat powinien wszędzie mieć tę samą grubość i być rozwałkowany w różnych kierunkach, inaczej przy schnięciu się wypacza.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8a5a2d" data-tid="toczenie">
@@ -540,7 +545,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li><b>Zdejmowanie</b> — podcięcie strunką i zdjęcie naczynia z koła.</li>
   <li><b>Obtaczanie (trimming)</b> — po podeschnięciu do stanu skórzanego naczynie odwraca się i cyklinami ścina nadmiar gliny, formując stopkę.</li>
   <li>Małe elementy (uchwyty, pokrywki) często toczy się „z góry” — z jednej dużej bryły (off the hump).</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8a5a2d" data-tid="obtaczanie">
@@ -564,7 +569,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary>
   <ul><li>Obtaczanie wyrównuje i zagęszcza ścianki naczynia zbudowanego ręcznie; charakterystyczne dla kultur, które znały koło, ale nie stosowały szybkiego toczenia z pełnej bryły.</li>
   <li>Formy toczone można po podeschnięciu ciąć strunką, owalizować, wgniatać (faceting — ścinanie płaszczyzn nożem) i składać w formy rzeźbiarskie.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#5f7470" data-tid="odlewanie">
@@ -593,7 +598,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <ul><li>Formy gipsowe wykonuje się z modelu; formy wieloczęściowe pozwalają odlewać podcięcia i kształty niemożliwe do wytoczenia.</li>
   <li>Upłynniacz (deflokulant) sprawia, że masa jest lejna przy małej ilości wody — mniejszy skurcz i szybsze odlewy.</li>
   <li>Po stężeniu odlew wyjmuje się, usuwa szwy (retusz) i dokleja elementy (ucha, dzióbki) szlikrem.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#5f7470" data-tid="formy">
@@ -612,7 +617,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <ul><li><b>Hump mold</b> (forma wypukła) — płat kładzie się na grzbiet formy; <b>slump mold</b> (wklęsła) — płat osiada w zagłębieniu.</li>
   <li>Formy dwuczęściowe pozwalają wyciskać pełne kształty (np. figurki, kafle piecowe).</li>
   <li>W manufakturach stosuje się prasy i formy metalowo-gipsowe do masowej produkcji talerzy i kafli.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#5f7470" data-tid="jiggering">
@@ -635,7 +640,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <ul><li>To technologia, dzięki której od XVIII–XIX w. zastawa stołowa stała się tania i powtarzalna.</li>
   <li>Współczesne linie (roller-head) formują talerz w kilka sekund.</li>
   <li>Ekstrudowane profile tnie się i skleja — popularne w ceramice architektonicznej.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#5f7470" data-tid="druk3d">
@@ -662,7 +667,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary>
   <ul><li>Charakterystyczne prążkowanie warstw bywa celowym efektem estetycznym.</li>
   <li>Masa musi być na tyle sztywna, by kolejne warstwy nie osiadały — drukuje się z ograniczonym nawisem.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 </section>
@@ -709,7 +714,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary><ul>
   <li>Atmosfera utleniająca (nadmiar tlenu): kolory szkliw są „czyste” — miedź daje zieleń, żelazo miody i brązy.</li>
   <li>Bez ingerencji nie uzyska się efektów redukcyjnych (seladon, czerwień miedziowa).</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#c25b4a" data-tid="gazowy">
@@ -737,7 +742,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li><b>Seladon</b> — niewielka ilość żelaza w redukcji daje szarozielone, „nefrytowe” szkliwa (Chiny, Korea).</li>
   <li><b>Czerwień miedziowa (oxblood / sang de boeuf)</b> — miedź w redukcji zamiast zieleni daje głęboką czerwień.</li>
   <li>Masy kamionkowe nabierają cieplejszych, nakrapianych odcieni („toasty” brąz, żelazne cętki).</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#c25b4a" data-tid="drewno">
@@ -762,7 +767,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Ustawienie naczyń w piecu (ścieżka płomienia) jest częścią kompozycji — każda strona naczynia wypala się inaczej.</li>
   <li>Efekty: naturalne szkliwo popiołowe, wady-zalety typu hikidashi, muszelkowe odciski podkładek.</li>
   <li>Wypał bywa zbiorowym wydarzeniem — dokładanie drewna trwa na zmiany dzień i noc.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#c25b4a" data-tid="raku">
@@ -786,7 +791,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Szok termiczny wymaga mas szamotowych; naczynia raku są porowate i głównie dekoracyjne.</li>
   <li>Efekty: metaliczne lustry miedziowe, spękania szkliwa podkreślone dymem (krakle), aksamitna czerń odkrytego czerepu.</li>
   <li>Pokrewne techniki dymne: wypał w beczce, sagger, obvara (zanurzenie gorącego naczynia w zakwasie mącznym — technika znana z Europy Wschodniej).</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#c25b4a" data-tid="mielerz">
@@ -808,7 +813,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <li>Nierównomierna atmosfera daje chmury czerni i różu na powierzchni — dziś ceniony efekt artystyczny.</li>
   <li>Naczynia często wcześniej poleruje się lub pokrywa terra sigillatą, bo szkliwa w tych temperaturach zwykle się nie stosuje.</li>
   <li>Czarna ceramika siwa (redukcyjne wędzenie pod koniec wypału) to tradycja żywa m.in. w Polsce.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="box" id="wypal-kalk-link">
@@ -848,7 +853,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Wskazówki</summary><ul>
   <li>Gęstość zawiesiny i czas zanurzenia decydują o grubości warstwy; szkliwo trzeba przed użyciem dokładnie wymieszać i przesiać.</li>
   <li>Ślady po szczypcach retuszuje się pędzlem; stopkę czyści się z szkliwa, żeby naczynie nie przywarło do płyty.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#3f6e8a" data-tid="polewanie">
@@ -866,7 +871,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <path d="M232 44 q-6 12 4 14 q10 2 12 -6 q2 -8 -4 -10 q-8 -2 -12 2" fill="#c98850" stroke="#8a5a2d" stroke-width="1.6"/>
    <text x="206" y="100" font-size="9" fill="#6b5c48">listwy nad miską łapią nadmiar</text>
   </svg><figcaption>Polewanie: szkliwo lane na naczynie ustawione na listwach; nadmiar wraca do miski.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#3f6e8a" data-tid="natrysk">
@@ -885,7 +890,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="252" y="60" font-size="9" fill="#6b5c48">talerzyk obrotowy —</text>
    <text x="252" y="72" font-size="9" fill="#6b5c48">równa mgiełka</text>
   </svg><figcaption>Natrysk: pistolet/aerograf napyla mgiełkę szkliwa na obracane naczynie (kabina + maska!).</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#3f6e8a" data-tid="pedzel">
@@ -901,7 +906,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="228" y="50" font-size="9" fill="#6b5c48">szkliwo pędzlowe</text>
    <text x="228" y="62" font-size="9" fill="#6b5c48">ze spoiwem (CMC)</text>
   </svg><figcaption>Pędzlowanie: kilka krzyżujących się warstw szkliwa ze spoiwem.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#3f6e8a" data-tid="wosk">
@@ -920,7 +925,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <path d="M52 70 q2 8 8 8" stroke="#e2c98a" stroke-width="4" fill="none"/>
    <text x="16" y="24" font-size="9" fill="#6b5c48">pędzel z woskiem</text>
   </svg><figcaption>Rezerważ woskiem: pokryte miejsca (np. stopka) zostają czyste po zanurzeniu w szkliwie.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="box" id="typyszkliw">
@@ -997,7 +1002,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <g fill="#3f6e8a"><circle cx="222" cy="46" r="3.4"/><circle cx="234" cy="46" r="3.4"/><circle cx="228" cy="58" r="3.4"/><circle cx="222" cy="70" r="3.4"/><circle cx="234" cy="70" r="3.4"/></g>
    <text x="196" y="102" font-size="9" fill="#6b5c48">stempelki gąbkowe (Bolesławiec)</text>
   </svg><figcaption>Stemplowanie: odcisk w mokrej glinie albo kobaltowy stempelek gąbkowy na czerepie.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8d5f8c" data-tid="rzezbienie">
@@ -1019,7 +1024,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary><ul>
   <li>Chińskie i koreańskie seladony często mają delikatny rzeźbiony relief widoczny przez transparentne szkliwo gromadzące się w zagłębieniach.</li>
   <li>Ażur wymaga masy o dobrej stabilności i cierpliwego suszenia.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8d5f8c" data-tid="angoba">
@@ -1040,7 +1045,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Techniki pokrewne</summary><ul>
   <li><b>Marmurkowanie</b> — dwie mokre angoby poruszone ruchem naczynia tworzą marmurowe wzory.</li>
   <li><b>Feathering</b> — przeciąganie piórkiem/igłą przez świeże pasy angoby.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8d5f8c" data-tid="sgraffito">
@@ -1057,7 +1062,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="34" y="49" font-size="9" fill="#fcf9f4">warstwa ciemnej angoby</text>
    <text x="34" y="70" font-size="9" fill="#fff">jasna glina — odsłonięta linia rysunku</text>
   </svg><figcaption>Sgraffito w przekroju: rysunek wydrapany w angobie odsłania kolor czerepu.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8d5f8c" data-tid="mishima">
@@ -1078,7 +1083,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="118" y="98" font-size="9" fill="#6b5c48">2. wypełnienie angobą</text>
    <text x="222" y="98" font-size="9" fill="#6b5c48">3. zeskrobanie nadmiaru</text>
   </svg><figcaption>Mishima/sanggam: ryta linia, wypełnienie kontrastową glinką, zeskrobanie — zostaje inkrustacja.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8d5f8c" data-tid="terra">
@@ -1097,7 +1102,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="200" y="96" font-size="9" fill="#6b5c48">odstana zawiesina gliny —</text>
    <text x="200" y="107" font-size="9" fill="#6b5c48">zbiera się sam wierzch</text>
   </svg><figcaption>Polerowanie i terra sigillata: najdrobniejsza frakcja gliny + gładzik = jedwabisty połysk.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#8d5f8c" data-tid="nerikomi">
@@ -1124,7 +1129,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary><ul>
   <li>Masy muszą mieć identyczny skurcz, inaczej blok pęka na łączeniach.</li>
   <li>Po wypale powierzchnię często szlifuje się na mokro, by wyostrzyć rysunek.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b56a2c" data-tid="podszkliwne">
@@ -1145,7 +1150,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary><ul>
   <li>Tlenki „surowe” (kobalt, żelazo, miedź, mangan) dają klasyczną, ograniczoną paletę; współczesne pigmenty ceramiczne (sztaple/underglaze) — pełną gamę kolorów.</li>
   <li>Niektóre kolory wypalają się tylko w niskich temperaturach — projekt dekoracji musi uwzględniać wypał.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b56a2c" data-tid="majolika">
@@ -1164,7 +1169,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="44" y="82" font-size="9" fill="#fff">czerep (glina niskotopliwa)</text>
    <text x="44" y="40" font-size="9" fill="#6b5c48">surowe białe szkliwo cynowe — malowanie „jak na fresku”, bez poprawek</text>
   </svg><figcaption>Majolika: pigmenty malowane wprost na niewypalone białe szkliwo cynowe.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b56a2c" data-tid="naszkliwne">
@@ -1186,7 +1191,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
   <details class="szcz"><summary>Szczegóły</summary><ul>
   <li>Paleta naszkliwna jest najszersza (niska temperatura = stabilne pigmenty), ale mniej odporna na ścieranie niż dekoracja podszkliwna.</li>
   <li>Naczynia ze złoceniami nie nadają się do mikrofalówki.</li></ul></details>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b56a2c" data-tid="lustry">
@@ -1203,7 +1208,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <path d="M160 80 q6 -10 0 -18 M172 82 q6 -10 0 -18" stroke="#8a7a68" stroke-width="1.8" fill="none"/>
    <text x="184" y="82" font-size="9" fill="#8a7a68">dym / redukcja</text>
   </svg><figcaption>Lustry: związki metali na wypalonym szkliwie redukowane do lustrzanej błony.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b56a2c" data-tid="kalka">
@@ -1221,7 +1226,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="238" y="60" font-size="9" fill="#6b5c48">wypał utrwala</text>
    <text x="238" y="72" font-size="9" fill="#6b5c48">nadruk w szkliwie</text>
   </svg><figcaption>Kalkomania: drukowany motyw przenoszony z papieru na szkliwo i utrwalany wypałem.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 
 <div class="tk" style="--pc:#b56a2c" data-tid="kintsugi">
@@ -1236,7 +1241,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
    <text x="24" y="36" font-size="9" fill="#6b5c48" text-anchor="start">pęknięcia czarki</text>
    <text x="96" y="102" font-size="9" fill="#6b5c48">blizna staje się ozdobą (wabi-sabi)</text>
   </svg><figcaption>Kintsugi: sklejone laką pęknięcia podkreślone złotem.</figcaption></figure>
- </div><label class="chkwrap"><input type="checkbox"><span></span></label></div>
+ </div></div>
 </div>
 </section>
 
@@ -1254,7 +1259,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <label>Epoka
 <select id="fEp"><option value="">wszystkie</option>
 <option>Prehistoria</option><option>Starożytność</option><option>Średniowiecze</option><option>Nowożytność</option><option>XVIII–XIX w.</option><option>XX w.</option></select></label>
-<input type="search" id="fSzuk" placeholder="Szukaj: np. porcelana, seladon, Delft…">
+<input type="search" id="fSzuk" placeholder="Szukaj po początku słowa: porcelan, seladon, Delft…">
 <button id="fClear">Wyczyść filtry</button>
 </div>
 
@@ -1543,6 +1548,11 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <div class="box"><h2>📦 Do zrobienia</h2>
 <ul class="todo" id="tdPrev"></ul>
 <p class="puste" id="tdPrevB">Nic do zrobienia 🎉</p>
+<div class="dodaj" style="margin-top:10px">
+<select id="tdTyp2"><option>Inne</option><option>Produkt</option><option>Wysyłka</option><option>Wypał</option><option>Kupno</option></select>
+<input type="text" id="tdTekst2" placeholder="szybko dodaj…" style="flex:1 1 120px">
+<button class="kbtn" id="tdDodaj2">+</button>
+</div>
 <button class="goto" id="tdGo" style="margin-top:8px">→ wszystkie zamówienia (Moja pracownia)</button></div>
 
 <div class="box"><h2>🗒️ Szybkie notatki</h2>
@@ -1568,6 +1578,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <textarea class="nt" id="fbMsg" style="min-height:88px" placeholder="Twoja sugestia lub zgłoszenie…"></textarea>
 <input type="text" id="fbMail" placeholder="Twój mail (opcjonalnie, do odpowiedzi)" style="width:100%;font:inherit;font-size:.9rem;padding:8px 11px;border:1px solid var(--lin);margin-top:8px;background:#fff">
 <div style="display:flex;gap:10px;align-items:center;margin-top:8px;flex-wrap:wrap"><button class="kbtn" id="fbSend">Wyślij</button><span id="fbSt" style="font-size:.82rem;color:var(--mut)"></span></div>
+<p style="font-size:.72rem;color:var(--mut);margin:8px 0 0">Wiadomość wysyłana jest przez zewnętrzną usługę formsubmit.co bezpośrednio na skrzynkę autorki.</p>
 </div>
 </div>
 </section>
@@ -1591,8 +1602,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
  <div><b id="mQuiz">0</b><span>pytań w quizach</span></div>
  <div><b id="mFisz">0</b><span>fiszek</span></div>
 </div>
-<div class="prg"><i id="pbar"></i></div>
-<div class="pinfo"><span id="ptxt">0 z 0 technik opanowanych</span><span>💾 Postęp zapisuje się automatycznie na tym urządzeniu.</span></div>
+<div class="pinfo"><span>💾 Postęp zapisuje się automatycznie na tym urządzeniu.</span></div>
 </div>
 
 <div class="mod">
@@ -1649,7 +1659,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 
 <div class="lek" style="--pc:#b0603a" data-lid="l10"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 10</b> · Quiz: Formowanie<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
-<p>6 pytań quizu „Formowanie” bez notatek. Pomyłki? Wróć do odpowiedniej karty i odhacz ją w zakładce Formowanie jako opanowaną dopiero, gdy umiesz odpowiedzieć.</p>
+<p>6 pytań quizu „Formowanie” bez notatek. Pomyłki? Wróć do odpowiedniej karty w zakładce Formowanie i przejrzyj ją jeszcze raz przed odhaczeniem lekcji.</p>
 <button class="goto" data-goto="quiz">→ Quizy</button></div></div>
 </div>
 
@@ -2093,7 +2103,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 
 <div class="toast" id="toast" role="status">
 <b>💾 Postęp zapisuje się lokalnie</b><br>
-Twoje ukończone lekcje, odhaczone techniki, notatki i wybrana zakładka zapisują się automatycznie <b>na tym urządzeniu, w tej przeglądarce</b> — po ponownym otwarciu aplikacji wszystko będzie na swoim miejscu. Każda osoba korzystająca ze swojego urządzenia ma własny, niezależny postęp.<br>
+Twoje ukończone lekcje, notatki, zamówienia i pracownia zapisują się automatycznie <b>na tym urządzeniu, w tej przeglądarce</b> — po ponownym otwarciu aplikacji wszystko będzie na swoim miejscu. Każda osoba korzystająca ze swojego urządzenia ma własny, niezależny postęp.<br>
 <span style="opacity:.8">Uwaga: tryb prywatny lub wyczyszczenie danych przeglądarki kasuje zapis.</span><br>
 <button id="toastOk">Rozumiem</button>
 </div>
@@ -2350,8 +2360,14 @@ function pracRender(){
   return"<tr"+(EDITS.szkliwa===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  p.wypaly.sort(function(a,b){return(a.data||"").localeCompare(b.data||"")});
+ var dzis=new Date().toISOString().slice(0,10),najbl=-1;
+ p.wypaly.forEach(function(r,i){if(najbl<0&&r.data&&r.data>=dzis)najbl=i});
  document.getElementById("prWypaly").innerHTML=p.wypaly.map(function(r,i){
-  return"<tr"+(EDITS.wypaly===i?' class="editing"':"")+"><td>"+esc(r.data||"—")+"</td><td>"+esc(r.typ)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
+  var kl=[];
+  if(EDITS.wypaly===i)kl.push("editing");
+  if(i===najbl)kl.push("najbl");
+  else if(r.data&&r.data<dzis)kl.push("minelo");
+  return"<tr"+(kl.length?' class="'+kl.join(" ")+'"':"")+"><td>"+esc(r.data||"—")+(i===najbl?'<span class="najbl-b">najbliższy</span>':"")+"</td><td>"+esc(r.typ)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  ["Prace","Masy","Szkliwa","Wypaly"].forEach(function(k){
   var arr={Prace:p.prace,Masy:p.masy,Szkliwa:p.szkliwa,Wypaly:p.wypaly}[k];
@@ -2368,7 +2384,8 @@ var SECBTN={prace:"prDodaj",masy:"maDodaj",szkliwa:"szDodaj",wypaly:"wyDodaj",kl
 function pracBind(tbodyId,arrName){
  document.getElementById(tbodyId).addEventListener("click",function(e){
   var d=e.target.closest("button.del");
-  if(d){st.prac[arrName].splice(+d.dataset.i,1);
+  if(d){if(!confirm("Usunąć ten wpis?"))return;
+   st.prac[arrName].splice(+d.dataset.i,1);
    if(EDITS[arrName]!=null)trybEdycji(SECBTN[arrName],arrName,false);
    save(st);pracRender();if(arrName==="klienci")klRender();return}
   var ed=e.target.closest("button.ed");
@@ -2376,6 +2393,7 @@ function pracBind(tbodyId,arrName){
  });
 }
 pracBind("prPrace","prace");pracBind("prMasy","masy");pracBind("prSzkliwa","szkliwa");pracBind("prWypaly","wypaly");
+document.getElementById("wyData").min=new Date().toISOString().slice(0,10);
 document.getElementById("prPrace").addEventListener("change",function(e){
  var s=e.target.closest("select");if(!s)return;
  st.prac.prace[+s.dataset.i].e=s.value;save(st);
@@ -2414,22 +2432,8 @@ document.getElementById("wyDodaj").addEventListener("click",function(){
 });
 pracRender();
 
-/* checkboxy technik + pasek postępu */
+/* karty technik: Wiedza jest czystą encyklopedią (postęp liczy się w Ścieżce nauki) */
 var tks=document.querySelectorAll(".tk[data-tid]");
-st.done=st.done||{};
-function refresh(){
- var n=0;tks.forEach(function(t){if(st.done[t.dataset.tid])n++});
- var pct=tks.length?Math.round(100*n/tks.length):0;
- document.getElementById("pbar").style.width=pct+"%";
- document.getElementById("ptxt").textContent=n+" z "+tks.length+" technik opanowanych ("+pct+"%)";
-}
-tks.forEach(function(t){
- var ch=t.querySelector(".chkwrap input");
- if(st.done[t.dataset.tid]){ch.checked=true;t.classList.add("done")}
- ch.addEventListener("change",function(){
-  st.done[t.dataset.tid]=ch.checked;t.classList.toggle("done",ch.checked);save(st);refresh();
- });
-});
 
 /* liczniki w hero */
 document.getElementById("mTech").textContent=tks.length;
@@ -2439,7 +2443,6 @@ document.getElementById("mQuiz").textContent=document.querySelectorAll("details.
 document.getElementById("mFisz").textContent=document.querySelectorAll(".fk").length;
 document.querySelectorAll(".qb").forEach(function(q){q.querySelector(".qc").textContent=q.querySelectorAll("details.q").length+" pytań"});
 document.querySelectorAll(".fkat").forEach(function(f){f.querySelector(".fc").textContent=f.querySelectorAll(".fk").length+" fiszek"});
-refresh();
 
 /* fiszki */
 document.querySelectorAll(".fk").forEach(function(k){k.addEventListener("click",function(){k.classList.toggle("flip")})});
@@ -2453,7 +2456,11 @@ function filtruj(){
   var ok=true;
   if(r)ok=h.dataset.reg===r;
   if(ok&&e)ok=h.dataset.ep===e;
-  if(ok&&q)ok=(h.textContent+" "+h.dataset.kul).toLowerCase().indexOf(q)>-1;
+  if(ok&&q){
+   var txt=(h.textContent+" "+h.dataset.kul).toLowerCase();
+   ok=txt.indexOf(q)>-1;
+   if(!ok&&q.length>4)ok=txt.indexOf(q.slice(0,-1))>-1||txt.indexOf(q.slice(0,-2))>-1;
+  }
   h.style.display=ok?"":"none";if(ok)vis++;
  });
  brak.style.display=vis?"none":"block";
@@ -2581,7 +2588,8 @@ function klRender(){
 }
 document.getElementById("prKlienci").addEventListener("click",function(e){
  var d=e.target.closest("button.del");
- if(d){st.prac.klienci.splice(+d.dataset.i,1);
+ if(d){if(!confirm("Usunąć tego klienta z kartoteki?"))return;
+  st.prac.klienci.splice(+d.dataset.i,1);
   if(EDITS.klienci!=null)trybEdycji("klDodaj","klienci",false);
   save(st);klRender();return}
  var ed=e.target.closest("button.ed");
@@ -2638,6 +2646,7 @@ document.getElementById("tdLista").addEventListener("click",function(e){
   var sel=document.getElementById("tdKlient");if(sel)sel.value=r.k||"";
   EDITS.todo=+e.target.dataset.i;trybEdycji("tdDodaj","todo",true);return}
  if(e.target.matches("button.x")){
+  if(!confirm("Usunąć to zadanie?"))return;
   st.todo.splice(+e.target.dataset.i,1);
   if(EDITS.todo!=null)trybEdycji("tdDodaj","todo",false);
   save(st);tdRender();return}
@@ -2645,6 +2654,11 @@ document.getElementById("tdLista").addEventListener("click",function(e){
 });
 document.getElementById("tdPrev").addEventListener("click",tdToggle);
 document.getElementById("tdGo").addEventListener("click",function(){showCzesc("prac")});
+document.getElementById("tdDodaj2").addEventListener("click",function(){
+ var x=document.getElementById("tdTekst2");if(!x.value.trim())return;
+ st.todo.push({t:document.getElementById("tdTyp2").value,x:x.value.trim(),k:"",done:false});
+ x.value="";save(st);tdRender();
+});
 document.getElementById("tdDodaj").addEventListener("click",function(){
  var x=document.getElementById("tdTekst");if(!x.value.trim())return;
  var sel=document.getElementById("tdKlient");
@@ -2699,6 +2713,7 @@ document.getElementById("fbSend").addEventListener("click",function(){
  var msg=document.getElementById("fbMsg"),stt=document.getElementById("fbSt"),
      kontakt=document.getElementById("fbMail").value.trim();
  if(!msg.value.trim()){stt.textContent="Wpisz wiadomość.";return}
+ if(kontakt&&!/^\S+@\S+\.\S+$/.test(kontakt)){stt.textContent="Ten mail wygląda na niepoprawny — popraw go albo zostaw pole puste.";return}
  stt.textContent="Wysyłanie…";
  fetch("https://formsubmit.co/ajax/lapinska.agat@gmail.com",{
   method:"POST",
@@ -2733,7 +2748,7 @@ dashLekRender();
 st.sticky=st.sticky||[];
 function stRender(){
  document.getElementById("stLista").innerHTML=st.sticky.map(function(s,i){
-  return'<div class="sticky"><button class="x" data-i="'+i+'" title="usuń">✕</button>'+
+  return'<div class="sticky"><button class="dn" data-i="'+i+'" title="zapisz jako notatkę">📥</button><button class="x" data-i="'+i+'" title="usuń">✕</button>'+
   '<textarea data-i="'+i+'" placeholder="pisz…">'+esc(s.txt)+"</textarea></div>";
  }).join("");
 }
@@ -2742,7 +2757,18 @@ document.getElementById("stDodaj").addEventListener("click",function(){
  var ta=document.querySelector('#stLista .sticky:last-child textarea');if(ta)ta.focus();
 });
 document.getElementById("stLista").addEventListener("click",function(e){
- if(e.target.matches("button.x")){st.sticky.splice(+e.target.dataset.i,1);save(st);stRender()}
+ if(e.target.matches("button.x")){
+  var s=st.sticky[+e.target.dataset.i];
+  if(s.txt.trim()&&!confirm("Usunąć tę karteczkę?"))return;
+  st.sticky.splice(+e.target.dataset.i,1);save(st);stRender();return}
+ if(e.target.matches("button.dn")){
+  var k=st.sticky[+e.target.dataset.i];
+  if(!k.txt.trim()){alert("Karteczka jest pusta — nie ma czego zapisać.");return}
+  var linia=k.txt.trim().split("\n")[0];
+  st.notes.push({id:"n"+Date.now(),title:linia.slice(0,48)||"Karteczka z pulpitu",tags:["karteczka"],body:k.txt,created:Date.now(),updated:Date.now()});
+  st.sticky.splice(+e.target.dataset.i,1);
+  save(st);stRender();notRender();
+ }
 });
 document.getElementById("stLista").addEventListener("input",function(e){
  if(e.target.matches("textarea")){st.sticky[+e.target.dataset.i].txt=e.target.value;save(st)}
@@ -2789,10 +2815,6 @@ document.querySelectorAll(".fk").forEach(function(k){
  k.addEventListener("keydown",function(e){
   if(e.key==="Enter"||e.key===" "){e.preventDefault();k.classList.toggle("flip")}
  });
-});
-document.querySelectorAll(".tk[data-tid]").forEach(function(t){
- var ch=t.querySelector(".chkwrap input"),h=t.querySelector("h4");
- if(ch&&h)ch.setAttribute("aria-label","Opanowane: "+h.textContent);
 });
 leks.forEach(function(l){
  var ch=l.querySelector(".chkwrap input"),h=l.querySelector(".lek-h b");
