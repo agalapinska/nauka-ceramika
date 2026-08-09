@@ -125,6 +125,31 @@ nav.nk button:hover{color:var(--ink);background:#f3eee1}
 nav.nk button.on{color:var(--acc);border-bottom-color:var(--acc)}
 .nsub{display:none}.nsub.on{display:block}
 .tscroll{overflow-x:auto}
+.wszuk{margin:18px 0 0;position:relative}
+.wszuk input{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding:9px 13px;border:1px solid var(--lin);background:#fff}
+.wyniki{display:flex;flex-direction:column;max-width:520px;background:#fff;border:1px solid var(--lin);border-top:none}
+.wyniki:empty{display:none}
+.wyniki button{text-align:left;background:none;border:none;border-bottom:1px solid var(--lin);padding:8px 13px;font:inherit;font-size:.88rem;color:var(--ink);cursor:pointer}
+.wyniki button:last-child{border-bottom:none}
+.wyniki button:hover{background:#f3eee1}
+.wlab{color:var(--acc);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:8px}
+.znal{outline:2px solid var(--acc2);outline-offset:2px}
+.hist,.box{scroll-margin-top:64px}
+.reclist{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:.85rem}
+.sklad{background:#f3eee1;border:1px solid var(--lin);padding:3px 9px;display:inline-flex;gap:7px;align-items:center}
+.sklad .sx{background:none;border:none;color:var(--acc);cursor:pointer;font-weight:700;padding:0}
+.szk{display:flex;gap:14px;align-items:flex-start;background:var(--paper2);border:1px solid var(--lin);padding:14px 16px;margin-bottom:10px}
+.szk.editing{background:#fdf1ea}
+.szk-f{width:96px;height:96px;object-fit:cover;flex:0 0 auto;border:1px solid var(--lin)}
+.szk-t{flex:1;min-width:0}
+.szk-t b{font-size:1.02rem}
+.szk-rec{border-collapse:collapse;font-size:.82rem;margin-top:7px}
+.szk-rec th,.szk-rec td{border:1px solid var(--lin);padding:3px 9px;text-align:left}
+.szk-rec th{background:#f3eee1;font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+.szk-w{font-size:.84rem;color:#3f6e8a;margin-top:6px}
+.szk-u{font-size:.84rem;color:var(--mut);margin-top:4px}
+#szFotoPrev img{width:44px;height:44px;object-fit:cover;border:1px solid var(--lin);vertical-align:middle;cursor:pointer}
+#szFotoPrev span{font-size:.74rem;color:var(--mut);margin-left:6px}
 .akc{white-space:nowrap}
 .kbtn.ed{background:#fff;color:var(--mut);border:1px solid var(--lin);padding:4px 9px}
 .kbtn.ed:hover{color:var(--acc);border-color:var(--acc)}
@@ -293,6 +318,11 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 
 
 <div class="wrap">
+
+<div class="wszuk" id="wSzukWrap">
+<input type="search" id="wSzuk" placeholder="🔍 Szukaj w całej Wiedzy: technika, pojęcie, kultura, epoka…">
+<div class="wyniki" id="wWyniki"></div>
+</div>
 
 <nav class="zk">
 <button class="on" data-p="glina">🧱 Glina</button>
@@ -1927,6 +1957,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <button class="kbtn" id="notNew">＋ Utwórz notatkę</button>
 </div>
 <p style="font-size:.9rem;margin:10px 0 0;color:var(--mut)">Lista notatek z datami i tytułami, zapisywana na tym urządzeniu. Taguj rozdziałami (np. <i>Szkliwienie</i>, <i>Wypał</i>) i filtruj klikając tag.</p>
+<input type="search" id="notSzuk" placeholder="🔍 Szukaj w notatkach (tytuł, treść, tagi)…" style="width:100%;max-width:420px;font:inherit;font-size:.9rem;padding:8px 12px;border:1px solid var(--lin);margin-top:12px;background:#fff">
 <div class="tagfilter" id="notTags"></div>
 </div>
 <div id="notLista"></div>
@@ -1977,14 +2008,40 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 </div>
 
 <div class="box">
-<h2>✨ Moje szkliwa</h2>
-<div class="tscroll"><table class="prtab"><thead><tr><th>Szkliwo</th><th style="width:150px">Stożek / temp.</th><th>Uwagi</th><th style="width:86px"></th></tr></thead>
-<tbody id="prSzkliwa"></tbody></table></div>
-<p class="puste" id="prSzkliwaB">Brak szkliw w ewidencji.</p>
+<h2>🧪 Surowce</h2>
+<p style="font-size:.88rem;color:var(--mut);margin:0">Twoja baza surowców szkliwierskich (skalenie, kaolin, kwarc, kreda, tlenki…). Z niej wyklikasz receptury szkliw poniżej. Każdy surowiec może mieć komentarz (np. dostawca, partia, zamiennik).</p>
+<div class="tscroll"><table class="prtab"><thead><tr><th style="width:220px">Surowiec</th><th>Komentarz</th><th style="width:86px"></th></tr></thead>
+<tbody id="prSurowce"></tbody></table></div>
+<p class="puste" id="prSurowceB">Brak surowców — dodaj pierwszy poniżej.</p>
 <div class="dodaj">
-<input type="text" id="szNazwa" placeholder="np. Seladon butelkowy" style="flex:1 1 200px">
-<input type="text" id="szTemp" placeholder="np. stożek 6" style="flex:0 1 130px">
-<input type="text" id="szUwagi" placeholder="np. 2 warstwy, spływa przy 3" style="flex:1 1 200px">
+<input type="text" id="suNazwa" placeholder="np. Skaleń potasowy" style="flex:1 1 200px">
+<input type="text" id="suKom" placeholder="komentarz, np. worek 25 kg, Ceramiq" style="flex:1 1 240px">
+<button class="kbtn" id="suDodaj">Dodaj surowiec</button>
+</div>
+</div>
+
+<div class="box">
+<h2>✨ Moje szkliwa</h2>
+<div id="prSzkliwa"></div>
+<p class="puste" id="prSzkliwaB">Brak szkliw w ewidencji — zbuduj pierwsze poniżej.</p>
+<h3 style="margin-top:18px">Dodaj szkliwo</h3>
+<div class="dodaj">
+<input type="text" id="szNazwa" placeholder="nazwa, np. Seladon butelkowy" style="flex:1 1 220px">
+<input type="text" id="szTemp" placeholder="stożek / temp., np. stożek 6" style="flex:0 1 190px">
+</div>
+<div class="dodaj">
+<select id="szSur"><option value="">— surowiec z bazy —</option></select>
+<input type="text" id="szIlosc" placeholder="ilość, np. 40 cz. wag." style="flex:0 1 170px">
+<button class="kbtn alt" id="szAddSkl" type="button">+ dodaj składnik</button>
+</div>
+<div class="reclist" id="szRecList"></div>
+<div class="dodaj">
+<input type="text" id="szWoda" placeholder="woda, np. 85 g na 100 g suchej mieszanki" style="flex:1 1 260px">
+<label class="kbtn alt" style="cursor:pointer">📷 dodaj zdjęcie<input type="file" id="szFoto" accept="image/*" style="display:none"></label>
+<span id="szFotoPrev"></span>
+</div>
+<div class="dodaj">
+<input type="text" id="szUwagi" placeholder="uwagi, np. 2 warstwy zanurzeniowe, spływa przy 3" style="flex:1 1 260px">
 <button class="kbtn" id="szDodaj">Dodaj szkliwo</button>
 </div>
 </div>
@@ -2145,11 +2202,12 @@ function showTab(id){
 }
 function showCzesc(c,noscroll){
  gbtns.forEach(function(x){x.classList.toggle("on",x.dataset.g===c)});
+ var wsw=document.getElementById("wSzukWrap");
  if(c==="wiedza"){
-  subnav.style.display="";
+  subnav.style.display="";if(wsw)wsw.style.display="";
   tabs.forEach(function(x){x.classList.toggle("on",x.dataset.p===st.tab)});
   showTab("p-"+st.tab);
- }else{subnav.style.display="none";showTab(GMAP[c]);}
+ }else{subnav.style.display="none";if(wsw)wsw.style.display="none";showTab(GMAP[c]);}
  st.czesc=c;save(st);
  if(!noscroll)window.scrollTo({top:0});
 }
@@ -2258,8 +2316,15 @@ function notRender(){
  var wszystkie=[];st.notes.forEach(function(n){(n.tags||[]).forEach(function(t){if(wszystkie.indexOf(t)<0)wszystkie.push(t)})});
  notTagsEl.innerHTML=wszystkie.length?('<button class="tagchip'+(notFilter===null?" on":"")+'" data-t="">wszystkie</button>'+
   wszystkie.map(function(t){return'<button class="tagchip'+(notFilter===t?" on":"")+'" data-t="'+esc(t)+'">'+esc(t)+"</button>"}).join("")):"";
+ var nq=(document.getElementById("notSzuk")?document.getElementById("notSzuk").value:"").trim().toLowerCase();
  var lista=st.notes.slice().sort(function(a,b){return b.updated-a.updated})
-  .filter(function(n){return!notFilter||(n.tags||[]).indexOf(notFilter)>-1});
+  .filter(function(n){return!notFilter||(n.tags||[]).indexOf(notFilter)>-1})
+  .filter(function(n){
+   if(!nq)return true;
+   var txt=(n.title+" "+(n.body||"")+" "+(n.tags||[]).join(" ")).toLowerCase();
+   if(txt.indexOf(nq)>-1)return true;
+   return nq.length>4&&(txt.indexOf(nq.slice(0,-1))>-1||txt.indexOf(nq.slice(0,-2))>-1);
+  });
  notLista.innerHTML=lista.map(function(n){
   return'<div class="note" data-id="'+n.id+'"><div class="note-h"><b>'+esc(n.title)+'</b><span class="note-d">'+fmtD(n.updated)+(n.updated!==n.created?" (utw. "+fmtD(n.created)+")":"")+"</span></div>"+
   ((n.tags||[]).length?'<div class="note-tags">'+n.tags.map(function(t){return'<span class="ntag">'+esc(t)+"</span>"}).join("")+"</div>":"")+
@@ -2309,6 +2374,7 @@ notRender();
 
 /* ===== moja pracownia ===== */
 st.prac=st.prac||{prace:[],masy:[],szkliwa:[],wypaly:[]};
+st.prac.surowce=st.prac.surowce||[];
 var ETAPY=["Pomysł","Formowanie","Suszenie","Biskwit","Szkliwienie","Wypał ostry","Gotowe"];
 var EDITS={};
 function delBtn(i){return'<td class="akc"><button class="kbtn ed" data-i="'+i+'" title="edytuj">✎</button><button class="kbtn del" data-i="'+i+'" title="usuń">✕</button></td>'}
@@ -2329,15 +2395,18 @@ function trybEdycji(btnId,sec,on){
  }
  rerenderSec(sec);
 }
-["prDodaj","maDodaj","szDodaj","wyDodaj","klDodaj","tdDodaj"].forEach(function(id){
+["prDodaj","maDodaj","szDodaj","wyDodaj","klDodaj","tdDodaj","suDodaj"].forEach(function(id){
  var b=document.getElementById(id);if(!b)return;
  b.dataset.orig=b.textContent;
  var c=document.createElement("button");
  c.className="kbtn alt anuluj";c.textContent="Anuluj edycję";c.style.display="none";c.type="button";
  b.parentNode.insertBefore(c,b.nextSibling);
  b._cancel=c;
- var SEKCJE={prDodaj:"prace",maDodaj:"masy",szDodaj:"szkliwa",wyDodaj:"wypaly",klDodaj:"klienci",tdDodaj:"todo"};
- c.addEventListener("click",function(){trybEdycji(id,SEKCJE[id],false)});
+ var SEKCJE={prDodaj:"prace",maDodaj:"masy",szDodaj:"szkliwa",wyDodaj:"wypaly",klDodaj:"klienci",tdDodaj:"todo",suDodaj:"surowce"};
+ c.addEventListener("click",function(){
+  trybEdycji(id,SEKCJE[id],false);
+  if(id==="szDodaj"&&typeof resetSzForm==="function")resetSzForm();
+ });
 });
 /* Enter w formularzach dodawania = klik przycisku */
 document.addEventListener("keydown",function(e){
@@ -2356,8 +2425,18 @@ function pracRender(){
  document.getElementById("prMasy").innerHTML=p.masy.map(function(r,i){
   return"<tr"+(EDITS.masy===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.s)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
+ document.getElementById("prSurowce").innerHTML=p.surowce.map(function(r,i){
+  return"<tr"+(EDITS.surowce===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.k||"")+"</td>"+delBtn(i)+"</tr>";
+ }).join("");
  document.getElementById("prSzkliwa").innerHTML=p.szkliwa.map(function(r,i){
-  return"<tr"+(EDITS.szkliwa===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
+  var wiersze=(r.rec||[]).map(function(s){return"<tr><td>"+esc(s.s)+"</td><td>"+esc(s.m)+"</td></tr>"}).join("");
+  return '<div class="szk'+(EDITS.szkliwa===i?" editing":"")+'">'+
+   (r.foto?'<img class="szk-f" src="'+r.foto+'" alt="'+esc(r.n)+'">':"")+
+   '<div class="szk-t"><b>'+esc(r.n)+"</b>"+(r.t?' <span class="czas">'+esc(r.t)+"</span>":"")+
+   (wiersze?'<div class="tscroll"><table class="szk-rec"><tr><th>surowiec</th><th>ilość (wag.)</th></tr>'+wiersze+"</table></div>":"")+
+   (r.woda?'<div class="szk-w">💧 '+esc(r.woda)+"</div>":"")+
+   (r.u?'<div class="szk-u">'+esc(r.u)+"</div>":"")+
+   '</div><span class="akc"><button class="kbtn ed" data-i="'+i+'" title="edytuj">✎</button><button class="kbtn del" data-i="'+i+'" title="usuń">✕</button></span></div>';
  }).join("");
  p.wypaly.sort(function(a,b){return(a.data||"").localeCompare(b.data||"")});
  var dzis=new Date().toISOString().slice(0,10),najbl=-1;
@@ -2369,18 +2448,25 @@ function pracRender(){
   else if(r.data&&r.data<dzis)kl.push("minelo");
   return"<tr"+(kl.length?' class="'+kl.join(" ")+'"':"")+"><td>"+esc(r.data||"—")+(i===najbl?'<span class="najbl-b">najbliższy</span>':"")+"</td><td>"+esc(r.typ)+"</td><td>"+esc(r.u)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
- ["Prace","Masy","Szkliwa","Wypaly"].forEach(function(k){
-  var arr={Prace:p.prace,Masy:p.masy,Szkliwa:p.szkliwa,Wypaly:p.wypaly}[k];
+ ["Prace","Masy","Szkliwa","Wypaly","Surowce"].forEach(function(k){
+  var arr={Prace:p.prace,Masy:p.masy,Szkliwa:p.szkliwa,Wypaly:p.wypaly,Surowce:p.surowce}[k];
   document.getElementById("pr"+k+"B").style.display=arr.length?"none":"block";
  });
+ suOptions();
 }
 var FILL={
  prace:function(r){document.getElementById("prNazwa").value=r.n;document.getElementById("prEtap").value=r.e},
  masy:function(r){document.getElementById("maNazwa").value=r.n;document.getElementById("maTemp").value=r.t;document.getElementById("maSkurcz").value=r.s},
- szkliwa:function(r){document.getElementById("szNazwa").value=r.n;document.getElementById("szTemp").value=r.t;document.getElementById("szUwagi").value=r.u},
+ szkliwa:function(r){
+  document.getElementById("szNazwa").value=r.n;document.getElementById("szTemp").value=r.t;
+  document.getElementById("szUwagi").value=r.u;document.getElementById("szWoda").value=r.woda||"";
+  tmpRec=(r.rec||[]).map(function(s){return{s:s.s,m:s.m}});tmpFoto=undefined;
+  fotoPrev(r.foto);recRender();
+ },
+ surowce:function(r){document.getElementById("suNazwa").value=r.n;document.getElementById("suKom").value=r.k||""},
  wypaly:function(r){document.getElementById("wyData").value=r.data||"";document.getElementById("wyTyp").value=r.typ;document.getElementById("wyUwagi").value=r.u}
 };
-var SECBTN={prace:"prDodaj",masy:"maDodaj",szkliwa:"szDodaj",wypaly:"wyDodaj",klienci:"klDodaj",todo:"tdDodaj"};
+var SECBTN={prace:"prDodaj",masy:"maDodaj",szkliwa:"szDodaj",wypaly:"wyDodaj",klienci:"klDodaj",todo:"tdDodaj",surowce:"suDodaj"};
 function pracBind(tbodyId,arrName){
  document.getElementById(tbodyId).addEventListener("click",function(e){
   var d=e.target.closest("button.del");
@@ -2392,8 +2478,77 @@ function pracBind(tbodyId,arrName){
   if(ed&&FILL[arrName]){FILL[arrName](st.prac[arrName][+ed.dataset.i]);EDITS[arrName]=+ed.dataset.i;trybEdycji(SECBTN[arrName],arrName,true)}
  });
 }
-pracBind("prPrace","prace");pracBind("prMasy","masy");pracBind("prSzkliwa","szkliwa");pracBind("prWypaly","wypaly");
+pracBind("prPrace","prace");pracBind("prMasy","masy");pracBind("prSzkliwa","szkliwa");pracBind("prWypaly","wypaly");pracBind("prSurowce","surowce");
 document.getElementById("wyData").min=new Date().toISOString().slice(0,10);
+
+/* surowce: opcje w budowniczym receptur + dodawanie */
+function suOptions(){
+ var sel=document.getElementById("szSur");if(!sel)return;
+ var v=sel.value;
+ sel.innerHTML='<option value="">— surowiec z bazy —</option>'+st.prac.surowce.map(function(s){return"<option>"+esc(s.n)+"</option>"}).join("");
+ sel.value=v;
+}
+document.getElementById("suDodaj").addEventListener("click",function(){
+ var n=document.getElementById("suNazwa");if(!n.value.trim())return;
+ var rek={n:n.value.trim(),k:document.getElementById("suKom").value.trim()};
+ if(EDITS.surowce!=null){st.prac.surowce[EDITS.surowce]=rek;trybEdycji("suDodaj","surowce",false)}
+ else st.prac.surowce.push(rek);
+ n.value="";document.getElementById("suKom").value="";
+ save(st);pracRender();
+});
+
+/* budowniczy receptury szkliwa */
+var tmpRec=[],tmpFoto;
+function recRender(){
+ var el=document.getElementById("szRecList");
+ el.innerHTML=tmpRec.length?tmpRec.map(function(s,i){
+  return '<span class="sklad">'+esc(s.s)+" — "+esc(s.m)+' <button type="button" class="sx" data-i="'+i+'" title="usuń składnik">✕</button></span>';
+ }).join(""):'<span style="font-size:.78rem;color:var(--mut)">Receptura pusta — wybierz surowiec z bazy i kliknij „+ dodaj składnik”.</span>';
+}
+function fotoPrev(src){
+ var el=document.getElementById("szFotoPrev");
+ el.innerHTML=src?'<img src="'+src+'" title="kliknij, aby usunąć zdjęcie"><span>kliknij miniaturę, by usunąć</span>':"";
+}
+function resetSzForm(){
+ tmpRec=[];tmpFoto=undefined;
+ document.getElementById("szWoda").value="";
+ document.getElementById("szFoto").value="";
+ fotoPrev(null);recRender();
+}
+document.getElementById("szAddSkl").addEventListener("click",function(){
+ var sur=document.getElementById("szSur").value;
+ if(!sur){alert("Najpierw wybierz surowiec z bazy (sekcja „Surowce” powyżej).");return}
+ var m=document.getElementById("szIlosc").value.trim()||"—";
+ tmpRec.push({s:sur,m:m});
+ document.getElementById("szIlosc").value="";
+ recRender();
+});
+document.getElementById("szRecList").addEventListener("click",function(e){
+ var b=e.target.closest("button.sx");if(!b)return;
+ tmpRec.splice(+b.dataset.i,1);recRender();
+});
+document.getElementById("szFoto").addEventListener("change",function(){
+ var f=this.files[0];if(!f)return;
+ var rd=new FileReader();
+ rd.onload=function(){
+  var img=new Image();
+  img.onload=function(){
+   var maks=560,sk=Math.min(1,maks/Math.max(img.width,img.height));
+   var c=document.createElement("canvas");
+   c.width=Math.round(img.width*sk);c.height=Math.round(img.height*sk);
+   c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+   tmpFoto=c.toDataURL("image/jpeg",.78);
+   fotoPrev(tmpFoto);
+  };
+  img.src=rd.result;
+ };
+ rd.readAsDataURL(f);
+});
+document.getElementById("szFotoPrev").addEventListener("click",function(e){
+ if(e.target.tagName!=="IMG")return;
+ tmpFoto=null;document.getElementById("szFoto").value="";fotoPrev(null);
+});
+recRender();
 document.getElementById("prPrace").addEventListener("change",function(e){
  var s=e.target.closest("select");if(!s)return;
  st.prac.prace[+s.dataset.i].e=s.value;save(st);
@@ -2415,10 +2570,28 @@ document.getElementById("maDodaj").addEventListener("click",function(){
 });
 document.getElementById("szDodaj").addEventListener("click",function(){
  var n=document.getElementById("szNazwa");if(!n.value.trim())return;
- var rek={n:n.value.trim(),t:document.getElementById("szTemp").value.trim(),u:document.getElementById("szUwagi").value.trim()};
- if(EDITS.szkliwa!=null){st.prac.szkliwa[EDITS.szkliwa]=rek;trybEdycji("szDodaj","szkliwa",false)}
- else st.prac.szkliwa.push(rek);
+ var rek={
+  n:n.value.trim(),
+  t:document.getElementById("szTemp").value.trim(),
+  u:document.getElementById("szUwagi").value.trim(),
+  woda:document.getElementById("szWoda").value.trim(),
+  rec:tmpRec.slice(),
+  foto:null
+ };
+ if(EDITS.szkliwa!=null){
+  var stare=st.prac.szkliwa[EDITS.szkliwa];
+  rek.foto=(tmpFoto===undefined)?(stare.foto||null):tmpFoto;
+  st.prac.szkliwa[EDITS.szkliwa]=rek;trybEdycji("szDodaj","szkliwa",false);
+ }else{
+  rek.foto=tmpFoto||null;
+  st.prac.szkliwa.push(rek);
+ }
+ if(JSON.stringify(st).length>4500000){
+  rek.foto=null;
+  alert("Pamięć przeglądarki jest prawie pełna — szkliwo zapisano bez zdjęcia. Usuń stare zdjęcia albo wyeksportuj kopię danych.");
+ }
  n.value="";document.getElementById("szTemp").value="";document.getElementById("szUwagi").value="";
+ resetSzForm();
  save(st);pracRender();
 });
 document.getElementById("wyDodaj").addEventListener("click",function(){
@@ -2819,6 +2992,52 @@ document.querySelectorAll(".fk").forEach(function(k){
 leks.forEach(function(l){
  var ch=l.querySelector(".chkwrap input"),h=l.querySelector(".lek-h b");
  if(ch&&h)ch.setAttribute("aria-label","Ukończona: "+h.textContent);
+});
+
+/* ===== szukajka w notatkach ===== */
+var notSzuk=document.getElementById("notSzuk");
+if(notSzuk)notSzuk.addEventListener("input",notRender);
+
+/* ===== szukajka w Wiedzy ===== */
+var W_TABS={"p-glina":["glina","Glina"],"p-form":["form","Formowanie"],"p-wypal":["wypal","Wypał"],"p-szklo":["szklo","Szkliwienie"],"p-zdob":["zdob","Zdobienie"],"p-hist":["hist","Historia"],"p-kalk":["kalk","Kalkulatory"]};
+var W_IDX=[];
+Object.keys(W_TABS).forEach(function(pid){
+ var sec=document.getElementById(pid);if(!sec)return;
+ var tb=W_TABS[pid];
+ sec.querySelectorAll(".tk[data-tid],.hist").forEach(function(el){
+  var h=el.querySelector("h4");if(!h)return;
+  W_IDX.push({tab:tb[0],lab:tb[1],tit:h.textContent.trim(),txt:el.textContent.toLowerCase(),el:el});
+ });
+ sec.querySelectorAll(".box").forEach(function(b){
+  var h=b.querySelector("h2");if(!h)return;
+  W_IDX.push({tab:tb[0],lab:tb[1],tit:h.textContent.trim(),txt:b.textContent.toLowerCase(),el:b});
+ });
+});
+var wSzuk=document.getElementById("wSzuk"),wWyniki=document.getElementById("wWyniki");
+wSzuk.addEventListener("input",function(){
+ var q=wSzuk.value.trim().toLowerCase();
+ if(q.length<2){wWyniki.innerHTML="";return}
+ function pasuje(t){
+  if(t.indexOf(q)>-1)return true;
+  return q.length>4&&(t.indexOf(q.slice(0,-1))>-1||t.indexOf(q.slice(0,-2))>-1);
+ }
+ var wyn=[];
+ W_IDX.forEach(function(it,i){if(wyn.length<12&&pasuje(it.txt))wyn.push(i)});
+ wWyniki.innerHTML=wyn.length?wyn.map(function(i){
+  var it=W_IDX[i];
+  return '<button data-n="'+i+'"><span class="wlab">'+esc(it.lab)+"</span>"+esc(it.tit)+"</button>";
+ }).join(""):'<button disabled style="color:var(--mut);cursor:default">Brak wyników — spróbuj początku słowa</button>';
+});
+wWyniki.addEventListener("click",function(e){
+ var b=e.target.closest("button[data-n]");if(!b)return;
+ var it=W_IDX[+b.dataset.n];
+ st.tab=it.tab;showCzesc("wiedza");
+ wSzuk.value="";wWyniki.innerHTML="";
+ setTimeout(function(){
+  it.el.scrollIntoView({behavior:"smooth",block:"start"});
+  it.el.classList.add("znal");
+  setTimeout(function(){it.el.classList.remove("znal")},2200);
+ },80);
 });
 
 /* ===== źródła ===== */
