@@ -255,6 +255,8 @@ figure.schemat figcaption{font-size:.78rem;color:var(--mut);text-align:center;ma
 .lek-h{font-size:1rem;font-weight:600;line-height:1.45}
 .lek-h b{color:var(--pc,#b4552d)}
 .czas{display:inline-block;background:#f3eee1;color:var(--mut);padding:2px 9px;font-size:.7rem;font-weight:600;margin-left:7px;white-space:nowrap;vertical-align:1px}
+.czas.prakt{background:#e7eedd;color:#4c6b2f}
+.odkiedy{font-size:.72rem;color:var(--mut);margin-top:2px}
 .lek p{margin:5px 0 8px;font-size:.9rem;color:#48412f}
 .lek.done{background:#faf7ee}
 .lek.done .lek-t{opacity:.6}
@@ -339,6 +341,20 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <div class="box">
 <h2>🧱 Glina — surowiec ceramika</h2>
 <p style="font-size:.92rem;margin:0">Glina to zwietrzałe skały skaleniowe: mikroskopijne, płaskie cząstki minerałów ilastych (głównie kaolinitu), które zwilżone ślizgają się po sobie — stąd plastyczność. To, co glina zawiera poza minerałami ilastymi (żelazo, topniki, piasek, organika), decyduje o jej kolorze, temperaturze wypału i zastosowaniu.</p>
+</div>
+
+<div class="box" id="bhp">
+<h2>🧤 BHP — bezpieczeństwo w domowej pracowni</h2>
+<p style="font-size:.92rem;margin:0 0 6px">Ceramika w mieszkaniu jest bezpieczna, jeśli pilnujesz kilku zasad. Największy wróg nie jest widoczny: to drobny pył krzemionkowy z wysuszonej gliny i szkliw.</p>
+<div class="zas">
+<div><b>Pył krzemionkowy</b><p>Nie zamiataj na sucho i nie odkurzaj zwykłym odkurzaczem — sprzątaj NA MOKRO (mop, gąbka). Przy szlifowaniu suchych prac, przesiewaniu szkliw i mieszaniu suchych surowców noś maskę FFP2/FFP3. Blat wycieraj mokrą ścierką po każdej sesji.</p></div>
+<div><b>Zlew i kanalizacja</b><p>Szlamu z gliny i resztek szkliwa nie wylewaj do zlewu — zatyka rury i truje środowisko. Myj narzędzia w wiadrze-odstojniku: osad opada, wodę znad niego można odlać, a zagęszczony osad wyrzucić do śmieci (albo glinę odzyskać).</p></div>
+<div><b>Naczynia do żywności</b><p>Używaj szkliw oznaczonych jako bezpieczne dla żywności (food-safe, bezołowiowe) i wypalaj je w zalecanej temperaturze — niedopalone szkliwo może uwalniać metale. Surowa, porowata ceramika i szkliwa z kraklami nie nadają się na kontakt z jedzeniem na co dzień.</p></div>
+<div><b>Jedzenie i domownicy</b><p>Nie jedz i nie pij przy stanowisku pracy. Surowce (tlenki barwiące, surowe szkliwa) trzymaj w podpisanych, zamkniętych pojemnikach poza zasięgiem dzieci i zwierząt.</p></div>
+<div><b>Szkliwa i tlenki</b><p>Surowe szkliwa nakładaj w rękawiczkach, jeśli masz skaleczenia; przy natrysku zawsze kabina/na zewnątrz + maska. Tlenki (kobalt, mangan, miedź) odmierzaj ostrożnie — pylą najbardziej.</p></div>
+<div><b>Wypał w domu?</b><p>Piec elektryczny wymaga osobnego obwodu, niepalnego otoczenia i dobrej wentylacji (przy wypale uchodzą spaliny z organiki). Jeśli wypalasz w usługowej pracowni — ten problem masz z głowy.</p></div>
+</div>
+<p class="src">Zasady zgodne z ogólnymi wytycznymi bezpieczeństwa pracowni ceramicznych (m.in. materiały Ceramic Arts Network / Digitalfire o pyle krzemionkowym).</p>
 </div>
 
 <div class="box">
@@ -1567,6 +1583,24 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 </div>
 <p class="src">Wartości domyślne: typowy piec pracowniany ~7 kW, wypał ~9 h, współczynnik 60%. Podstaw dane swojego pieca i taryfy.</p>
 </div>
+
+<div class="box" id="zlecony">
+<h2>🚚 Koszt wypału zleconego (bez własnego pieca)</h2>
+<p style="font-size:.9rem;margin:0 0 10px">Wypalasz odpłatnie w pracowni usługowej? Policz koszt według cennika (za litr, półkę, kilogram lub sztukę) i sprawdź, czy praca Ci się opłaca.</p>
+<div class="kalk">
+<div>
+<label style="font-size:.85rem;color:var(--mut)">Rozliczenie:
+<select id="zlJak"><option>za litr</option><option>za półkę</option><option>za kilogram</option><option>za sztukę</option></select></label><br>
+<label style="font-size:.85rem;color:var(--mut)">Cena [zł]: <input type="number" id="zlCena" value="16" step="0.5" min="0"></label><br>
+<label style="font-size:.85rem;color:var(--mut)">Ilość (litry / półki / kg / szt.): <input type="number" id="zlIle" value="2" step="0.5" min="0"></label>
+<p class="src" style="margin-top:10px">Podpowiedź objętości (walec, np. kubek):<br>
+<label>⌀ [cm] <input type="number" id="zlD" value="8" step="0.5" style="width:64px"></label>
+<label> wys. [cm] <input type="number" id="zlH" value="10" step="0.5" style="width:64px"></label>
+<span id="zlV" style="font-weight:600"></span></p>
+</div>
+<div class="ksum" id="zlOut"></div>
+</div>
+</div>
 </section>
 
 <!-- ============ PULPIT ============ -->
@@ -1583,7 +1617,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <input type="text" id="tdTekst2" placeholder="szybko dodaj…" style="flex:1 1 120px">
 <button class="kbtn" id="tdDodaj2">+</button>
 </div>
-<button class="goto" id="tdGo" style="margin-top:8px">→ wszystkie zamówienia (Moja pracownia)</button></div>
+<button class="goto" id="tdGo" style="margin-top:8px">→ pełna lista w Mojej pracowni</button></div>
 
 <div class="box"><h2>🗒️ Szybkie notatki</h2>
 <p style="font-size:.85rem;color:var(--mut);margin:0 0 4px">Podręczne karteczki — żyją tylko na tym pulpicie.</p>
@@ -1603,6 +1637,11 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 </div>
 
 
+<div class="box"><h2>🎲 Czy wiesz, że…</h2>
+<div id="ciek"></div>
+<button class="goto" id="ciekGo" style="margin-top:8px">→ czytaj dalej w Historii</button>
+</div>
+
 <div class="box"><h2>💬 Sugestie i zgłoszenia</h2>
 <p style="font-size:.85rem;color:var(--mut);margin:0 0 8px">Masz pomysł albo coś nie działa? Napisz — wiadomość poleci prosto na maila autorki.</p>
 <textarea class="nt" id="fbMsg" style="min-height:88px" placeholder="Twoja sugestia lub zgłoszenie…"></textarea>
@@ -1619,7 +1658,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <div class="nsub on" id="nk-plan">
 <div class="npostep">
 <h2 style="margin:0 0 4px;font-size:1.15rem">🎓 Twoja ścieżka nauki</h2>
-<p style="font-size:.9rem;margin:0">Cały materiał serwisu rozłożony na krótkie lekcje po 10–15 minut — jedna dziennie wystarczy, by przejść ścieżkę w nieco ponad miesiąc. Odhaczaj ukończone lekcje; podświetlona jest zawsze Twoja następna.</p>
+<p style="font-size:.9rem;margin:0">Cały materiał serwisu rozłożony na krótkie lekcje po 10–15 minut — jedna dziennie wystarczy, by przejść ścieżkę w nieco ponad miesiąc. Odhaczaj ukończone lekcje; podświetlona jest zawsze Twoja następna. Znacznik <span class="czas prakt">🖐 z gliną w dłoni</span> oznacza lekcje, przy których warto mieć rozłożony warsztat.</p>
 <div class="lbar" style="--pc:#a0522d"><i id="nbar"></i></div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
 <span id="ntxt" style="font-size:.9rem;font-weight:700">0 z 0 lekcji</span>
@@ -1643,12 +1682,12 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <p>Przeczytaj wstęp zakładki Glina i tabelę rodzajów glin. Zapamiętaj: co odróżnia kaolin od ball clay i dlaczego gliny czerwone wypala się nisko.</p>
 <button class="goto" data-goto="glina">→ otwórz: Glina</button></div></div>
 
-<div class="lek" style="--pc:#7a6a3f" data-lid="l02"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#7a6a3f" data-lid="l02"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 2</b> · Dzika glina: pozyskiwanie i oczyszczanie<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
-<p>Przeczytaj karty „Pozyskiwanie dzikiej gliny” i „Oczyszczanie” ze schematami. Umiej opisać test słoikowy i kolejne kroki szlamowania.</p>
+<p>Przeczytaj karty „Pozyskiwanie dzikiej gliny” i „Oczyszczanie” ze schematami. Umiej opisać test słoikowy i kolejne kroki szlamowania. <i>Lekcja opcjonalna — jeśli kupujesz gotową masę, wystarczy, że ją przejrzysz.</i></p>
 <button class="goto" data-goto="glina" data-kot="dzika">→ otwórz: Glina</button></div></div>
 
-<div class="lek" style="--pc:#7a6a3f" data-lid="l03"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#7a6a3f" data-lid="l03"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 3</b> · Wyrabianie i odzyskiwanie gliny<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Przeczytaj karty o wedgingu (3 metody!) i reclaimie. Zamknij stronę i wymień z pamięci metody wyrabiania oraz po co się je stosuje.</p>
 <button class="goto" data-goto="glina" data-kot="wyrabianie">→ otwórz: Glina</button></div></div>
@@ -1662,22 +1701,22 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <div class="mod">
 <div class="modh" style="--pc:#b0603a"><h3>Moduł 2 · Formowanie</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
 
-<div class="lek" style="--pc:#b0603a" data-lid="l05"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#b0603a" data-lid="l05"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 5</b> · Techniki ręczne: wyciskanie i wałeczki<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Przeczytaj karty pinching i coiling (ze schematami i szczegółami). Zapamiętaj, jak łączy się wałeczki i dlaczego duże formy buduje się etapami.</p>
 <button class="goto" data-goto="form" data-kot="szczypanie">→ otwórz: Formowanie</button></div></div>
 
-<div class="lek" style="--pc:#b0603a" data-lid="l06"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#b0603a" data-lid="l06"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 6</b> · Technika płatowa<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Karta „slab building”: jak przygotować równy płat, jak skleja się złącza i czym są formy slump/hump (schemat w karcie „Wyciskanie w formach”).</p>
 <button class="goto" data-goto="form" data-kot="platy">→ otwórz: Formowanie</button></div></div>
 
-<div class="lek" style="--pc:#b0603a" data-lid="l07"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#b0603a" data-lid="l07"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 7</b> · Toczenie na kole — etapy<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Naucz się kolejności: wyrabianie → centrowanie → otwieranie → ciągnięcie → profilowanie → zdjęcie → obtaczanie. Odtwórz listę z pamięci, sprawdzając ze schematem.</p>
 <button class="goto" data-goto="form" data-kot="toczenie">→ otwórz: Formowanie</button></div></div>
 
-<div class="lek" style="--pc:#b0603a" data-lid="l08"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#b0603a" data-lid="l08"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 8</b> · Odlewanie ze szlikru i formy gipsowe<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Karty „slip casting” i „press molding”: rola gipsu i upłynniacza, formy wieloczęściowe. Prześledź 3 kroki na schemacie odlewania.</p>
 <button class="goto" data-goto="form" data-kot="odlewanie">→ otwórz: Formowanie</button></div></div>
@@ -1735,7 +1774,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <p>Szkłotwórca, topniki, stabilizator, barwniki — umiej przypisać do każdej roli po 2 surowce i podać kolory z kobaltu, miedzi, żelaza i cyny.</p>
 <button class="goto" data-goto="szklo">→ otwórz: Szkliwienie</button></div></div>
 
-<div class="lek" style="--pc:#3f6e8a" data-lid="l18"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#3f6e8a" data-lid="l18"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 18</b> · Nakładanie szkliwa<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Zanurzanie, polewanie, natrysk, pędzlowanie, rezerważ woskiem — przejrzyj schematy i zapamiętaj, kiedy która metoda wygrywa.</p>
 <button class="goto" data-goto="szklo" data-kot="zanurzanie">→ otwórz: Szkliwienie</button></div></div>
@@ -1759,12 +1798,12 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <div class="mod">
 <div class="modh" style="--pc:#8d5f8c"><h3>Moduł 5 · Zdobienie</h3><div class="lbar"><i></i></div><span class="modtxt"></span></div>
 
-<div class="lek" style="--pc:#8d5f8c" data-lid="l22"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#8d5f8c" data-lid="l22"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 22</b> · Zdobienie w glinie<span class="czas">⏱ 10 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Faktury i stemplowanie (Jōmon! Bolesławiec!), rzeźbienie, ażur, sprigging — przejrzyj karty ze schematami.</p>
 <button class="goto" data-goto="zdob" data-kot="faktura">→ otwórz: Zdobienie</button></div></div>
 
-<div class="lek" style="--pc:#8d5f8c" data-lid="l23"><label class="chkwrap"><input type="checkbox"><span></span></label><div class="lek-t">
+<div class="lek" style="--pc:#8d5f8c" data-lid="l23"><label class="chkwrap"><input type="checkbox"><span></span><span class="czas prakt">🖐 z gliną w dłoni</span></label><div class="lek-t">
 <div class="lek-h"><b>Lekcja 23</b> · Angoby: sgraffito, mishima, terra sigillata<span class="czas">⏱ 15 min</span><span class="nextbadge">▶ następna</span></div>
 <p>Cztery techniki angobowe + nerikomi. Kluczowe rozróżnienie: sgraffito (wydrapywanie) vs mishima (inkrustacja) — porównaj schematy krok po kroku.</p>
 <button class="goto" data-goto="zdob" data-kot="angoba">→ otwórz: Zdobienie</button></div></div>
@@ -2026,15 +2065,21 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <p class="puste" id="prSzkliwaB">Brak szkliw w ewidencji — zbuduj pierwsze poniżej.</p>
 <h3 style="margin-top:18px">Dodaj szkliwo</h3>
 <div class="dodaj">
-<input type="text" id="szNazwa" placeholder="nazwa, np. Seladon butelkowy" style="flex:1 1 220px">
-<input type="text" id="szTemp" placeholder="stożek / temp., np. stożek 6" style="flex:0 1 190px">
+<input type="text" id="szNazwa" placeholder="nazwa, np. Błękit nocny" style="flex:1 1 220px">
+<input type="text" id="szTemp" placeholder="stożek / temp., np. 1020–1060 °C" style="flex:0 1 190px">
 </div>
 <div class="dodaj">
+<select id="szTyp"><option value="kupne">Szkliwo kupne (gotowe)</option><option value="wlasne">Własna receptura</option></select>
+<input type="text" id="szProd" placeholder="producent / symbol, np. Botz 9541" style="flex:1 1 220px">
+</div>
+<div id="szRecWrap">
+<div class="dodaj">
 <select id="szSur"><option value="">— surowiec z bazy —</option></select>
-<input type="text" id="szIlosc" placeholder="ilość, np. 40 cz. wag." style="flex:0 1 170px">
+<input type="text" id="szIlosc" placeholder="ilość, np. 40 części wagowych" style="flex:0 1 210px">
 <button class="kbtn alt" id="szAddSkl" type="button">+ dodaj składnik</button>
 </div>
 <div class="reclist" id="szRecList"></div>
+</div>
 <div class="dodaj">
 <input type="text" id="szWoda" placeholder="woda, np. 85 g na 100 g suchej mieszanki" style="flex:1 1 260px">
 <label class="kbtn alt" style="cursor:pointer">📷 dodaj zdjęcie<input type="file" id="szFoto" accept="image/*" style="display:none"></label>
@@ -2162,6 +2207,7 @@ footer{background:var(--sur);border-top:1px solid var(--lin);color:var(--mut);fo
 <b>💾 Postęp zapisuje się lokalnie</b><br>
 Twoje ukończone lekcje, notatki, zamówienia i pracownia zapisują się automatycznie <b>na tym urządzeniu, w tej przeglądarce</b> — po ponownym otwarciu aplikacji wszystko będzie na swoim miejscu. Każda osoba korzystająca ze swojego urządzenia ma własny, niezależny postęp.<br>
 <span style="opacity:.8">Uwaga: tryb prywatny lub wyczyszczenie danych przeglądarki kasuje zapis.</span><br>
+<span style="opacity:.8">Dlatego co jakiś czas zrób kopię zapasową — przycisk „⬇ Eksport” znajdziesz w stopce strony.</span><br>
 <button id="toastOk">Rozumiem</button>
 </div>
 
@@ -2428,7 +2474,9 @@ document.addEventListener("keydown",function(e){
 function pracRender(){
  var p=st.prac;
  document.getElementById("prPrace").innerHTML=p.prace.map(function(r,i){
-  return"<tr"+(EDITS.prace===i?' class="editing"':"")+"><td>"+esc(r.n)+'</td><td><select data-i="'+i+'">'+ETAPY.map(function(e){return"<option"+(e===r.e?" selected":"")+">"+e+"</option>"}).join("")+"</select></td><td>"+fmtD(r.d)+"</td>"+delBtn(i)+"</tr>";
+  var dni=Math.floor((Date.now()-(r.ze||r.d))/86400000);
+  var od=dni<=0?"etap od dziś":(dni===1?"etap od wczoraj":"etap od "+dni+" dni");
+  return"<tr"+(EDITS.prace===i?' class="editing"':"")+"><td>"+esc(r.n)+'</td><td><select data-i="'+i+'">'+ETAPY.map(function(e){return"<option"+(e===r.e?" selected":"")+">"+e+"</option>"}).join("")+'</select><div class="odkiedy">'+od+"</div></td><td>"+fmtD(r.d)+"</td>"+delBtn(i)+"</tr>";
  }).join("");
  document.getElementById("prMasy").innerHTML=p.masy.map(function(r,i){
   return"<tr"+(EDITS.masy===i?' class="editing"':"")+"><td>"+esc(r.n)+"</td><td>"+esc(r.t)+"</td><td>"+esc(r.s)+"</td>"+delBtn(i)+"</tr>";
@@ -2442,7 +2490,8 @@ function pracRender(){
   return '<div class="szk'+(EDITS.szkliwa===i?" editing":"")+'">'+
    (foto?'<img class="szk-f" src="'+esc(foto)+'" alt="'+esc(r.n)+'">':"")+
    '<div class="szk-t"><b>'+esc(r.n)+"</b>"+(r.t?' <span class="czas">'+esc(r.t)+"</span>":"")+
-   (wiersze?'<div class="tscroll"><table class="szk-rec"><tr><th>surowiec</th><th>ilość (wag.)</th></tr>'+wiersze+"</table></div>":"")+
+   (r.prod?'<div class="szk-u">🏷 '+esc(r.prod)+"</div>":"")+
+   (wiersze?'<div class="tscroll"><table class="szk-rec"><tr><th>surowiec</th><th>ilość (części wagowe)</th></tr>'+wiersze+"</table></div>":"")+
    (r.woda?'<div class="szk-w">💧 '+esc(r.woda)+"</div>":"")+
    (r.u?'<div class="szk-u">'+esc(r.u)+"</div>":"")+
    '</div><span class="akc"><button class="kbtn ed" data-i="'+i+'" title="edytuj">✎</button><button class="kbtn del" data-i="'+i+'" title="usuń">✕</button></span></div>';
@@ -2469,8 +2518,11 @@ var FILL={
  szkliwa:function(r){
   document.getElementById("szNazwa").value=r.n;document.getElementById("szTemp").value=r.t;
   document.getElementById("szUwagi").value=r.u;document.getElementById("szWoda").value=r.woda||"";
+  document.getElementById("szProd").value=r.prod||"";
+  document.getElementById("szTyp").value=r.typ||((r.rec&&r.rec.length)?"wlasne":"kupne");
   tmpRec=(r.rec||[]).map(function(s){return{s:s.s,m:s.m}});tmpFoto=undefined;
   fotoPrev(r.foto);recRender();
+  if(typeof szTypToggle==="function")szTypToggle();
  },
  surowce:function(r){document.getElementById("suNazwa").value=r.n;document.getElementById("suKom").value=r.k||""},
  wypaly:function(r){document.getElementById("wyData").value=r.data||"";document.getElementById("wyTyp").value=r.typ;document.getElementById("wyUwagi").value=r.u}
@@ -2559,14 +2611,64 @@ document.getElementById("szFotoPrev").addEventListener("click",function(e){
  tmpFoto=null;document.getElementById("szFoto").value="";fotoPrev(null);
 });
 recRender();
+
+/* przełącznik: szkliwo kupne / własna receptura */
+function szTypToggle(){
+ var kupne=document.getElementById("szTyp").value==="kupne";
+ document.getElementById("szRecWrap").style.display=kupne?"none":"";
+ document.getElementById("szProd").style.display=kupne?"":"none";
+}
+document.getElementById("szTyp").addEventListener("change",szTypToggle);
+szTypToggle();
+
+/* pulpit: losowa ciekawostka z Historii */
+(function(){
+ var el=document.getElementById("ciek"),epizody=document.querySelectorAll("#histLista .hist");
+ if(!el||!epizody.length)return;
+ var i=Math.floor(Math.random()*epizody.length),h=epizody[i];
+ el.innerHTML='<b style="font-size:.98rem">'+esc(h.querySelector("h4").textContent)+'</b>'+
+  '<p style="margin:5px 0 0;font-size:.88rem;color:var(--mut)">'+esc(h.querySelector("p").textContent.slice(0,150))+'…</p>';
+ document.getElementById("ciekGo").addEventListener("click",function(){
+  st.tab="hist";showCzesc("wiedza");
+  setTimeout(function(){
+   h.scrollIntoView({behavior:"smooth",block:"start"});
+   h.classList.add("znal");setTimeout(function(){h.classList.remove("znal")},2200);
+  },80);
+ });
+})();
+
+/* kalkulator wypału zleconego */
+(function(){
+ var zlJak=document.getElementById("zlJak"),zlCena=document.getElementById("zlCena"),
+     zlIle=document.getElementById("zlIle"),zlOut=document.getElementById("zlOut"),
+     zlD=document.getElementById("zlD"),zlH=document.getElementById("zlH"),zlV=document.getElementById("zlV");
+ if(!zlOut)return;
+ function zl(){
+  var koszt=(+zlCena.value||0)*(+zlIle.value||0);
+  var j={"za litr":"l","za półkę":"półek","za kilogram":"kg","za sztukę":"szt."}[zlJak.value]||"";
+  zlOut.innerHTML="Koszt wypału: <b>"+koszt.toFixed(2)+" zł</b> ("+esc(zlIle.value||"0")+" "+j+" × "+esc(zlCena.value||"0")+" zł)"+
+   "<br><span style='font-size:.8rem;color:var(--mut)'>Przy dwóch wypałach (biskwit + szkliwny) policz koszt dwukrotnie — cenniki bywają różne dla każdego.</span>";
+ }
+ function obj(){
+  var d=+zlD.value||0,h=+zlH.value||0;
+  var litry=Math.PI*Math.pow(d/2,2)*h/1000;
+  zlV.textContent="≈ "+litry.toFixed(2)+" l";
+ }
+ [zlJak,zlCena,zlIle].forEach(function(x){x.addEventListener("input",zl)});
+ zlJak.addEventListener("change",zl);
+ [zlD,zlH].forEach(function(x){x.addEventListener("input",obj)});
+ zl();obj();
+})();
 document.getElementById("prPrace").addEventListener("change",function(e){
  var s=e.target.closest("select");if(!s)return;
- st.prac.prace[+s.dataset.i].e=s.value;save(st);
+ var r=st.prac.prace[+s.dataset.i];
+ r.e=s.value;r.ze=Date.now();
+ save(st);pracRender();
 });
 document.getElementById("prDodaj").addEventListener("click",function(){
  var n=document.getElementById("prNazwa");if(!n.value.trim())return;
- var rek={n:n.value.trim(),e:document.getElementById("prEtap").value,d:Date.now()};
- if(EDITS.prace!=null){rek.d=st.prac.prace[EDITS.prace].d;st.prac.prace[EDITS.prace]=rek;trybEdycji("prDodaj","prace",false)}
+ var rek={n:n.value.trim(),e:document.getElementById("prEtap").value,d:Date.now(),ze:Date.now()};
+ if(EDITS.prace!=null){var sp=st.prac.prace[EDITS.prace];rek.d=sp.d;if(sp.e===rek.e)rek.ze=sp.ze||sp.d;st.prac.prace[EDITS.prace]=rek;trybEdycji("prDodaj","prace",false)}
  else st.prac.prace.push(rek);
  n.value="";save(st);pracRender();
 });
@@ -2580,12 +2682,15 @@ document.getElementById("maDodaj").addEventListener("click",function(){
 });
 document.getElementById("szDodaj").addEventListener("click",function(){
  var n=document.getElementById("szNazwa");if(!n.value.trim())return;
+ var typ=document.getElementById("szTyp").value;
  var rek={
   n:n.value.trim(),
   t:document.getElementById("szTemp").value.trim(),
   u:document.getElementById("szUwagi").value.trim(),
   woda:document.getElementById("szWoda").value.trim(),
-  rec:tmpRec.slice(),
+  typ:typ,
+  prod:document.getElementById("szProd").value.trim(),
+  rec:(typ==="wlasne")?tmpRec.slice():[],
   foto:null
  };
  if(EDITS.szkliwa!=null){
@@ -2795,7 +2900,8 @@ document.getElementById("klDodaj").addEventListener("click",function(){
 function tdKlientFill(){
  var sel=document.getElementById("tdKlient");if(!sel)return;
  var v=sel.value;
- sel.innerHTML='<option value="">— klient —</option>'+st.prac.klienci.map(function(k){return"<option>"+esc(k.n)+"</option>"}).join("");
+ var pusty=st.prac.klienci.length?"— klient (opcjonalnie) —":"— brak klientów: dodasz w sekcji Klienci ↓ —";
+ sel.innerHTML='<option value="">'+pusty+"</option>"+st.prac.klienci.map(function(k){return"<option>"+esc(k.n)+"</option>"}).join("");
  sel.value=v;
 }
 klRender();tdKlientFill();
