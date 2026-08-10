@@ -1,0 +1,16 @@
+{
+  "name": "Ceramika — techniki, nauka, pracownia",
+  "short_name": "Ceramika",
+  "description": "Kompendium technik ceramicznych z interaktywną historią, ścieżką nauki, kalkulatorami i panelem pracowni.",
+  "lang": "pl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#b4552d",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
