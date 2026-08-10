@@ -2233,6 +2233,19 @@ Twoje ukończone lekcje, notatki, zamówienia i pracownia zapisują się automat
 (function(){
 "use strict";
 var LS="ceramika_v1";
+
+/* ===== analityka (GoatCounter — darmowa, bez cookies, bez banera RODO) =====
+   1. Załóż darmowe konto na https://www.goatcounter.com (wybierz kod, np. "ceramika").
+   2. Wpisz poniżej swój adres zliczania, np. "https://ceramika.goatcounter.com/count".
+   Pusta wartość = analityka całkowicie wyłączona. */
+var ANALITYKA="";
+function traf(sciezka,tytul){
+ if(!ANALITYKA||location.hostname==="localhost")return;
+ try{
+  var i=new Image();
+  i.src=ANALITYKA+"?p="+encodeURIComponent(sciezka)+"&t="+encodeURIComponent(tytul||sciezka)+"&rnd="+Date.now();
+ }catch(e){}
+}
 function load(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){return{}}}
 function save(s){
  try{localStorage.setItem(LS,JSON.stringify(s))}
@@ -2263,12 +2276,13 @@ function showCzesc(c,noscroll){
   showTab("p-"+st.tab);
  }else{subnav.style.display="none";if(wsw)wsw.style.display="none";showTab(GMAP[c]);}
  st.czesc=c;save(st);
+ traf("/"+c+(c==="wiedza"?"/"+st.tab:""));
  if(!noscroll)window.scrollTo({top:0});
 }
 tabs.forEach(function(b){b.addEventListener("click",function(){
  st.tab=b.dataset.p;
  tabs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");
- showTab("p-"+st.tab);save(st);window.scrollTo({top:0});
+ showTab("p-"+st.tab);save(st);traf("/wiedza/"+st.tab);window.scrollTo({top:0});
 })});
 gbtns.forEach(function(b){b.addEventListener("click",function(){showCzesc(b.dataset.g)})});
 showCzesc(st.czesc||"dash",true);
@@ -2283,7 +2297,7 @@ var nkb=document.querySelectorAll("nav.nk button");
 function nkShow(n){
  nkb.forEach(function(x){x.classList.toggle("on",x.dataset.n===n)});
  ["plan","quiz","fisz"].forEach(function(k){document.getElementById("nk-"+k).classList.toggle("on",k===n)});
- st.ntab=n;save(st);
+ st.ntab=n;save(st);traf("/nauka/"+n);
 }
 nkb.forEach(function(b){b.addEventListener("click",function(){nkShow(b.dataset.n)})});
 nkShow(st.ntab||"plan");
@@ -2331,7 +2345,7 @@ leks.forEach(function(l){
  if(st.lek[l.dataset.lid]){ch.checked=true;l.classList.add("done")}
  ch.addEventListener("change",function(){
   st.lek[l.dataset.lid]=ch.checked;l.classList.toggle("done",ch.checked);
-  if(ch.checked)st.lastLek=l.dataset.lid;
+  if(ch.checked){st.lastLek=l.dataset.lid;traf("/zdarzenie/lekcja-ukonczona/"+l.dataset.lid)}
   save(st);lekRefresh();
   if(typeof dashLekRender==="function")dashLekRender();
  });
@@ -3009,7 +3023,7 @@ document.getElementById("fbSend").addEventListener("click",function(){
   headers:{"Content-Type":"application/json","Accept":"application/json"},
   body:JSON.stringify({_subject:"panel ceramika",wiadomosc:msg.value.trim(),kontakt:kontakt||"nie podano"})
  }).then(function(r){if(!r.ok)throw 0;return r.json()})
- .then(function(){stt.textContent="✓ Wysłano — dziękuję!";msg.value=""})
+ .then(function(){stt.textContent="✓ Wysłano — dziękuję!";msg.value="";traf("/zdarzenie/sugestia-wyslana")})
  .catch(function(){
   stt.innerHTML='Nie udało się wysłać automatycznie — <a href="mailto:lapinska.agat@gmail.com?subject='+encodeURIComponent("panel ceramika")+'&body='+encodeURIComponent(msg.value.trim())+'">kliknij, by wysłać mailem</a>.';
  });
@@ -3165,6 +3179,12 @@ document.getElementById("zrodlaZglos").addEventListener("click",function(){
   if(t){t.scrollIntoView({behavior:"smooth",block:"center"});t.focus()}
  },80);
 });
+
+/* dopisek o analityce w stopce — tylko gdy jest włączona */
+if(ANALITYKA){
+ var fc=document.querySelector(".fcredit");
+ if(fc)fc.insertAdjacentHTML("beforeend",' · anonimowa statystyka odwiedzin: <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a> (bez cookies)');
+}
 
 /* ===== PWA: service worker (offline po pierwszym otwarciu) ===== */
 if("serviceWorker" in navigator&&location.protocol!=="file:"){
